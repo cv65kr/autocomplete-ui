@@ -5992,6 +5992,9 @@ var InputComponent = exports.InputComponent = (0, _preact2.connect)('', _actions
     return (0, _preact.h)("input", _extends({}, htmlNodeInheritProps, {
         autocomplete: "false",
         spellCheck: "false",
+        role: "combobox",
+        "aria-autocomplete": "list",
+        "aria-expanded": "false",
         "data-search": "Apisearch-autocomplete",
         onInput: function onInput(event) {
             return searchAction(event.target.value);
@@ -9859,6 +9862,7 @@ var createResultContainer = exports.createResultContainer = function createResul
     // create container node
     var resultNode = document.createElement('div');
     resultNode.className = 'apisearch-result-container';
+    resultNode.role = 'listbox';
 
     inputNode.parentNode.insertBefore(resultNode, inputNode.nextSibling);
 
