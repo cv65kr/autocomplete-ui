@@ -12,6 +12,7 @@ export const actions = store => ({
             .client
             .query
             .create(queryText)
+            .filterByTypes(state.datasets)
             .enableHighlights()
         ;
 

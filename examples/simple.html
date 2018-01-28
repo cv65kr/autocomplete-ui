@@ -10,15 +10,21 @@
         apisearchAutocomplete({
             inputTarget: '.as-autocomplete',
             client: {
-                appId: '54725861',
-                indexId: '66777162',
-                token: 'daf93c2b-40bc-49f2-870e-f8f62ea524ad'
+                appId: 'adef5afd',
+                indexId: '01a5b867',
+                token: 'bc81352f-2115-47e8-aff9-cfe3d29ebbb7'
             },
             datasets: [{
-                type: 'album',
+                type: 'object',
                 template: {
-                    header: 'Albums',
-                    item: '> {{metadata.title}}'
+                    header: '<h3>Objectes</h3>',
+                    item: '<a href="#{{metadata.slug}}">{{metadata.name}}</a>'
+                }
+            },{
+                type: 'blogpost',
+                template: {
+                    header: '<h3>Posts</h3>',
+                    item: '<a href="#{{indexed_metadata.path}}">{{indexed_metadata.title}}</a>'
                 }
             }]
         });
