@@ -25,15 +25,21 @@ export const getNodeAttributes = (htmlNode) => {
 };
 
 /**
- * Highlight text
+ * Create Result container
+ * @returns {Element}
  */
-export function highlightSuggestion(currentQueryText, suggestion) {
-    let regex = new RegExp(`(${currentQueryText})`, 'gi');
-    let highlightedSuggestion = suggestion.replace(regex, "<em>$1</em>");
-    let sanitizedSpaces = highlightedSuggestion.split(' ');
+export const createResultContainer = () => {
+    // select input container
+    let inputNode = document.querySelector('input[data-search="Apisearch-autocomplete"]');
 
-    return sanitizedSpaces.join('&nbsp;');
-}
+    // create container node
+    let resultNode = document.createElement('div');
+    resultNode.className = 'apisearch-result-container';
+
+    inputNode.parentNode.insertBefore(resultNode, inputNode.nextSibling);
+
+    return resultNode;
+};
 
 /**
  * Mark as active the item next

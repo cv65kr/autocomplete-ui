@@ -1,27 +1,28 @@
+import {h} from "preact";
 import apisearch from "apisearch";
-import Input from "./widgets/Input";
-import Result from "./widgets/Result";
 import createStore from 'unistore';
+import {renderInput, renderResult} from "./render";
 
 
-module.exports = function(
-    target,
-    {
-        appId,
-        indexId,
-        token,
-        options
-    }
-) {
-    ensureTargetIsDefined(target);
+module.exports = function({
+    inputTarget,
+    resultTarget,
+    client,
+    datasets
+}) {
+    ensureTargetIsDefined(inputTarget);
 
     /**
      * Compose initial state
-         */
+     */
     let initialState = {
-        data: {},
-        template: defaultTemplate,
-        client: apisearch({appId, indexId, token, options})
+        client: apisearch(client),
+        data: {
+            query: {},
+            items: [],
+            total_hits: 0,
+            total_items: 0
+        }
     };
 
     /**
@@ -29,11 +30,22 @@ module.exports = function(
      */
     let store = createStore(initialState);
 
-    const input = new Input(target, store);
-    input.render();
+    /**
+     * Render Input
+     */
+    renderInput({
+        store,
+        target: inputTarget
+    });
 
-    const result = new Result('.result', store);
-    result.render();
+    /**
+     * Render Result
+     */
+    renderResult({
+        store,
+        datasets,
+        target: resultTarget
+    });
 };
 
 const ensureTargetIsDefined = function(targetNode) {
@@ -41,6 +53,3 @@ const ensureTargetIsDefined = function(targetNode) {
         throw new Error('A valid DOM target must be defined.');
     }
 };
-
-const defaultTemplate = '<ul>{{#items}}<li><a href="{{metadata.url}}" title="{{metadata.title}}">{{#highlights.title}}{{highlights.title}}{{/highlights.title}}{{^highlights.title}}{{metadata.title}}{{/highlights.title}}</a></li>{{/items}}</ul>';
-

@@ -1123,12 +1123,15 @@ var actions = exports.actions = function actions(store) {
          * @param queryText
          */
         searchAction: function searchAction(state, queryText) {
-            var query = state.client.query.create(queryText);
+            var query = state.client.query.create(queryText).enableHighlights();
 
-            state.client.search(query, function (response, error) {
-                store.setState({
-                    data: response
-                });
+            state.client.search(query, function (data, error) {
+                if (error) {
+                    store.setState({ error: error });
+                    return;
+                }
+
+                store.setState({ data: data });
             });
         }
     };
@@ -1141,39 +1144,39 @@ var actions = exports.actions = function actions(store) {
 "use strict";
 
 
+var _preact = __webpack_require__(0);
+
 var _apisearch = __webpack_require__(4);
 
 var _apisearch2 = _interopRequireDefault(_apisearch);
 
-var _Input = __webpack_require__(5);
-
-var _Input2 = _interopRequireDefault(_Input);
-
-var _Result = __webpack_require__(7);
-
-var _Result2 = _interopRequireDefault(_Result);
-
-var _unistore = __webpack_require__(12);
+var _unistore = __webpack_require__(5);
 
 var _unistore2 = _interopRequireDefault(_unistore);
 
+var _render = __webpack_require__(6);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = function (target, _ref) {
-    var appId = _ref.appId,
-        indexId = _ref.indexId,
-        token = _ref.token,
-        options = _ref.options;
+module.exports = function (_ref) {
+    var inputTarget = _ref.inputTarget,
+        resultTarget = _ref.resultTarget,
+        client = _ref.client,
+        datasets = _ref.datasets;
 
-    ensureTargetIsDefined(target);
+    ensureTargetIsDefined(inputTarget);
 
     /**
      * Compose initial state
-         */
+     */
     var initialState = {
-        data: {},
-        template: defaultTemplate,
-        client: (0, _apisearch2.default)({ appId: appId, indexId: indexId, token: token, options: options })
+        client: (0, _apisearch2.default)(client),
+        data: {
+            query: {},
+            items: [],
+            total_hits: 0,
+            total_items: 0
+        }
     };
 
     /**
@@ -1181,11 +1184,22 @@ module.exports = function (target, _ref) {
      */
     var store = (0, _unistore2.default)(initialState);
 
-    var input = new _Input2.default(target, store);
-    input.render();
+    /**
+     * Render Input
+     */
+    (0, _render.renderInput)({
+        store: store,
+        target: inputTarget
+    });
 
-    var result = new _Result2.default('.result', store);
-    result.render();
+    /**
+     * Render Result
+     */
+    (0, _render.renderResult)({
+        store: store,
+        datasets: datasets,
+        target: resultTarget
+    });
 };
 
 var ensureTargetIsDefined = function ensureTargetIsDefined(targetNode) {
@@ -1193,8 +1207,6 @@ var ensureTargetIsDefined = function ensureTargetIsDefined(targetNode) {
         throw new Error('A valid DOM target must be defined.');
     }
 };
-
-var defaultTemplate = '<ul>{{#items}}<li><a href="{{metadata.url}}" title="{{metadata.title}}">{{#highlights.title}}{{highlights.title}}{{/highlights.title}}{{^highlights.title}}{{metadata.title}}{{/highlights.title}}</a></li>{{/items}}</ul>';
 
 /***/ }),
 /* 4 */
@@ -4691,50 +4703,72 @@ exports.default = MemoryCache;
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+function assign(obj, props) {
+    for (var i in props) 
+        { obj[i] = props[i]; }
+    return obj;
+}
 
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _preact = __webpack_require__(0);
-
-var _preact2 = __webpack_require__(1);
-
-var _InputComponent = __webpack_require__(6);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Input = function () {
-    function Input(target, store) {
-        _classCallCheck(this, Input);
-
-        this.target = target;
-        this.store = store;
-    }
-
-    _createClass(Input, [{
-        key: "render",
-        value: function render() {
-            var targetNode = document.querySelector(this.target);
-
-            (0, _preact.render)((0, _preact.h)(
-                _preact2.Provider,
-                { store: this.store },
-                (0, _preact.h)(_InputComponent.InputComponent, null)
-            ), targetNode);
+function createStore(state) {
+    var listeners = [];
+    state = state || {};
+    function unsubscribe(listener) {
+        var out = [];
+        for (var i = 0;i < listeners.length; i++) {
+            if (listeners[i] === listener) {
+                listener = null;
+            } else {
+                out.push(listeners[i]);
+            }
         }
-    }]);
+        listeners = out;
+    }
+    
+    function setState(update, overwrite) {
+        state = overwrite ? update : assign(assign({}, state), update);
+        var currentListeners = listeners;
+        for (var i = 0;i < currentListeners.length; i++) 
+            { currentListeners[i](state); }
+    }
+    
+    return {
+        action: function action(action$1) {
+            return function () {
+                var arguments$1 = arguments;
 
-    return Input;
-}();
+                var args = [state];
+                for (var i = 0;i < arguments.length; i++) 
+                    { args.push(arguments$1[i]); }
+                var ret = action$1.apply(this, args);
+                if (ret != null) {
+                    if (ret.then) 
+                        { ret.then(setState); }
+                     else 
+                        { setState(ret); }
+                }
+            };
+        },
+        setState: setState,
+        subscribe: function subscribe(listener) {
+            listeners.push(listener);
+            return function () {
+                unsubscribe(listener);
+            };
+        },
+        unsubscribe: unsubscribe,
+        getState: function getState() {
+            return state;
+        }
+    };
+}
 
-exports.default = Input;
+/* harmony default export */ __webpack_exports__["default"] = (createStore);
+//# sourceMappingURL=unistore.es.js.map
+
 
 /***/ }),
 /* 6 */
@@ -4746,24 +4780,63 @@ exports.default = Input;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.InputComponent = undefined;
+exports.renderResult = exports.renderInput = undefined;
 
 var _preact = __webpack_require__(0);
 
-var _actions = __webpack_require__(2);
-
 var _preact2 = __webpack_require__(1);
 
-var InputComponent = exports.InputComponent = (0, _preact2.connect)('data', _actions.actions)(function (_ref) {
-    var data = _ref.data,
-        searchAction = _ref.searchAction;
-    return (0, _preact.h)("input", {
-        "data-search": "Apisearch-autocomplete",
-        onInput: function onInput(event) {
-            return searchAction(event.target.value);
-        }
-    });
-});
+var _InputComponent = __webpack_require__(7);
+
+var _ResultComponent = __webpack_require__(8);
+
+var _helpers = __webpack_require__(12);
+
+/**
+ * Render Input widget
+ * @param target
+ * @param store
+ */
+var renderInput = exports.renderInput = function renderInput(_ref) {
+    var target = _ref.target,
+        store = _ref.store;
+
+    var targetNode = document.querySelector(target);
+    var parentNode = targetNode.parentNode;
+
+    (0, _preact.render)((0, _preact.h)(
+        _preact2.Provider,
+        { store: store },
+        (0, _preact.h)(_InputComponent.InputComponent, { htmlNodeInheritProps: (0, _helpers.getNodeAttributes)(targetNode) })
+    ), parentNode, parentNode.childNodes[0]);
+
+    targetNode.remove();
+};
+
+/**
+ * Render Result widget
+ * @param target
+ * @param store
+ * @param template
+ */
+var renderResult = exports.renderResult = function renderResult(_ref2) {
+    var target = _ref2.target,
+        store = _ref2.store,
+        datasets = _ref2.datasets;
+
+    var targetNode = document.querySelector(target);
+    if (targetNode === null) {
+        targetNode = (0, _helpers.createResultContainer)();
+    }
+
+    (0, _preact.render)((0, _preact.h)(
+        _preact2.Provider,
+        { store: store },
+        (0, _preact.h)(_ResultComponent.ResultComponent, {
+            datasets: datasets
+        })
+    ), targetNode);
+};
 
 /***/ }),
 /* 7 */
@@ -4775,42 +4848,28 @@ var InputComponent = exports.InputComponent = (0, _preact2.connect)('data', _act
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.InputComponent = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _preact = __webpack_require__(0);
 
+var _actions = __webpack_require__(2);
+
 var _preact2 = __webpack_require__(1);
 
-var _ResultComponent = __webpack_require__(8);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Result = function () {
-    function Result(target, store) {
-        _classCallCheck(this, Result);
-
-        this.target = target;
-        this.store = store;
-    }
-
-    _createClass(Result, [{
-        key: "render",
-        value: function render() {
-            var targetNode = document.querySelector(this.target);
-
-            (0, _preact.render)((0, _preact.h)(
-                _preact2.Provider,
-                { store: this.store },
-                (0, _preact.h)(_ResultComponent.ResultComponent, null)
-            ), targetNode);
+var InputComponent = exports.InputComponent = (0, _preact2.connect)('', _actions.actions)(function (_ref) {
+    var htmlNodeInheritProps = _ref.htmlNodeInheritProps,
+        searchAction = _ref.searchAction;
+    return (0, _preact.h)("input", _extends({}, htmlNodeInheritProps, {
+        autocomplete: "false",
+        spellCheck: "false",
+        "data-search": "Apisearch-autocomplete",
+        onInput: function onInput(event) {
+            return searchAction(event.target.value);
         }
-    }]);
-
-    return Result;
-}();
-
-exports.default = Result;
+    }));
+});
 
 /***/ }),
 /* 8 */
@@ -4839,12 +4898,31 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Suggested Search Component
  */
-var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('template, data')(function (_ref) {
-    var template = _ref.template,
+var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('data')(function (_ref) {
+    var datasets = _ref.datasets,
         data = _ref.data;
-    return (0, _preact.h)("div", { dangerouslySetInnerHTML: {
-            __html: renderTemplate(template, data)
-        } });
+
+    if (data.total_hits === 0) {
+        return null;
+    }
+
+    return (0, _preact.h)(
+        "div",
+        null,
+        datasets.map(function (dataset) {
+            return (0, _preact.h)(
+                "ul",
+                null,
+                data.items.map(function (item) {
+                    return (0, _preact.h)("li", {
+                        dangerouslySetInnerHTML: {
+                            __html: renderTemplate(dataset.template.item, item)
+                        }
+                    });
+                })
+            );
+        })
+    );
 });
 
 /**
@@ -5662,72 +5740,144 @@ var Hogan = {};
 
 /***/ }),
 /* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-function assign(obj, props) {
-    for (var i in props) 
-        { obj[i] = props[i]; }
-    return obj;
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.selectNextSuggestion = selectNextSuggestion;
+exports.selectPreviousSuggestion = selectPreviousSuggestion;
+exports.selectActiveSuggestion = selectActiveSuggestion;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * Set of helpers for the suggestions widget
+ */
+
+/**
+ * Returns an object of an
+ * html node attributes.
+ *
+ * @param htmlNode
+ * @returns {{}}
+ */
+var getNodeAttributes = exports.getNodeAttributes = function getNodeAttributes(htmlNode) {
+    var nodeAttributes = {};
+    for (var i = 0; i < htmlNode.attributes.length; i++) {
+        var attr = htmlNode.attributes[i];
+        if (attr.specified) {
+            nodeAttributes = _extends({}, nodeAttributes, _defineProperty({}, attr.name, attr.value));
+        }
+    }
+
+    return nodeAttributes;
+};
+
+/**
+ * Create Result container
+ * @returns {Element}
+ */
+var createResultContainer = exports.createResultContainer = function createResultContainer() {
+    // select input container
+    var inputNode = document.querySelector('input[data-search="Apisearch-autocomplete"]');
+
+    // create container node
+    var resultNode = document.createElement('div');
+    resultNode.className = 'apisearch-result-container';
+
+    inputNode.parentNode.insertBefore(resultNode, inputNode.nextSibling);
+
+    return resultNode;
+};
+
+/**
+ * Mark as active the item next
+ * to the last active item
+ * on a given array of items
+ *
+ * @example when a user press a key arrow down
+ */
+function selectNextSuggestion(suggestionsArray) {
+    var currentActiveSuggestionKey = void 0;
+
+    return suggestionsArray.map(function (suggestion, key) {
+        /**
+         * Detect current active suggestion
+         */
+        if (suggestion.isActive && key + 1 < suggestionsArray.length) {
+            currentActiveSuggestionKey = key;
+            suggestion.isActive = false;
+        }
+
+        /**
+         * Modify the first suggestion next to
+         * the current active suggestion
+         */
+        if (key === currentActiveSuggestionKey + 1 && key + 1 <= suggestionsArray.length) {
+            suggestion.isActive = true;
+        }
+
+        return suggestion;
+    });
 }
 
-function createStore(state) {
-    var listeners = [];
-    state = state || {};
-    function unsubscribe(listener) {
-        var out = [];
-        for (var i = 0;i < listeners.length; i++) {
-            if (listeners[i] === listener) {
-                listener = null;
-            } else {
-                out.push(listeners[i]);
-            }
+/**
+ * Mark as active the item previous
+ * to the last active item
+ * on a given array of items
+ *
+ * @example when a user press a key arrow up
+ */
+function selectPreviousSuggestion(suggestionsArray) {
+    /**
+     * Find the current active suggestion key
+     */
+    var currentActiveSuggestionKey = suggestionsArray.findIndex(function (suggestion) {
+        if (suggestion.isActive) {
+            return suggestion;
         }
-        listeners = out;
-    }
-    
-    function setState(update, overwrite) {
-        state = overwrite ? update : assign(assign({}, state), update);
-        var currentListeners = listeners;
-        for (var i = 0;i < currentListeners.length; i++) 
-            { currentListeners[i](state); }
-    }
-    
-    return {
-        action: function action(action$1) {
-            return function () {
-                var arguments$1 = arguments;
+    });
 
-                var args = [state];
-                for (var i = 0;i < arguments.length; i++) 
-                    { args.push(arguments$1[i]); }
-                var ret = action$1.apply(this, args);
-                if (ret != null) {
-                    if (ret.then) 
-                        { ret.then(setState); }
-                     else 
-                        { setState(ret); }
-                }
-            };
-        },
-        setState: setState,
-        subscribe: function subscribe(listener) {
-            listeners.push(listener);
-            return function () {
-                unsubscribe(listener);
-            };
-        },
-        unsubscribe: unsubscribe,
-        getState: function getState() {
-            return state;
+    return suggestionsArray.map(function (suggestion, key) {
+        /**
+         * Set the current active suggestion as false
+         * if is Active AND is not the last one
+         */
+        if (suggestion.isActive && currentActiveSuggestionKey - 1 >= 0) {
+            suggestion.isActive = false;
         }
-    };
+
+        /**
+         * Set active the suggestion previous to
+         * the current active suggestion
+         */
+        if (currentActiveSuggestionKey - 1 === key && currentActiveSuggestionKey - 1 >= 0) {
+            suggestion.isActive = true;
+        }
+
+        return suggestion;
+    });
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (createStore);
-//# sourceMappingURL=unistore.es.js.map
+/**
+ * Return the active item of an array
+ */
+function selectActiveSuggestion(suggestionsArray) {
+    var selectedSuggestion = suggestionsArray.filter(function (suggestion) {
+        if (suggestion.isActive) {
+            return suggestion;
+        }
+    });
 
+    return selectedSuggestion[0].name;
+}
 
 /***/ })
 /******/ ]);

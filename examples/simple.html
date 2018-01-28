@@ -4,16 +4,24 @@
     <script src="./../dist/apisearch-autocomplete.js"></script>
 </head>
 <body>
-    <!--<input type="text" class="apisearch-autocomplete" />-->
-    <div class="apisearch-autocomplete"></div>
-    <div class="result"></div>
+    <input type="search" class="as-autocomplete" />
 
     <script>
-        apisearchAutocomplete('.apisearch-autocomplete', {
-            appId: '54725861',
-            indexId: '66777162',
-            token: 'daf93c2b-40bc-49f2-870e-f8f62ea524ad'
-        })
+        apisearchAutocomplete({
+            inputTarget: '.as-autocomplete',
+            client: {
+                appId: '54725861',
+                indexId: '66777162',
+                token: 'daf93c2b-40bc-49f2-870e-f8f62ea524ad'
+            },
+            datasets: [{
+                type: 'album',
+                template: {
+                    header: 'Albums',
+                    item: '> {{metadata.title}}'
+                }
+            }]
+        });
     </script>
 </body>
 </html>

@@ -12,14 +12,18 @@ export const actions = store => ({
             .client
             .query
             .create(queryText)
+            .enableHighlights()
         ;
 
         state
             .client
-            .search(query, (response, error) => {
-                store.setState({
-                    data: response
-                });
+            .search(query, (data, error) => {
+                if (error) {
+                    store.setState({error});
+                    return;
+                }
+
+                store.setState({data});
             })
     },
 });

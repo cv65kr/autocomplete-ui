@@ -6,12 +6,31 @@ import Hogan from 'hogan.js'
 /**
  * Suggested Search Component
  */
-export const ResultComponent = connect('template, data')(
-    ({template, data}) => (
-        <div dangerouslySetInnerHTML={{
-            __html: renderTemplate(template, data)
-        }} />
-    )
+export const ResultComponent = connect('data')(
+    ({datasets, data}) => {
+        if (data.total_hits === 0) {
+            return null;
+        }
+
+        return (
+            <div>
+                {datasets.map(dataset =>
+                    <ul>
+                        {data.items.map(item =>
+                            <li
+                                dangerouslySetInnerHTML={{
+                                    __html: renderTemplate(
+                                        dataset.template.item,
+                                        item
+                                    )
+                                }}
+                            />
+                        )}
+                    </ul>
+                )}
+            </div>
+        )
+    }
 );
 
 /**
