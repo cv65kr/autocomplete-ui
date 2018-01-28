@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "apisearch": "^0.1.22",
+    "hogan.js": "^3.0.2",
     "preact": "^8.2.7",
     "unistore": "^3.0.3"
   }

@@ -9,18 +9,25 @@ module.exports = function(
     {
         appId,
         indexId,
-        token
+        token,
+        options
     }
 ) {
     ensureTargetIsDefined(target);
 
     /**
+     * Compose initial state
+         */
+    let initialState = {
+        data: {},
+        template: defaultTemplate,
+        client: apisearch({appId, indexId, token, options})
+    };
+
+    /**
      * compose store
      */
-    let store = createStore({
-        data: {},
-        client: apisearch({appId, indexId, token})
-    });
+    let store = createStore(initialState);
 
     const input = new Input(target, store);
     input.render();
@@ -34,4 +41,6 @@ const ensureTargetIsDefined = function(targetNode) {
         throw new Error('A valid DOM target must be defined.');
     }
 };
+
+const defaultTemplate = '<ul>{{#items}}<li><a href="{{metadata.url}}" title="{{metadata.title}}">{{#highlights.title}}{{highlights.title}}{{/highlights.title}}{{^highlights.title}}{{metadata.title}}{{/highlights.title}}</a></li>{{/items}}</ul>';
 
