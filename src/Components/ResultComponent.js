@@ -9,40 +9,42 @@ import groupBy from 'lodash/groupBy'
  */
 export const ResultComponent = connect('data')(
     ({datasets, data}) => {
-        if (data.total_hits === 0) {
+        if (data.total_hits === 0 || data.query.q === '') {
             return null;
         }
 
         let filteredItemsByType = groupBy(data.items, 'uuid.type');
+        let filteredDatasetsByType = groupBy(datasets, 'type');
 
         return (
             <div>
-                {datasets.map(dataset =>
-                    <ul>
-                        {(dataset.template.header)
-                            ? <li
-                                dangerouslySetInnerHTML={{
-                                    __html: renderTemplate(
-                                        dataset.template.header,
+                {Object.keys(filteredItemsByType).map(type =>
+                    <div>
+                        {(filteredDatasetsByType[type][0].template.header)
+                            ? <div
+                                dangerouslySetInnerHTML={
+                                    renderTemplate(
+                                        filteredDatasetsByType[type][0].template.header,
                                         null
                                     )
-                                }}
+                                }
                             />
                             : null
                         }
-                        {data.items.map(item =>
-                            (item.uuid.type === dataset.type)
-                                ? <li
-                                    dangerouslySetInnerHTML={{
-                                        __html: renderTemplate(
-                                            dataset.template.item,
+
+                        <ul>
+                            {filteredItemsByType[type].map(item =>
+                                <li
+                                    dangerouslySetInnerHTML={
+                                        renderTemplate(
+                                            filteredDatasetsByType[type][0].template.item,
                                             item
                                         )
-                                    }}
+                                    }
                                 />
-                                : null
-                        )}
-                    </ul>
+                            )}
+                        </ul>
+                    </div>
                 )}
             </div>
         )
@@ -56,5 +58,8 @@ export const ResultComponent = connect('data')(
  */
 const renderTemplate = (template, data) => {
     let compiledTemplate = Hogan.compile(template);
-    return compiledTemplate.render(data);
+
+    return {
+        __html: compiledTemplate.render(data)
+    }
 };

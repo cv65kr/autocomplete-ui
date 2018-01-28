@@ -17,7 +17,7 @@ module.exports = function({
      */
     let initialState = {
         client: apisearch(client),
-        datasets: datasets.map(dataset => dataset.type),
+        datasetKeys: datasets.map(dataset => dataset.type),
         data: {
             query: {},
             items: [],

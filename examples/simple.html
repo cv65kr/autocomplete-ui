@@ -26,6 +26,12 @@
                     header: '<h3>Posts</h3>',
                     item: '<a href="#{{indexed_metadata.path}}">{{indexed_metadata.title}}</a>'
                 }
+            },{
+                type: 'book',
+                template: {
+                    header: '<h3>Books</h3>',
+                    item: '<a href="#{{metadata.slug}}">{{metadata.name}}</a>'
+                }
             }]
         });
     </script>
