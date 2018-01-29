@@ -12,7 +12,8 @@ export const InputComponent = connect('resultBoxOpen', actions) (
 
         /** actions */
         searchAction,
-        keyDownAction
+        keyDownAction,
+        focusOutAction
     }) =>
         <input
             {...htmlNodeInheritProps}
@@ -27,6 +28,6 @@ export const InputComponent = connect('resultBoxOpen', actions) (
 
             onInput={event => searchAction(event.target.value)}
             onKeyDown={keyDownAction}
-            // onBlur={handleSearchInputFocusedOut}
+            onBlur={focusOutAction}
         />
 );

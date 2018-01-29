@@ -15,6 +15,7 @@ const key = {
 export const actions = store => ({
     /**
      * Search Action
+     *
      * @param state
      * @param queryText
      */
@@ -77,6 +78,21 @@ export const actions = store => ({
 
         if (event.code ===  key.enter) {
             console.log('enter');
+        }
+    },
+
+    /**
+     * Focus lost
+     *
+     * @param state
+     * @param event
+     */
+    focusOutAction(state, event) {
+        if (
+            null === event.relatedTarget ||
+            false === event.relatedTarget.id === 'apisearch-listbox'
+        ) {
+            store.setState({ resultBoxOpen: false });
         }
     }
 });

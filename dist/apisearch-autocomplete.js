@@ -1651,6 +1651,7 @@ var actions = exports.actions = function actions(store) {
     return {
         /**
          * Search Action
+         *
          * @param state
          * @param queryText
          */
@@ -1704,6 +1705,19 @@ var actions = exports.actions = function actions(store) {
 
             if (event.code === key.enter) {
                 console.log('enter');
+            }
+        },
+
+
+        /**
+         * Focus lost
+         *
+         * @param state
+         * @param event
+         */
+        focusOutAction: function focusOutAction(state, event) {
+            if (null === event.relatedTarget || false === event.relatedTarget.id === 'apisearch-listbox') {
+                store.setState({ resultBoxOpen: false });
             }
         }
     };
@@ -6047,7 +6061,8 @@ var InputComponent = exports.InputComponent = (0, _preact2.connect)('resultBoxOp
     var htmlNodeInheritProps = _ref.htmlNodeInheritProps,
         resultBoxOpen = _ref.resultBoxOpen,
         searchAction = _ref.searchAction,
-        keyDownAction = _ref.keyDownAction;
+        keyDownAction = _ref.keyDownAction,
+        focusOutAction = _ref.focusOutAction;
     return (0, _preact.h)("input", _extends({}, htmlNodeInheritProps, {
         autocomplete: "false",
         tabIndex: "0",
@@ -6061,8 +6076,8 @@ var InputComponent = exports.InputComponent = (0, _preact2.connect)('resultBoxOp
         onInput: function onInput(event) {
             return searchAction(event.target.value);
         },
-        onKeyDown: keyDownAction
-        // onBlur={handleSearchInputFocusedOut}
+        onKeyDown: keyDownAction,
+        onBlur: focusOutAction
     }));
 });
 
