@@ -14,10 +14,13 @@ const defaultHtmlAttributes = {
 /**
  * Suggested Search Component
  */
-export const ResultComponent = connect('resultBoxOpen, data')(
+export const ResultComponent = connect('resultBoxOpen, items')(
     ({
+         /** component props */
          datasets,
-         data,
+
+         /** store props */
+         items,
          resultBoxOpen
     }) => {
         if (false === resultBoxOpen) {
@@ -27,7 +30,7 @@ export const ResultComponent = connect('resultBoxOpen, data')(
             />;
         }
 
-        let filteredItemsByType = groupBy(data.items, 'uuid.type');
+        let filteredItemsByType = groupBy(items, 'uuid.type');
         let filteredDatasetsByType = groupBy(datasets, 'type');
 
         return (

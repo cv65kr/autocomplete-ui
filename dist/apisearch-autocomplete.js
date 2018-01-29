@@ -1634,6 +1634,17 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 /**
+ * Keyboard keys
+ * @type {{up: string, down: string, esc: string, enter: string}}
+ */
+var key = {
+    up: 'ArrowUp',
+    down: 'ArrowDown',
+    esc: 'Escape',
+    enter: 'Enter'
+};
+
+/**
  * Actions
  */
 var actions = exports.actions = function actions(store) {
@@ -1657,12 +1668,43 @@ var actions = exports.actions = function actions(store) {
                     return;
                 }
                 if (data.total_hits === 0) {
-                    store.setState({ resultBoxOpen: false });
+                    store.setState({
+                        total_hits: 0,
+                        resultBoxOpen: false
+                    });
                     return;
                 }
 
-                store.setState({ data: data, resultBoxOpen: true });
+                store.setState({
+                    items: data.items,
+                    total_hits: data.total_hits,
+                    resultBoxOpen: true
+                });
             });
+        },
+        keyDownAction: function keyDownAction(state, event) {
+
+            if (event.code === key.esc) {
+                store.setState({ resultBoxOpen: false });
+                return;
+            }
+
+            if (event.code === key.down) {
+                console.log('Down');
+            }
+
+            if (event.code === key.up) {
+                /*
+                 * Prevent cursor to go at the starting point of the line
+                 */
+                event.preventDefault();
+
+                console.log('Up');
+            }
+
+            if (event.code === key.enter) {
+                console.log('enter');
+            }
         }
     };
 };
@@ -2309,12 +2351,8 @@ module.exports = function (_ref) {
             return dataset.type;
         }),
         resultBoxOpen: false,
-        data: {
-            query: {},
-            items: [],
-            total_hits: 0,
-            total_items: 0
-        }
+        items: [],
+        total_hits: 0
     };
 
     /**
@@ -6008,7 +6046,8 @@ var _preact2 = __webpack_require__(12);
 var InputComponent = exports.InputComponent = (0, _preact2.connect)('resultBoxOpen', _actions.actions)(function (_ref) {
     var htmlNodeInheritProps = _ref.htmlNodeInheritProps,
         resultBoxOpen = _ref.resultBoxOpen,
-        searchAction = _ref.searchAction;
+        searchAction = _ref.searchAction,
+        keyDownAction = _ref.keyDownAction;
     return (0, _preact.h)("input", _extends({}, htmlNodeInheritProps, {
         autocomplete: "false",
         tabIndex: "0",
@@ -6021,8 +6060,8 @@ var InputComponent = exports.InputComponent = (0, _preact2.connect)('resultBoxOp
 
         onInput: function onInput(event) {
             return searchAction(event.target.value);
-        }
-        // onKeyDown={handleSuggestionsNavigation}
+        },
+        onKeyDown: keyDownAction
         // onBlur={handleSearchInputFocusedOut}
     }));
 });
@@ -6067,9 +6106,9 @@ var defaultHtmlAttributes = {
 /**
  * Suggested Search Component
  */
-var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('resultBoxOpen, data')(function (_ref) {
+var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('resultBoxOpen, items')(function (_ref) {
     var datasets = _ref.datasets,
-        data = _ref.data,
+        items = _ref.items,
         resultBoxOpen = _ref.resultBoxOpen;
 
     if (false === resultBoxOpen) {
@@ -6078,7 +6117,7 @@ var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('resultBox
         }));
     }
 
-    var filteredItemsByType = (0, _groupBy2.default)(data.items, 'uuid.type');
+    var filteredItemsByType = (0, _groupBy2.default)(items, 'uuid.type');
     var filteredDatasetsByType = (0, _groupBy2.default)(datasets, 'type');
 
     return (0, _preact.h)(

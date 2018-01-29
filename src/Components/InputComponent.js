@@ -4,9 +4,15 @@ import { connect } from 'unistore/preact'
 
 export const InputComponent = connect('resultBoxOpen', actions) (
     ({
+         /** component props */
         htmlNodeInheritProps,
+
+        /** store props */
         resultBoxOpen,
-        searchAction
+
+        /** actions */
+        searchAction,
+        keyDownAction
     }) =>
         <input
             {...htmlNodeInheritProps}
@@ -20,7 +26,7 @@ export const InputComponent = connect('resultBoxOpen', actions) (
             data-search="Apisearch-autocomplete"
 
             onInput={event => searchAction(event.target.value)}
-            // onKeyDown={handleSuggestionsNavigation}
+            onKeyDown={keyDownAction}
             // onBlur={handleSearchInputFocusedOut}
         />
 );

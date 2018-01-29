@@ -19,12 +19,8 @@ module.exports = function({
         client: apisearch(client),
         datasetKeys: datasets.map(dataset => dataset.type),
         resultBoxOpen: false,
-        data: {
-            query: {},
-            items: [],
-            total_hits: 0,
-            total_items: 0
-        }
+        items: [],
+        total_hits: 0
     };
 
     /**

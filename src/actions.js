@@ -1,4 +1,15 @@
 /**
+ * Keyboard keys
+ * @type {{up: string, down: string, esc: string, enter: string}}
+ */
+const key = {
+    up: 'ArrowUp',
+    down: 'ArrowDown',
+    esc: 'Escape',
+    enter: 'Enter'
+};
+
+/**
  * Actions
  */
 export const actions = store => ({
@@ -29,11 +40,43 @@ export const actions = store => ({
                     return;
                 }
                 if (data.total_hits === 0) {
-                    store.setState({ resultBoxOpen: false });
+                    store.setState({
+                        total_hits: 0,
+                        resultBoxOpen: false
+                    });
                     return;
                 }
 
-                store.setState({ data, resultBoxOpen: true });
+                store.setState({
+                    items: data.items,
+                    total_hits: data.total_hits,
+                    resultBoxOpen: true
+                });
             })
     },
+
+    keyDownAction(state, event) {
+
+        if (event.code === key.esc) {
+            store.setState({ resultBoxOpen: false });
+            return;
+        }
+
+        if (event.code === key.down) {
+            console.log('Down')
+        }
+
+        if (event.code ===  key.up) {
+            /*
+             * Prevent cursor to go at the starting point of the line
+             */
+            event.preventDefault();
+
+            console.log('Up')
+        }
+
+        if (event.code ===  key.enter) {
+            console.log('enter');
+        }
+    }
 });
