@@ -4,46 +4,46 @@ import createStore from 'unistore';
 import {renderInput, renderResult} from "./render";
 
 
-module.exports = function({
-    inputTarget,
-    resultTarget,
-    client,
-    datasets
-}) {
-    ensureTargetIsDefined(inputTarget);
+module.exports = function(client)
+{
+    const clientInstance = apisearch(client);
 
-    /**
-     * Compose initial state
-     */
-    let initialState = {
-        client: apisearch(client),
-        datasetKeys: datasets.map(dataset => dataset.type),
-        resultBoxOpen: false,
-        items: [],
-        total_hits: 0
-    };
+    return ({ inputTarget, datasets }) => {
+        ensureTargetIsDefined(inputTarget);
 
-    /**
-     * compose store
-     */
-    let store = createStore(initialState);
+        /**
+         * Compose initial state
+         */
+        let initialState = {
+            client: clientInstance,
+            datasetKeys: datasets.map(dataset => dataset.type),
+            resultBoxOpen: false,
+            items: [],
+            total_hits: 0
+        };
 
-    /**
-     * Render Input
-     */
-    renderInput({
-        store,
-        target: inputTarget
-    });
+        /**
+         * compose store
+         */
+        let store = createStore(initialState);
 
-    /**
-     * Render Result
-     */
-    renderResult({
-        store,
-        datasets,
-        target: inputTarget
-    });
+        /**
+         * Render Input
+         */
+        renderInput({
+            store,
+            target: inputTarget
+        });
+
+        /**
+         * Render Result
+         */
+        renderResult({
+            store,
+            datasets,
+            target: inputTarget
+        });
+    }
 };
 
 const ensureTargetIsDefined = function(targetNode) {

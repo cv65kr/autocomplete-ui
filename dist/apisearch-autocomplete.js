@@ -2348,48 +2348,50 @@ var _render = __webpack_require__(41);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = function (_ref) {
-    var inputTarget = _ref.inputTarget,
-        resultTarget = _ref.resultTarget,
-        client = _ref.client,
-        datasets = _ref.datasets;
+module.exports = function (client) {
+    var clientInstance = (0, _apisearch2.default)(client);
 
-    ensureTargetIsDefined(inputTarget);
+    return function (_ref) {
+        var inputTarget = _ref.inputTarget,
+            datasets = _ref.datasets;
 
-    /**
-     * Compose initial state
-     */
-    var initialState = {
-        client: (0, _apisearch2.default)(client),
-        datasetKeys: datasets.map(function (dataset) {
-            return dataset.type;
-        }),
-        resultBoxOpen: false,
-        items: [],
-        total_hits: 0
+        ensureTargetIsDefined(inputTarget);
+
+        /**
+         * Compose initial state
+         */
+        var initialState = {
+            client: clientInstance,
+            datasetKeys: datasets.map(function (dataset) {
+                return dataset.type;
+            }),
+            resultBoxOpen: false,
+            items: [],
+            total_hits: 0
+        };
+
+        /**
+         * compose store
+         */
+        var store = (0, _unistore2.default)(initialState);
+
+        /**
+         * Render Input
+         */
+        (0, _render.renderInput)({
+            store: store,
+            target: inputTarget
+        });
+
+        /**
+         * Render Result
+         */
+        (0, _render.renderResult)({
+            store: store,
+            datasets: datasets,
+            target: inputTarget
+        });
     };
-
-    /**
-     * compose store
-     */
-    var store = (0, _unistore2.default)(initialState);
-
-    /**
-     * Render Input
-     */
-    (0, _render.renderInput)({
-        store: store,
-        target: inputTarget
-    });
-
-    /**
-     * Render Result
-     */
-    (0, _render.renderResult)({
-        store: store,
-        datasets: datasets,
-        target: inputTarget
-    });
 };
 
 var ensureTargetIsDefined = function ensureTargetIsDefined(targetNode) {

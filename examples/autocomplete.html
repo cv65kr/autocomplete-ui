@@ -70,13 +70,14 @@
     </form>
 
     <script>
-        apisearchAutocomplete({
+        var autocomplete = apisearchAutocomplete({
+            appId: 'adef5afd',
+            indexId: '01a5b867',
+            token: 'bc81352f-2115-47e8-aff9-cfe3d29ebbb7'
+        });
+
+        autocomplete({
             inputTarget: '.as-autocomplete',
-            client: {
-                appId: 'adef5afd',
-                indexId: '01a5b867',
-                token: 'bc81352f-2115-47e8-aff9-cfe3d29ebbb7'
-            },
             datasets: [{
                 type: 'object',
                 template: {
