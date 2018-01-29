@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Simple example</title>
+    <script src="./../dist/apisearch-autocomplete.js"></script>
+    <style>
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+        }
+        .as-autocomplete {
+            outline: none;
+            border-radius: 5rem;
+            border: 1px solid gainsboro;
+            font-size: 1.2rem;
+            padding: .5rem;
+            box-shadow: 0 2px 0 #d2d2d2;
+            color: #292935;
+            max-width: 30rem;
+            width: 100%;
+            display: block;
+            margin: 3rem auto 1rem;
+        }
+        #apisearch-listbox {
+            border: 1px solid #eaeaea;
+            box-shadow: 0 4px 9px rgba(160, 160, 160, 0.21);
+            border-radius: .3rem;
+            max-width: 50rem;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        ul li {
+            height: 2rem;
+            line-height: 2rem;
+        }
+        ul li a {
+            color: #215df3;
+            text-decoration: none;
+            padding: 0 1rem;
+            display: block;
+            height: inherit;
+            line-height: inherit;
+        }
+        ul li a:hover {
+            background-color: #e8e8e8;
+        }
+        ul li a em {
+            background: #cff5ff;
+            box-shadow: 0 1px #4d78f4;
+            font-style: initial;
+        }
+        h3 {
+            margin: 0;
+            font-weight: 100;
+            padding: 1rem 1rem .5rem 1rem;
+            color: #393939;
+            text-transform: uppercase;
+            letter-spacing: .2rem;
+            font-size: .8rem;
+        }
+    </style>
+</head>
+<body>
+    <input type="search" class="as-autocomplete" placeholder="search..." />
+
+    <script>
+        apisearchAutocomplete({
+            inputTarget: '.as-autocomplete',
+            client: {
+                appId: 'adef5afd',
+                indexId: '01a5b867',
+                token: 'bc81352f-2115-47e8-aff9-cfe3d29ebbb7'
+            },
+            datasets: [{
+                type: 'object',
+                template: {
+                    header: '<h3>Objectes</h3>',
+                    item: '<a href="#{{metadata.slug}}">' +
+                        '{{#highlights.name}}{{{highlights.name}}}{{/highlights.name}}' +
+                        '{{^highlights.name}}{{metadata.name}}{{/highlights.name}}' +
+                    '</a>'
+                }
+            },{
+                type: 'blogpost',
+                template: {
+                    header: '<h3>Posts</h3>',
+                    item: '<a href="#{{indexed_metadata.path}}">{{indexed_metadata.title}}</a>'
+                }
+            },{
+                type: 'book',
+                template: {
+                    header: '<h3>Books</h3>',
+                    item: '<a href="#{{metadata.slug}}">' +
+                        '{{#highlights.name}}{{{highlights.name}}}{{/highlights.name}}' +
+                        '{{^highlights.name}}{{metadata.name}}{{/highlights.name}}' +
+                    '</a>'
+                }
+            }]
+        });
+    </script>
+</body>
+</html>

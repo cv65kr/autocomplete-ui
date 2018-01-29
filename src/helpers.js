@@ -34,8 +34,9 @@ export const createResultContainer = () => {
 
     // create container node
     let resultNode = document.createElement('div');
-    resultNode.className = 'apisearch-result-container';
-    resultNode.role = 'listbox';
+    resultNode.id = 'apisearch-listbox';
+    resultNode.setAttribute('role', 'listbox');
+    resultNode.setAttribute('tabindex', '-1');
 
     inputNode.parentNode.insertBefore(resultNode, inputNode.nextSibling);
 
