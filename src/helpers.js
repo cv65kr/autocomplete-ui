@@ -1,8 +1,4 @@
 /**
- * Set of helpers for the suggestions widget
- */
-
-/**
  * Returns an object of an
  * html node attributes.
  *
@@ -22,25 +18,6 @@ export const getNodeAttributes = (htmlNode) => {
     }
 
     return nodeAttributes;
-};
-
-/**
- * Create Result container
- * @returns {Element}
- */
-export const createResultContainer = () => {
-    // select input container
-    let inputNode = document.querySelector('input[data-search="Apisearch-autocomplete"]');
-
-    // create container node
-    let resultNode = document.createElement('div');
-    resultNode.id = 'apisearch-listbox';
-    resultNode.setAttribute('role', 'listbox');
-    resultNode.setAttribute('tabindex', '-1');
-
-    inputNode.parentNode.insertBefore(resultNode, inputNode.nextSibling);
-
-    return resultNode;
 };
 
 /**

@@ -1646,13 +1646,22 @@ var actions = exports.actions = function actions(store) {
         searchAction: function searchAction(state, queryText) {
             var query = state.client.query.create(queryText).filterByTypes(state.datasetKeys).enableHighlights();
 
+            if (query.q === '') {
+                store.setState({ resultBoxOpen: false });
+                return;
+            }
+
             state.client.search(query, function (data, error) {
                 if (error) {
-                    store.setState({ error: error });
+                    store.setState({ error: error, resultBoxOpen: false });
+                    return;
+                }
+                if (data.total_hits === 0) {
+                    store.setState({ resultBoxOpen: false });
                     return;
                 }
 
-                store.setState({ data: data });
+                store.setState({ data: data, resultBoxOpen: true });
             });
         }
     };
@@ -2299,6 +2308,7 @@ module.exports = function (_ref) {
         datasetKeys: datasets.map(function (dataset) {
             return dataset.type;
         }),
+        resultBoxOpen: false,
         data: {
             query: {},
             items: [],
@@ -2326,7 +2336,7 @@ module.exports = function (_ref) {
     (0, _render.renderResult)({
         store: store,
         datasets: datasets,
-        target: resultTarget
+        target: inputTarget
     });
 };
 
@@ -5953,9 +5963,8 @@ var renderResult = exports.renderResult = function renderResult(_ref2) {
         datasets = _ref2.datasets;
 
     var targetNode = document.querySelector(target);
-    if (targetNode === null) {
-        targetNode = (0, _helpers.createResultContainer)();
-    }
+    var parentNode = targetNode.parentNode;
+    var index = getTargetIndex(targetNode);
 
     (0, _preact.render)((0, _preact.h)(
         _preact2.Provider,
@@ -5963,8 +5972,18 @@ var renderResult = exports.renderResult = function renderResult(_ref2) {
         (0, _preact.h)(_ResultComponent.ResultComponent, {
             datasets: datasets
         })
-    ), targetNode);
+    ), parentNode, parentNode.childNodes[index + 1]);
 };
+
+/**
+ * Get target index relative to its parent
+ *
+ * @param targetNode
+ * @returns {*}
+ */
+function getTargetIndex(targetNode) {
+    return Array.prototype.indexOf.call(targetNode.parentNode.children, targetNode);
+}
 
 /***/ }),
 /* 42 */
@@ -5986,8 +6005,9 @@ var _actions = __webpack_require__(20);
 
 var _preact2 = __webpack_require__(12);
 
-var InputComponent = exports.InputComponent = (0, _preact2.connect)('', _actions.actions)(function (_ref) {
+var InputComponent = exports.InputComponent = (0, _preact2.connect)('resultBoxOpen', _actions.actions)(function (_ref) {
     var htmlNodeInheritProps = _ref.htmlNodeInheritProps,
+        resultBoxOpen = _ref.resultBoxOpen,
         searchAction = _ref.searchAction;
     return (0, _preact.h)("input", _extends({}, htmlNodeInheritProps, {
         autocomplete: "false",
@@ -5995,12 +6015,15 @@ var InputComponent = exports.InputComponent = (0, _preact2.connect)('', _actions
         spellCheck: "false",
         role: "combobox",
         "aria-autocomplete": "list",
-        "aria-expanded": "false",
+        "aria-expanded": "" + resultBoxOpen,
         "aria-owns": "apisearch-listbox",
         "data-search": "Apisearch-autocomplete",
+
         onInput: function onInput(event) {
             return searchAction(event.target.value);
         }
+        // onKeyDown={handleSuggestionsNavigation}
+        // onBlur={handleSearchInputFocusedOut}
     }));
 });
 
@@ -6015,6 +6038,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.ResultComponent = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _preact = __webpack_require__(3);
 
@@ -6032,15 +6057,25 @@ var _groupBy2 = _interopRequireDefault(_groupBy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var defaultHtmlAttributes = {
+    id: "apisearch-listbox",
+    className: "as-result",
+    role: "listbox",
+    tabIndex: "-1"
+};
+
 /**
  * Suggested Search Component
  */
-var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('data')(function (_ref) {
+var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('resultBoxOpen, data')(function (_ref) {
     var datasets = _ref.datasets,
-        data = _ref.data;
+        data = _ref.data,
+        resultBoxOpen = _ref.resultBoxOpen;
 
-    if (data.total_hits === 0 || data.query.q === '') {
-        return null;
+    if (false === resultBoxOpen) {
+        return (0, _preact.h)("div", _extends({}, defaultHtmlAttributes, {
+            style: { display: 'none' }
+        }));
     }
 
     var filteredItemsByType = (0, _groupBy2.default)(data.items, 'uuid.type');
@@ -6048,19 +6083,26 @@ var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('data')(fu
 
     return (0, _preact.h)(
         "div",
-        null,
+        defaultHtmlAttributes,
         Object.keys(filteredItemsByType).map(function (type) {
             return (0, _preact.h)(
                 "div",
-                null,
+                {
+                    className: "as-result__dataset as-result__dataset--" + type
+                },
                 filteredDatasetsByType[type][0].template.header ? (0, _preact.h)("div", {
+                    className: "as-result__datasetHeader",
                     dangerouslySetInnerHTML: renderTemplate(filteredDatasetsByType[type][0].template.header, null)
                 }) : null,
                 (0, _preact.h)(
                     "ul",
-                    null,
+                    {
+                        className: "as-result__datasetItemsList"
+                    },
                     filteredItemsByType[type].map(function (item) {
                         return (0, _preact.h)("li", {
+                            className: "as-result__datasetItem",
+                            tabIndex: -1,
                             dangerouslySetInnerHTML: renderTemplate(filteredDatasetsByType[type][0].template.item, item)
                         });
                     })
@@ -9831,10 +9873,6 @@ exports.selectActiveSuggestion = selectActiveSuggestion;
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Set of helpers for the suggestions widget
- */
-
-/**
  * Returns an object of an
  * html node attributes.
  *
@@ -9851,25 +9889,6 @@ var getNodeAttributes = exports.getNodeAttributes = function getNodeAttributes(h
     }
 
     return nodeAttributes;
-};
-
-/**
- * Create Result container
- * @returns {Element}
- */
-var createResultContainer = exports.createResultContainer = function createResultContainer() {
-    // select input container
-    var inputNode = document.querySelector('input[data-search="Apisearch-autocomplete"]');
-
-    // create container node
-    var resultNode = document.createElement('div');
-    resultNode.id = 'apisearch-listbox';
-    resultNode.setAttribute('role', 'listbox');
-    resultNode.setAttribute('tabindex', '-1');
-
-    inputNode.parentNode.insertBefore(resultNode, inputNode.nextSibling);
-
-    return resultNode;
 };
 
 /**

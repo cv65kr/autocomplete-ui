@@ -18,6 +18,7 @@ module.exports = function({
     let initialState = {
         client: apisearch(client),
         datasetKeys: datasets.map(dataset => dataset.type),
+        resultBoxOpen: false,
         data: {
             query: {},
             items: [],
@@ -45,7 +46,7 @@ module.exports = function({
     renderResult({
         store,
         datasets,
-        target: resultTarget
+        target: inputTarget
     });
 };
 

@@ -41,9 +41,8 @@ export const renderResult = ({
     datasets
 }) => {
     let targetNode = document.querySelector(target);
-    if (targetNode === null) {
-        targetNode = createResultContainer();
-    }
+    let parentNode = targetNode.parentNode;
+    let index = getTargetIndex(targetNode);
 
     render(
         <Provider store={store}>
@@ -51,6 +50,20 @@ export const renderResult = ({
                 datasets={datasets}
             />
         </Provider>,
-        targetNode
+        parentNode,
+        parentNode.childNodes[index + 1]
     );
 };
+
+/**
+ * Get target index relative to its parent
+ *
+ * @param targetNode
+ * @returns {*}
+ */
+function getTargetIndex(targetNode) {
+    return Array.prototype.indexOf.call(
+        targetNode.parentNode.children,
+        targetNode
+    );
+}

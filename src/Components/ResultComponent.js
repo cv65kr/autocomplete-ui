@@ -4,24 +4,43 @@ import { connect } from 'unistore/preact'
 import Hogan from 'hogan.js'
 import groupBy from 'lodash/groupBy'
 
+const defaultHtmlAttributes = {
+    id: "apisearch-listbox",
+    className: "as-result",
+    role: "listbox",
+    tabIndex: "-1"
+};
+
 /**
  * Suggested Search Component
  */
-export const ResultComponent = connect('data')(
-    ({datasets, data}) => {
-        if (data.total_hits === 0 || data.query.q === '') {
-            return null;
+export const ResultComponent = connect('resultBoxOpen, data')(
+    ({
+         datasets,
+         data,
+         resultBoxOpen
+    }) => {
+        if (false === resultBoxOpen) {
+            return <div
+                {...defaultHtmlAttributes}
+                style={{display: 'none'}}
+            />;
         }
 
         let filteredItemsByType = groupBy(data.items, 'uuid.type');
         let filteredDatasetsByType = groupBy(datasets, 'type');
 
         return (
-            <div>
+            <div
+                {...defaultHtmlAttributes}
+            >
                 {Object.keys(filteredItemsByType).map(type =>
-                    <div>
+                    <div
+                        className={`as-result__dataset as-result__dataset--${type}`}
+                    >
                         {(filteredDatasetsByType[type][0].template.header)
                             ? <div
+                                className="as-result__datasetHeader"
                                 dangerouslySetInnerHTML={
                                     renderTemplate(
                                         filteredDatasetsByType[type][0].template.header,
@@ -32,9 +51,13 @@ export const ResultComponent = connect('data')(
                             : null
                         }
 
-                        <ul>
+                        <ul
+                            className="as-result__datasetItemsList"
+                        >
                             {filteredItemsByType[type].map(item =>
                                 <li
+                                    className="as-result__datasetItem"
+                                    tabIndex={-1}
                                     dangerouslySetInnerHTML={
                                         renderTemplate(
                                             filteredDatasetsByType[type][0].template.item,

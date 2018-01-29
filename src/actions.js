@@ -16,15 +16,24 @@ export const actions = store => ({
             .enableHighlights()
         ;
 
+        if (query.q === '') {
+            store.setState({resultBoxOpen: false});
+            return;
+        }
+
         state
             .client
             .search(query, (data, error) => {
                 if (error) {
-                    store.setState({error});
+                    store.setState({ error, resultBoxOpen: false });
+                    return;
+                }
+                if (data.total_hits === 0) {
+                    store.setState({ resultBoxOpen: false });
                     return;
                 }
 
-                store.setState({data});
+                store.setState({ data, resultBoxOpen: true });
             })
     },
 });
