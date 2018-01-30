@@ -5994,7 +5994,7 @@ var InputComponent = exports.InputComponent = (0, _preact2.connect)('resultBoxOp
         keyDownAction = _ref.keyDownAction,
         focusOutAction = _ref.focusOutAction;
     return (0, _preact.h)("input", _extends({}, htmlNodeInheritProps, {
-        autoComplete: "false",
+        autoComplete: "off",
         spellCheck: "false",
         role: "combobox",
         "aria-autocomplete": "list",

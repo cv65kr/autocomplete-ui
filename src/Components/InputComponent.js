@@ -17,7 +17,7 @@ export const InputComponent = connect('resultBoxOpen', actions) (
     }) =>
         <input
             {...htmlNodeInheritProps}
-            autoComplete="false"
+            autoComplete="off"
             spellCheck="false"
             role="combobox"
             aria-autocomplete="list"
