@@ -37,13 +37,18 @@ export const actions = store => ({
             .client
             .search(query, (data, error) => {
                 if (error) {
-                    store.setState({ error, resultBoxOpen: false });
+                    store.setState({
+                        error,
+                        resultBoxOpen: false,
+                        currentCursorIndex: 0
+                    });
                     return;
                 }
                 if (data.total_hits === 0) {
                     store.setState({
                         total_hits: 0,
-                        resultBoxOpen: false
+                        resultBoxOpen: false,
+                        currentCursorIndex: 0
                     });
                     return;
                 }
@@ -51,33 +56,65 @@ export const actions = store => ({
                 store.setState({
                     items: data.items,
                     total_hits: data.total_hits,
-                    resultBoxOpen: true
+                    resultBoxOpen: true,
+                    currentCursorIndex: 0
                 });
             })
     },
 
+    /**
+     * On key down action
+     * Navigation, enter and scape key
+     *
+     * @param state
+     * @param event
+     * @returns {*}
+     */
     keyDownAction(state, event) {
+        if (event.code === key.enter) {
+            if (state.currentCursorIndex !== 0) {
+                event.preventDefault();
+
+                /**
+                 * Select an anchor inside the targeted element
+                 */
+                document
+                    .querySelector(`li[data-index='${state.currentCursorIndex}'] a`)
+                    .click()
+            }
+        }
 
         if (event.code === key.esc) {
-            store.setState({ resultBoxOpen: false });
-            return;
+            return {
+                resultBoxOpen: false,
+                currentCursorIndex: 0
+            };
         }
 
         if (event.code === key.down) {
-            console.log('Down')
+            let currentIndex = state.currentCursorIndex;
+            let visibleHits = state.items.length;
+
+            return {
+                currentCursorIndex: (currentIndex < visibleHits)
+                    ? currentIndex + 1
+                    : 0
+            };
         }
 
-        if (event.code ===  key.up) {
-            /*
+        if (event.code === key.up) {
+            /**
              * Prevent cursor to go at the starting point of the line
              */
             event.preventDefault();
 
-            console.log('Up')
-        }
-
-        if (event.code ===  key.enter) {
-            console.log('enter');
+            let currentIndex = state.currentCursorIndex;
+            let visibleHits = state.items.length;
+            return {
+                currentCursorIndex: (currentIndex > 0)
+                    ? currentIndex - 1
+                    : visibleHits
+            };
         }
     },
 
@@ -87,12 +124,12 @@ export const actions = store => ({
      * @param state
      * @param event
      */
-    focusOutAction(state, event) {
+    focusOutAction({}, event) {
         if (
             null === event.relatedTarget ||
             false === event.relatedTarget.id === 'apisearch-listbox'
         ) {
-            store.setState({ resultBoxOpen: false });
+            return { resultBoxOpen: false };
         }
     }
 });

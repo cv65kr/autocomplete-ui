@@ -1,8 +1,8 @@
 import {h} from "preact"
-import {actions} from "../actions"
 import { connect } from 'unistore/preact'
 import Hogan from 'hogan.js'
 import groupBy from 'lodash/groupBy'
+import {sortBy} from "lodash";
 
 const defaultHtmlAttributes = {
     id: "apisearch-listbox",
@@ -14,14 +14,15 @@ const defaultHtmlAttributes = {
 /**
  * Suggested Search Component
  */
-export const ResultComponent = connect('resultBoxOpen, items')(
+export const ResultComponent = connect('resultBoxOpen, currentCursorIndex, items')(
     ({
          /** component props */
          datasets,
 
          /** store props */
-         items,
-         resultBoxOpen
+         resultBoxOpen,
+         currentCursorIndex,
+         items
     }) => {
         if (false === resultBoxOpen) {
             return <div
@@ -29,8 +30,10 @@ export const ResultComponent = connect('resultBoxOpen, items')(
                 style={{display: 'none'}}
             />;
         }
-
-        let filteredItemsByType = groupBy(items, 'uuid.type');
+        let filteredItemsByType = createDatasetByItemTypeAndSetActiveIndex(
+            items,
+            currentCursorIndex
+        );
         let filteredDatasetsByType = groupBy(datasets, 'type');
 
         return (
@@ -57,10 +60,14 @@ export const ResultComponent = connect('resultBoxOpen, items')(
                         <ul
                             className="as-result__datasetItemsList"
                         >
-                            {filteredItemsByType[type].map(item =>
+                            {filteredItemsByType[type].map((item, index) =>
                                 <li
-                                    className="as-result__datasetItem"
-                                    tabIndex={-1}
+                                    data-index={item.navigationIndex}
+                                    className={`as-result__datasetItem${
+                                        item.isActive
+                                            ? ' as-result__datasetItem--active'
+                                            : ''
+                                    }`}
                                     dangerouslySetInnerHTML={
                                         renderTemplate(
                                             filteredDatasetsByType[type][0].template.item,
@@ -88,4 +95,27 @@ const renderTemplate = (template, data) => {
     return {
         __html: compiledTemplate.render(data)
     }
+};
+
+/**
+ * Set active index
+ *
+ * @param items
+ * @param currentCursorIndex
+ * @returns {{}}
+ */
+const createDatasetByItemTypeAndSetActiveIndex = (
+    items,
+    currentCursorIndex
+) => {
+    let sortedItemsByType = sortBy(items, 'uuid.type');
+    let itemsWithActiveIndex = sortedItemsByType.map((item, index) =>
+        ({
+            ...item,
+            navigationIndex: (index + 1),
+            isActive: ((index + 1) === currentCursorIndex)
+        })
+    );
+
+    return groupBy(itemsWithActiveIndex, 'uuid.type');
 };

@@ -28,16 +28,19 @@
             display: block;
             margin: 0 auto;
         }
-        ul, li {
+        .as-result__datasetItemsList, .as-result__datasetItem {
             padding: 0;
             margin: 0;
             list-style: none;
         }
-        ul li {
+        .as-result__datasetItemsList .as-result__datasetItem {
             height: 2rem;
             line-height: 2rem;
         }
-        ul li a {
+        .as-result__datasetItemsList .as-result__datasetItem--active {
+            background: rgb(230, 230, 230);
+        }
+        .as-result__datasetItemsList .as-result__datasetItem a {
             color: #215df3;
             text-decoration: none;
             padding: 0 1rem;
@@ -45,10 +48,10 @@
             height: inherit;
             line-height: inherit;
         }
-        ul li a:hover {
+        .as-result__datasetItemsList .as-result__datasetItem a:hover {
             background-color: #e8e8e8;
         }
-        ul li a em {
+        .as-result__datasetItemsList .as-result__datasetItem a em {
             background: #cff5ff;
             box-shadow: 0 1px #4d78f4;
             font-style: initial;
@@ -65,8 +68,12 @@
     </style>
 </head>
 <body>
-    <form action="">
-        <input type="search" class="as-autocomplete" placeholder="search..." />
+    <form action="./autocomplete.html">
+        <input type="search"
+               class="as-autocomplete"
+               placeholder="search..."
+               autofocus
+        />
     </form>
 
     <script>

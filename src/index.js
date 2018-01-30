@@ -18,6 +18,7 @@ module.exports = function(client)
             client: clientInstance,
             datasetKeys: datasets.map(dataset => dataset.type),
             resultBoxOpen: false,
+            currentCursorIndex: 0,
             items: [],
             total_hits: 0
         };
