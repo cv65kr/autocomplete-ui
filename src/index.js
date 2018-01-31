@@ -4,19 +4,24 @@ import createStore from 'unistore';
 import {renderInput, renderResult} from "./render";
 
 
-module.exports = function(client)
+module.exports = function(clientCredentials)
 {
-    const clientInstance = apisearch(client);
+    const client = apisearch(clientCredentials);
 
-    return ({ inputTarget, datasets }) => {
+    return ({
+        inputTarget,
+        poweredBy,
+        datasets
+    }) => {
         ensureTargetIsDefined(inputTarget);
 
         /**
          * Compose initial state
          */
         let initialState = {
-            client: clientInstance,
-            datasetKeys: datasets.map(dataset => dataset.type),
+            client,
+            poweredBy,
+            datasets,
             resultBoxOpen: false,
             currentCursorIndex: 0,
             items: [],
@@ -41,7 +46,6 @@ module.exports = function(client)
          */
         renderResult({
             store,
-            datasets,
             target: inputTarget
         });
     }

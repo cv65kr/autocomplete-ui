@@ -2275,11 +2275,12 @@ var _render = __webpack_require__(41);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = function (client) {
-    var clientInstance = (0, _apisearch2.default)(client);
+module.exports = function (clientCredentials) {
+    var client = (0, _apisearch2.default)(clientCredentials);
 
     return function (_ref) {
         var inputTarget = _ref.inputTarget,
+            poweredBy = _ref.poweredBy,
             datasets = _ref.datasets;
 
         ensureTargetIsDefined(inputTarget);
@@ -2288,10 +2289,9 @@ module.exports = function (client) {
          * Compose initial state
          */
         var initialState = {
-            client: clientInstance,
-            datasetKeys: datasets.map(function (dataset) {
-                return dataset.type;
-            }),
+            client: client,
+            poweredBy: poweredBy,
+            datasets: datasets,
             resultBoxOpen: false,
             currentCursorIndex: 0,
             items: [],
@@ -2316,7 +2316,6 @@ module.exports = function (client) {
          */
         (0, _render.renderResult)({
             store: store,
-            datasets: datasets,
             target: inputTarget
         });
     };
@@ -5941,8 +5940,7 @@ var renderInput = exports.renderInput = function renderInput(_ref) {
  */
 var renderResult = exports.renderResult = function renderResult(_ref2) {
     var target = _ref2.target,
-        store = _ref2.store,
-        datasets = _ref2.datasets;
+        store = _ref2.store;
 
     var targetNode = document.querySelector(target);
     var parentNode = targetNode.parentNode;
@@ -5951,9 +5949,7 @@ var renderResult = exports.renderResult = function renderResult(_ref2) {
     (0, _preact.render)((0, _preact.h)(
         _preact2.Provider,
         { store: store },
-        (0, _preact.h)(_ResultComponent.ResultComponent, {
-            datasets: datasets
-        })
+        (0, _preact.h)(_ResultComponent.ResultComponent, null)
     ), parentNode, parentNode.childNodes[index + 1]);
 };
 
@@ -6046,7 +6042,9 @@ var actions = exports.actions = function actions(store) {
          * @param queryText
          */
         searchAction: function searchAction(state, queryText) {
-            var query = state.client.query.create(queryText).filterByTypes(state.datasetKeys).enableHighlights();
+            var query = state.client.query.create(queryText).filterByTypes(state.datasets.map(function (dataset) {
+                return dataset.type;
+            })).enableHighlights();
 
             if (query.q === '') {
                 store.setState({ resultBoxOpen: false });
@@ -6188,20 +6186,28 @@ var defaultHtmlAttributes = {
 /**
  * Suggested Search Component
  */
-var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('resultBoxOpen, currentCursorIndex, items')(function (_ref) {
+var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('datasets, poweredBy, resultBoxOpen, currentCursorIndex, items')(function (_ref) {
     var datasets = _ref.datasets,
+        poweredBy = _ref.poweredBy,
         resultBoxOpen = _ref.resultBoxOpen,
         currentCursorIndex = _ref.currentCursorIndex,
         items = _ref.items;
 
+    /**
+     * No results
+     */
     if (false === resultBoxOpen) {
         return (0, _preact.h)('div', _extends({}, defaultHtmlAttributes, {
             style: { display: 'none' }
         }));
     }
+
     var filteredItemsByType = createDatasetByItemTypeAndSetActiveIndex(items, currentCursorIndex);
     var filteredDatasetsByType = (0, _groupBy2.default)(datasets, 'type');
 
+    /**
+     * Results set
+     */
     return (0, _preact.h)(
         'div',
         defaultHtmlAttributes,
@@ -6229,7 +6235,8 @@ var ResultComponent = exports.ResultComponent = (0, _preact2.connect)('resultBox
                     })
                 )
             );
-        })
+        }),
+        buildPoweredBy(poweredBy)
     );
 });
 
@@ -6263,6 +6270,31 @@ var createDatasetByItemTypeAndSetActiveIndex = function createDatasetByItemTypeA
     });
 
     return (0, _groupBy2.default)(itemsWithActiveIndex, 'uuid.type');
+};
+
+/**
+ * Build the poweredBy icon
+ * It can be a boolean:
+ *   if (false) do now show a poweredBy
+ *   if (true) assign the default poweredBy
+ *   else render a custom poweredBy template string
+ *
+ * @param poweredBy
+ * @returns {XML}
+ */
+var buildPoweredBy = function buildPoweredBy() {
+    var poweredBy = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+    if (false === poweredBy) return null;
+
+    if (true === poweredBy) {
+        poweredBy = '<a href="http://apisearch.io">\n            <img \n                src="http://apisearch.io/assets/media/powered-by.svg" \n                alt="Powered by Apisearch" \n                width="100px"\n            />\n        </a>';
+    }
+
+    return (0, _preact.h)('div', {
+        className: 'as-poweredBy',
+        dangerouslySetInnerHTML: renderTemplate(poweredBy, null)
+    });
 };
 
 /***/ }),

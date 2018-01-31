@@ -24,7 +24,9 @@ export const actions = store => ({
             .client
             .query
             .create(queryText)
-            .filterByTypes(state.datasetKeys)
+            .filterByTypes(
+                state.datasets.map(dataset => dataset.type)
+            )
             .enableHighlights()
         ;
 

@@ -14,28 +14,33 @@ const defaultHtmlAttributes = {
 /**
  * Suggested Search Component
  */
-export const ResultComponent = connect('resultBoxOpen, currentCursorIndex, items')(
+export const ResultComponent = connect('datasets, poweredBy, resultBoxOpen, currentCursorIndex, items')(
     ({
-         /** component props */
          datasets,
-
-         /** store props */
+         poweredBy,
          resultBoxOpen,
          currentCursorIndex,
          items
     }) => {
+        /**
+         * No results
+         */
         if (false === resultBoxOpen) {
             return <div
                 {...defaultHtmlAttributes}
                 style={{display: 'none'}}
             />;
         }
+
         let filteredItemsByType = createDatasetByItemTypeAndSetActiveIndex(
             items,
             currentCursorIndex
         );
         let filteredDatasetsByType = groupBy(datasets, 'type');
 
+        /**
+         * Results set
+         */
         return (
             <div
                 {...defaultHtmlAttributes}
@@ -79,6 +84,8 @@ export const ResultComponent = connect('resultBoxOpen, currentCursorIndex, items
                         </ul>
                     </div>
                 )}
+
+                {buildPoweredBy(poweredBy)}
             </div>
         )
     }
@@ -118,4 +125,35 @@ const createDatasetByItemTypeAndSetActiveIndex = (
     );
 
     return groupBy(itemsWithActiveIndex, 'uuid.type');
+};
+
+/**
+ * Build the poweredBy icon
+ * It can be a boolean:
+ *   if (false) do now show a poweredBy
+ *   if (true) assign the default poweredBy
+ *   else render a custom poweredBy template string
+ *
+ * @param poweredBy
+ * @returns {XML}
+ */
+const buildPoweredBy = (poweredBy = false) => {
+    if (false === poweredBy) return null;
+
+    if (true === poweredBy) {
+        poweredBy = `<a href="http://apisearch.io">
+            <img 
+                src="http://apisearch.io/assets/media/powered-by.svg" 
+                alt="Powered by Apisearch" 
+                width="100px"
+            />
+        </a>`;
+    }
+
+    return <div
+        className="as-poweredBy"
+        dangerouslySetInnerHTML={
+            renderTemplate(poweredBy, null)
+        }
+    />
 };

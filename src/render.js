@@ -37,8 +37,7 @@ export const renderInput = ({
  */
 export const renderResult = ({
     target,
-    store,
-    datasets
+    store
 }) => {
     let targetNode = document.querySelector(target);
     let parentNode = targetNode.parentNode;
@@ -46,9 +45,7 @@ export const renderResult = ({
 
     render(
         <Provider store={store}>
-            <ResultComponent
-                datasets={datasets}
-            />
+            <ResultComponent />
         </Provider>,
         parentNode,
         parentNode.childNodes[index + 1]

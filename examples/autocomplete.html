@@ -77,14 +77,17 @@
     </form>
 
     <script>
+        // Create instance
         var autocomplete = apisearchAutocomplete({
             appId: 'adef5afd',
             indexId: '01a5b867',
             token: 'bc81352f-2115-47e8-aff9-cfe3d29ebbb7'
         });
 
+        // Setup
         autocomplete({
             inputTarget: '.as-autocomplete',
+            poweredBy: true,
             datasets: [{
                 type: 'object',
                 template: {
