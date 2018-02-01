@@ -2281,6 +2281,7 @@ module.exports = function (clientCredentials) {
     return function (_ref) {
         var inputTarget = _ref.inputTarget,
             poweredBy = _ref.poweredBy,
+            startSearchOn = _ref.startSearchOn,
             datasets = _ref.datasets;
 
         ensureTargetIsDefined(inputTarget);
@@ -2292,6 +2293,8 @@ module.exports = function (clientCredentials) {
             client: client,
             poweredBy: poweredBy,
             datasets: datasets,
+            startSearchOn: startSearchOn ? startSearchOn : 0,
+
             resultBoxOpen: false,
             currentCursorIndex: 0,
             items: [],
@@ -6055,16 +6058,9 @@ var actions = exports.actions = function actions(store) {
             /**
              * Compose query
              */
-            var query = state.client.query.create(queryText).enableHighlights();
+            var query = state.client.query.create(queryText).filterByTypes(datasetKeys).enableHighlights();
 
-            /**
-             * Filter by datasets
-             */
-            if (datasetKeys[0] !== SELECT_ALL_DATASETS) {
-                query.filterByTypes(datasetKeys);
-            }
-
-            if (query.q === '') {
+            if (query.q === '' || query.q.length < state.startSearchOn) {
                 store.setState({ resultBoxOpen: false });
                 return;
             }

@@ -26,9 +26,24 @@
             inputTarget: '.as-autocomplete',
             poweredBy: true,
             datasets: [{
-                type: '*',
+                type: 'object',
                 template: {
                     header: '<h3>Objectes</h3>',
+                    item: '<a href="#{{metadata.slug}}">' +
+                        '{{#highlights.name}}{{{highlights.name}}}{{/highlights.name}}' +
+                        '{{^highlights.name}}{{metadata.name}}{{/highlights.name}}' +
+                    '</a>'
+                }
+            },{
+                type: 'blogpost',
+                template: {
+                    header: '<h3>Posts</h3>',
+                    item: '<a href="#{{indexed_metadata.path}}">{{indexed_metadata.title}}</a>'
+                }
+            },{
+                type: 'book',
+                template: {
+                    header: '<h3>Books</h3>',
                     item: '<a href="#{{metadata.slug}}">' +
                         '{{#highlights.name}}{{{highlights.name}}}{{/highlights.name}}' +
                         '{{^highlights.name}}{{metadata.name}}{{/highlights.name}}' +

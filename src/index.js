@@ -11,6 +11,7 @@ module.exports = function(clientCredentials)
     return ({
         inputTarget,
         poweredBy,
+        startSearchOn,
         datasets
     }) => {
         ensureTargetIsDefined(inputTarget);
@@ -22,6 +23,10 @@ module.exports = function(clientCredentials)
             client,
             poweredBy,
             datasets,
+            startSearchOn: startSearchOn
+                ? startSearchOn
+                : 0
+            ,
             resultBoxOpen: false,
             currentCursorIndex: 0,
             items: [],

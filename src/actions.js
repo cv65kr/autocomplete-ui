@@ -38,17 +38,14 @@ export const actions = store => ({
             .client
             .query
             .create(queryText)
+            .filterByTypes(datasetKeys)
             .enableHighlights()
         ;
 
-        /**
-         * Filter by datasets
-         */
-        if (datasetKeys[0] !== SELECT_ALL_DATASETS) {
-            query.filterByTypes(datasetKeys);
-        }
-
-        if (query.q === '') {
+        if (
+            query.q === '' ||
+            query.q.length < state.startSearchOn
+        ) {
             store.setState({resultBoxOpen: false});
             return;
         }
