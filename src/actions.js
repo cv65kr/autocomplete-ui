@@ -10,6 +10,12 @@ const key = {
 };
 
 /**
+ * Select all datasets constant
+ * @type {string}
+ */
+const SELECT_ALL_DATASETS = '*';
+
+/**
  * Actions
  */
 export const actions = store => ({
@@ -20,15 +26,27 @@ export const actions = store => ({
      * @param queryText
      */
     searchAction(state, queryText) {
+        let datasetKeys = state
+            .datasets
+            .map(dataset => dataset.type)
+        ;
+
+        /**
+         * Compose query
+         */
         let query = state
             .client
             .query
             .create(queryText)
-            .filterByTypes(
-                state.datasets.map(dataset => dataset.type)
-            )
             .enableHighlights()
         ;
+
+        /**
+         * Filter by datasets
+         */
+        if (datasetKeys[0] !== SELECT_ALL_DATASETS) {
+            query.filterByTypes(datasetKeys);
+        }
 
         if (query.q === '') {
             store.setState({resultBoxOpen: false});

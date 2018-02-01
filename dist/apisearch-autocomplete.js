@@ -6031,6 +6031,12 @@ var key = {
 };
 
 /**
+ * Select all datasets constant
+ * @type {string}
+ */
+var SELECT_ALL_DATASETS = '*';
+
+/**
  * Actions
  */
 var actions = exports.actions = function actions(store) {
@@ -6042,9 +6048,21 @@ var actions = exports.actions = function actions(store) {
          * @param queryText
          */
         searchAction: function searchAction(state, queryText) {
-            var query = state.client.query.create(queryText).filterByTypes(state.datasets.map(function (dataset) {
+            var datasetKeys = state.datasets.map(function (dataset) {
                 return dataset.type;
-            })).enableHighlights();
+            });
+
+            /**
+             * Compose query
+             */
+            var query = state.client.query.create(queryText).enableHighlights();
+
+            /**
+             * Filter by datasets
+             */
+            if (datasetKeys[0] !== SELECT_ALL_DATASETS) {
+                query.filterByTypes(datasetKeys);
+            }
 
             if (query.q === '') {
                 store.setState({ resultBoxOpen: false });
