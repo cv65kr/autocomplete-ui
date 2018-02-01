@@ -1,6 +1,6 @@
 {
   "name": "apisearch-autocomplete",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Javascript User interface for a fully customized autocomplete search.",
   "main": "./dist/apisearch-autocomplete.js",
   "scripts": {
