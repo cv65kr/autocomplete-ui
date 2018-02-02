@@ -36,7 +36,8 @@ body {
     background: rgb(230, 230, 230);
 }
 .as-result__datasetItemsList .as-result__datasetItem a {
-    color: #215df3;
+    color: #365067;
+    font-size: .9rem;
     text-decoration: none;
     padding: 0 1rem;
     display: block;
@@ -48,6 +49,7 @@ body {
 }
 .as-result__datasetItemsList .as-result__datasetItem a em {
     background: #cff5ff;
+    font-weight: 600;
     box-shadow: 0 1px #4d78f4;
     font-style: initial;
 }

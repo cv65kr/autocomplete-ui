@@ -15,6 +15,7 @@ export const renderInput = ({
 }) => {
     let targetNode = document.querySelector(target);
     let parentNode = targetNode.parentNode;
+    let index = getTargetIndex(targetNode);
 
     render(
         <Provider store={store}>
@@ -23,7 +24,7 @@ export const renderInput = ({
             } />
         </Provider>,
         parentNode,
-        parentNode.childNodes[0]
+        parentNode.childNodes[index]
     );
 
     targetNode.remove();

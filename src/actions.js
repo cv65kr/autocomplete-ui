@@ -10,12 +10,6 @@ const key = {
 };
 
 /**
- * Select all datasets constant
- * @type {string}
- */
-const SELECT_ALL_DATASETS = '*';
-
-/**
  * Actions
  */
 export const actions = store => ({
@@ -23,9 +17,10 @@ export const actions = store => ({
      * Search Action
      *
      * @param state
-     * @param queryText
+     * @param event
      */
-    searchAction(state, queryText) {
+    searchAction(state, event) {
+        let queryText = event.target.value;
         let datasetKeys = state
             .datasets
             .map(dataset => dataset.type)
@@ -39,6 +34,7 @@ export const actions = store => ({
             .query
             .create(queryText)
             .filterByTypes(datasetKeys)
+            .setResultSize(state.itemsPerResult)
             .enableHighlights()
         ;
 
@@ -47,9 +43,13 @@ export const actions = store => ({
             query.q.length < state.startSearchOn
         ) {
             store.setState({resultBoxOpen: false});
+            event.target.setAttribute('aria-expanded', 'false');
             return;
         }
 
+        /**
+         * Search data
+         */
         state
             .client
             .search(query, (data, error) => {
@@ -59,6 +59,8 @@ export const actions = store => ({
                         resultBoxOpen: false,
                         currentCursorIndex: 0
                     });
+                    event.target.setAttribute('aria-expanded', 'false');
+
                     return;
                 }
                 if (data.total_hits === 0) {
@@ -67,6 +69,8 @@ export const actions = store => ({
                         resultBoxOpen: false,
                         currentCursorIndex: 0
                     });
+                    event.target.setAttribute('aria-expanded', 'false');
+
                     return;
                 }
 
@@ -76,6 +80,7 @@ export const actions = store => ({
                     resultBoxOpen: true,
                     currentCursorIndex: 0
                 });
+                event.target.setAttribute('aria-expanded', 'true');
             })
     },
 
@@ -146,6 +151,7 @@ export const actions = store => ({
             null === event.relatedTarget ||
             false === event.relatedTarget.id === 'apisearch-listbox'
         ) {
+            event.target.setAttribute('aria-expanded', 'false');
             return { resultBoxOpen: false };
         }
     }

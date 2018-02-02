@@ -2281,6 +2281,7 @@ module.exports = function (clientCredentials) {
     return function (_ref) {
         var inputTarget = _ref.inputTarget,
             poweredBy = _ref.poweredBy,
+            itemsPerResult = _ref.itemsPerResult,
             startSearchOn = _ref.startSearchOn,
             datasets = _ref.datasets;
 
@@ -2293,8 +2294,9 @@ module.exports = function (clientCredentials) {
             client: client,
             poweredBy: poweredBy,
             datasets: datasets,
-            startSearchOn: startSearchOn ? startSearchOn : 0,
-
+            itemsPerResult: itemsPerResult || 10,
+            startSearchOn: startSearchOn || 0,
+            queryText: '',
             resultBoxOpen: false,
             currentCursorIndex: 0,
             items: [],
@@ -5925,12 +5927,13 @@ var renderInput = exports.renderInput = function renderInput(_ref) {
 
     var targetNode = document.querySelector(target);
     var parentNode = targetNode.parentNode;
+    var index = getTargetIndex(targetNode);
 
     (0, _preact.render)((0, _preact.h)(
         _preact2.Provider,
         { store: store },
         (0, _preact.h)(_InputComponent.InputComponent, { htmlNodeInheritProps: (0, _helpers.getNodeAttributes)(targetNode) })
-    ), parentNode, parentNode.childNodes[0]);
+    ), parentNode, parentNode.childNodes[index]);
 
     targetNode.remove();
 };
@@ -5986,24 +5989,21 @@ var _actions = __webpack_require__(43);
 
 var _preact2 = __webpack_require__(12);
 
-var InputComponent = exports.InputComponent = (0, _preact2.connect)('resultBoxOpen', _actions.actions)(function (_ref) {
+var InputComponent = exports.InputComponent = (0, _preact2.connect)('', _actions.actions)(function (_ref) {
     var htmlNodeInheritProps = _ref.htmlNodeInheritProps,
-        resultBoxOpen = _ref.resultBoxOpen,
         searchAction = _ref.searchAction,
         keyDownAction = _ref.keyDownAction,
         focusOutAction = _ref.focusOutAction;
     return (0, _preact.h)("input", _extends({}, htmlNodeInheritProps, {
-        autoComplete: "off",
+        autocomplete: "off",
         spellCheck: "false",
         role: "combobox",
         "aria-autocomplete": "list",
-        "aria-expanded": "" + resultBoxOpen,
+        "aria-expanded": "false",
         "aria-owns": "apisearch-listbox",
         "data-search": "Apisearch-autocomplete",
 
-        onInput: function onInput(event) {
-            return searchAction(event.target.value);
-        },
+        onInput: searchAction,
         onKeyDown: keyDownAction,
         onBlur: focusOutAction
     }));
@@ -6034,12 +6034,6 @@ var key = {
 };
 
 /**
- * Select all datasets constant
- * @type {string}
- */
-var SELECT_ALL_DATASETS = '*';
-
-/**
  * Actions
  */
 var actions = exports.actions = function actions(store) {
@@ -6048,9 +6042,10 @@ var actions = exports.actions = function actions(store) {
          * Search Action
          *
          * @param state
-         * @param queryText
+         * @param event
          */
-        searchAction: function searchAction(state, queryText) {
+        searchAction: function searchAction(state, event) {
+            var queryText = event.target.value;
             var datasetKeys = state.datasets.map(function (dataset) {
                 return dataset.type;
             });
@@ -6058,13 +6053,17 @@ var actions = exports.actions = function actions(store) {
             /**
              * Compose query
              */
-            var query = state.client.query.create(queryText).filterByTypes(datasetKeys).enableHighlights();
+            var query = state.client.query.create(queryText).filterByTypes(datasetKeys).setResultSize(state.itemsPerResult).enableHighlights();
 
             if (query.q === '' || query.q.length < state.startSearchOn) {
                 store.setState({ resultBoxOpen: false });
+                event.target.setAttribute('aria-expanded', 'false');
                 return;
             }
 
+            /**
+             * Search data
+             */
             state.client.search(query, function (data, error) {
                 if (error) {
                     store.setState({
@@ -6072,6 +6071,8 @@ var actions = exports.actions = function actions(store) {
                         resultBoxOpen: false,
                         currentCursorIndex: 0
                     });
+                    event.target.setAttribute('aria-expanded', 'false');
+
                     return;
                 }
                 if (data.total_hits === 0) {
@@ -6080,6 +6081,8 @@ var actions = exports.actions = function actions(store) {
                         resultBoxOpen: false,
                         currentCursorIndex: 0
                     });
+                    event.target.setAttribute('aria-expanded', 'false');
+
                     return;
                 }
 
@@ -6089,6 +6092,7 @@ var actions = exports.actions = function actions(store) {
                     resultBoxOpen: true,
                     currentCursorIndex: 0
                 });
+                event.target.setAttribute('aria-expanded', 'true');
             });
         },
 
@@ -6154,6 +6158,7 @@ var actions = exports.actions = function actions(store) {
             _objectDestructuringEmpty(_ref);
 
             if (null === event.relatedTarget || false === event.relatedTarget.id === 'apisearch-listbox') {
+                event.target.setAttribute('aria-expanded', 'false');
                 return { resultBoxOpen: false };
             }
         }

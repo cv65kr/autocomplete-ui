@@ -11,6 +11,7 @@ module.exports = function(clientCredentials)
     return ({
         inputTarget,
         poweredBy,
+        itemsPerResult,
         startSearchOn,
         datasets
     }) => {
@@ -23,10 +24,9 @@ module.exports = function(clientCredentials)
             client,
             poweredBy,
             datasets,
-            startSearchOn: startSearchOn
-                ? startSearchOn
-                : 0
-            ,
+            itemsPerResult: itemsPerResult || 10,
+            startSearchOn: startSearchOn || 0,
+            queryText: '',
             resultBoxOpen: false,
             currentCursorIndex: 0,
             items: [],

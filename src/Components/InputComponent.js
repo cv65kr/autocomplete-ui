@@ -2,13 +2,10 @@ import {h} from "preact";
 import {actions} from "../actions";
 import { connect } from 'unistore/preact'
 
-export const InputComponent = connect('resultBoxOpen', actions) (
+export const InputComponent = connect('', actions) (
     ({
          /** component props */
         htmlNodeInheritProps,
-
-        /** store props */
-        resultBoxOpen,
 
         /** actions */
         searchAction,
@@ -17,15 +14,15 @@ export const InputComponent = connect('resultBoxOpen', actions) (
     }) =>
         <input
             {...htmlNodeInheritProps}
-            autoComplete="off"
+            autocomplete="off"
             spellCheck="false"
             role="combobox"
             aria-autocomplete="list"
-            aria-expanded={`${resultBoxOpen}`}
+            aria-expanded="false"
             aria-owns="apisearch-listbox"
             data-search="Apisearch-autocomplete"
 
-            onInput={event => searchAction(event.target.value)}
+            onInput={searchAction}
             onKeyDown={keyDownAction}
             onBlur={focusOutAction}
         />

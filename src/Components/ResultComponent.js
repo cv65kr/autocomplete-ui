@@ -14,7 +14,9 @@ const defaultHtmlAttributes = {
 /**
  * Suggested Search Component
  */
-export const ResultComponent = connect('datasets, poweredBy, resultBoxOpen, currentCursorIndex, items')(
+export const ResultComponent = connect(
+    'datasets, poweredBy, resultBoxOpen, currentCursorIndex, items'
+)(
     ({
          datasets,
          poweredBy,
