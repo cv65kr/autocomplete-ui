@@ -2,7 +2,6 @@ import {h, render} from "preact"
 import { Provider } from 'unistore/preact'
 import {InputComponent} from "./Components/InputComponent"
 import {ResultComponent} from "./Components/ResultComponent"
-import {createResultContainer, getNodeAttributes} from './helpers'
 
 /**
  * Render Input widget
@@ -41,8 +40,8 @@ export const renderResult = ({
     let targetNode = document.querySelector(target);
     let parentNode = targetNode.parentNode;
 
-    // Create a temporal tiv to place
-    // the result div
+    // Create a temporary DIV to place
+    // the result-box on it
     let tempContainer = document.createElement('DIV');
     parentNode.insertBefore(tempContainer, targetNode.nextSibling);
     let index = getTargetIndex(tempContainer);
@@ -67,4 +66,26 @@ function getTargetIndex(targetNode) {
         targetNode.parentNode.children,
         targetNode
     );
+}
+
+/**
+ * Returns an object of an
+ * html node attributes.
+ *
+ * @param htmlNode
+ * @returns {{}}
+ */
+function getNodeAttributes(htmlNode) {
+    let nodeAttributes = {};
+    for (let i = 0; i < htmlNode.attributes.length; i++) {
+        let attr = htmlNode.attributes[i];
+        if (attr.specified) {
+            nodeAttributes = {
+                ...nodeAttributes,
+                [attr.name]: attr.value
+            }
+        }
+    }
+
+    return nodeAttributes;
 }

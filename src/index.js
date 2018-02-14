@@ -1,4 +1,3 @@
-import {h} from "preact";
 import apisearch from "apisearch";
 import createStore from 'unistore';
 import {renderInput, renderResult} from "./render";
@@ -10,6 +9,7 @@ module.exports = function(clientCredentials)
 
     return ({
         inputTarget,
+        resultTarget,
         poweredBy,
         itemsPerResult,
         startSearchOn,
@@ -51,7 +51,9 @@ module.exports = function(clientCredentials)
          */
         renderResult({
             store,
-            target: inputTarget
+            target: resultTarget
+                ? resultTarget
+                : inputTarget
         });
     }
 };

@@ -2261,8 +2261,6 @@ module.exports = castPath;
 "use strict";
 
 
-var _preact = __webpack_require__(3);
-
 var _apisearch = __webpack_require__(39);
 
 var _apisearch2 = _interopRequireDefault(_apisearch);
@@ -2280,6 +2278,7 @@ module.exports = function (clientCredentials) {
 
     return function (_ref) {
         var inputTarget = _ref.inputTarget,
+            resultTarget = _ref.resultTarget,
             poweredBy = _ref.poweredBy,
             itemsPerResult = _ref.itemsPerResult,
             startSearchOn = _ref.startSearchOn,
@@ -2321,7 +2320,7 @@ module.exports = function (clientCredentials) {
          */
         (0, _render.renderResult)({
             store: store,
-            target: inputTarget
+            target: resultTarget ? resultTarget : inputTarget
         });
     };
 };
@@ -5906,6 +5905,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.renderResult = exports.renderInput = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _preact = __webpack_require__(3);
 
 var _preact2 = __webpack_require__(12);
@@ -5914,7 +5915,7 @@ var _InputComponent = __webpack_require__(42);
 
 var _ResultComponent = __webpack_require__(44);
 
-var _helpers = __webpack_require__(140);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
  * Render Input widget
@@ -5932,7 +5933,7 @@ var renderInput = exports.renderInput = function renderInput(_ref) {
     (0, _preact.render)((0, _preact.h)(
         _preact2.Provider,
         { store: store },
-        (0, _preact.h)(_InputComponent.InputComponent, { htmlNodeInheritProps: (0, _helpers.getNodeAttributes)(targetNode) })
+        (0, _preact.h)(_InputComponent.InputComponent, { htmlNodeInheritProps: getNodeAttributes(targetNode) })
     ), parentNode, parentNode.children[index]);
 };
 
@@ -5949,8 +5950,8 @@ var renderResult = exports.renderResult = function renderResult(_ref2) {
     var targetNode = document.querySelector(target);
     var parentNode = targetNode.parentNode;
 
-    // Create a temporal tiv to place
-    // the result div
+    // Create a temporary DIV to place
+    // the result-box on it
     var tempContainer = document.createElement('DIV');
     parentNode.insertBefore(tempContainer, targetNode.nextSibling);
     var index = getTargetIndex(tempContainer);
@@ -5970,6 +5971,25 @@ var renderResult = exports.renderResult = function renderResult(_ref2) {
  */
 function getTargetIndex(targetNode) {
     return Array.prototype.indexOf.call(targetNode.parentNode.children, targetNode);
+}
+
+/**
+ * Returns an object of an
+ * html node attributes.
+ *
+ * @param htmlNode
+ * @returns {{}}
+ */
+function getNodeAttributes(htmlNode) {
+    var nodeAttributes = {};
+    for (var i = 0; i < htmlNode.attributes.length; i++) {
+        var attr = htmlNode.attributes[i];
+        if (attr.specified) {
+            nodeAttributes = _extends({}, nodeAttributes, _defineProperty({}, attr.name, attr.value));
+        }
+    }
+
+    return nodeAttributes;
 }
 
 /***/ }),
@@ -27111,126 +27131,6 @@ module.exports = basePropertyDeep;
 }.call(this));
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23), __webpack_require__(15)(module)))
-
-/***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-exports.selectNextSuggestion = selectNextSuggestion;
-exports.selectPreviousSuggestion = selectPreviousSuggestion;
-exports.selectActiveSuggestion = selectActiveSuggestion;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/**
- * Returns an object of an
- * html node attributes.
- *
- * @param htmlNode
- * @returns {{}}
- */
-var getNodeAttributes = exports.getNodeAttributes = function getNodeAttributes(htmlNode) {
-    var nodeAttributes = {};
-    for (var i = 0; i < htmlNode.attributes.length; i++) {
-        var attr = htmlNode.attributes[i];
-        if (attr.specified) {
-            nodeAttributes = _extends({}, nodeAttributes, _defineProperty({}, attr.name, attr.value));
-        }
-    }
-
-    return nodeAttributes;
-};
-
-/**
- * Mark as active the item next
- * to the last active item
- * on a given array of items
- *
- * @example when a user press a key arrow down
- */
-function selectNextSuggestion(suggestionsArray) {
-    var currentActiveSuggestionKey = void 0;
-
-    return suggestionsArray.map(function (suggestion, key) {
-        /**
-         * Detect current active suggestion
-         */
-        if (suggestion.isActive && key + 1 < suggestionsArray.length) {
-            currentActiveSuggestionKey = key;
-            suggestion.isActive = false;
-        }
-
-        /**
-         * Modify the first suggestion next to
-         * the current active suggestion
-         */
-        if (key === currentActiveSuggestionKey + 1 && key + 1 <= suggestionsArray.length) {
-            suggestion.isActive = true;
-        }
-
-        return suggestion;
-    });
-}
-
-/**
- * Mark as active the item previous
- * to the last active item
- * on a given array of items
- *
- * @example when a user press a key arrow up
- */
-function selectPreviousSuggestion(suggestionsArray) {
-    /**
-     * Find the current active suggestion key
-     */
-    var currentActiveSuggestionKey = suggestionsArray.findIndex(function (suggestion) {
-        if (suggestion.isActive) {
-            return suggestion;
-        }
-    });
-
-    return suggestionsArray.map(function (suggestion, key) {
-        /**
-         * Set the current active suggestion as false
-         * if is Active AND is not the last one
-         */
-        if (suggestion.isActive && currentActiveSuggestionKey - 1 >= 0) {
-            suggestion.isActive = false;
-        }
-
-        /**
-         * Set active the suggestion previous to
-         * the current active suggestion
-         */
-        if (currentActiveSuggestionKey - 1 === key && currentActiveSuggestionKey - 1 >= 0) {
-            suggestion.isActive = true;
-        }
-
-        return suggestion;
-    });
-}
-
-/**
- * Return the active item of an array
- */
-function selectActiveSuggestion(suggestionsArray) {
-    var selectedSuggestion = suggestionsArray.filter(function (suggestion) {
-        if (suggestion.isActive) {
-            return suggestion;
-        }
-    });
-
-    return selectedSuggestion[0].name;
-}
 
 /***/ })
 /******/ ]);
