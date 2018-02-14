@@ -51,9 +51,8 @@ module.exports = function(clientCredentials)
          */
         renderResult({
             store,
-            target: resultTarget
-                ? resultTarget
-                : inputTarget
+            target: resultTarget,
+            defaultTarget: inputTarget
         });
     }
 };

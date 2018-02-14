@@ -145,6 +145,75 @@ module.exports = getNative;
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(6),
+    getRawTag = __webpack_require__(52),
+    objectToString = __webpack_require__(53);
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1165,75 +1234,6 @@ var preact = {
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(6),
-    getRawTag = __webpack_require__(52),
-    objectToString = __webpack_require__(53);
-
-/** `Object#toString` result references. */
-var nullTag = '[object Null]',
-    undefinedTag = '[object Undefined]';
-
-/** Built-in value references. */
-var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
-
-/**
- * The base implementation of `getTag` without fallbacks for buggy environments.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the `toStringTag`.
- */
-function baseGetTag(value) {
-  if (value == null) {
-    return value === undefined ? undefinedTag : nullTag;
-  }
-  return (symToStringTag && symToStringTag in Object(value))
-    ? getRawTag(value)
-    : objectToString(value);
-}
-
-module.exports = baseGetTag;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return value != null && typeof value == 'object';
-}
-
-module.exports = isObjectLike;
-
-
-/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1377,7 +1377,7 @@ module.exports = toKey;
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-function t(t,n){"function"==typeof t&&(t=t(n));var r={};for(var e in t)r[e]=n.action(t[e]);return r}function n(t){return"string"==typeof t&&(t=t.split(/\s*,\s*/)),function(n){for(var r={},e=0;e<t.length;e++)r[t[e]]=n[t[e]];return r}}function r(t,n){for(var r in n)t[r]=n[r];return t}function e(e,o){return"function"!=typeof e&&(e=n(e||[])),function(n){function u(u,c){var f=this,s=c.store,p=e(s?s.getState():{},u),a=o?t(o,s):{store:s},l=function(){var t=e(s?s.getState():{},f.props);for(var n in t)if(t[n]!==p[n])return p=t,f.setState(null);for(var r in p)if(!(r in t))return p=t,f.setState(null)};this.componentDidMount=function(){l(),s.subscribe(l)},this.componentWillUnmount=function(){s.unsubscribe(l)},this.render=function(t){return i.h(n,r(r(r({},a),t),p))}}return(u.prototype=new i.Component).constructor=u}}function o(t){this.getChildContext=function(){return{store:t.store}}}var i=__webpack_require__(3);o.prototype.render=function(t){return t.children[0]},exports.connect=e,exports.Provider=o;
+function t(t,n){"function"==typeof t&&(t=t(n));var r={};for(var e in t)r[e]=n.action(t[e]);return r}function n(t){return"string"==typeof t&&(t=t.split(/\s*,\s*/)),function(n){for(var r={},e=0;e<t.length;e++)r[t[e]]=n[t[e]];return r}}function r(t,n){for(var r in n)t[r]=n[r];return t}function e(e,o){return"function"!=typeof e&&(e=n(e||[])),function(n){function u(u,c){var f=this,s=c.store,p=e(s?s.getState():{},u),a=o?t(o,s):{store:s},l=function(){var t=e(s?s.getState():{},f.props);for(var n in t)if(t[n]!==p[n])return p=t,f.setState(null);for(var r in p)if(!(r in t))return p=t,f.setState(null)};this.componentDidMount=function(){l(),s.subscribe(l)},this.componentWillUnmount=function(){s.unsubscribe(l)},this.render=function(t){return i.h(n,r(r(r({},a),t),p))}}return(u.prototype=new i.Component).constructor=u}}function o(t){this.getChildContext=function(){return{store:t.store}}}var i=__webpack_require__(5);o.prototype.render=function(t){return t.children[0]},exports.connect=e,exports.Provider=o;
 //# sourceMappingURL=preact.js.map
 
 
@@ -1620,8 +1620,8 @@ module.exports = isKey;
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
-    isObjectLike = __webpack_require__(5);
+var baseGetTag = __webpack_require__(3),
+    isObjectLike = __webpack_require__(4);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -1655,7 +1655,7 @@ module.exports = isSymbol;
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
+var baseGetTag = __webpack_require__(3),
     isObject = __webpack_require__(13);
 
 /** `Object#toString` result references. */
@@ -1769,7 +1769,7 @@ module.exports = toSource;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsArguments = __webpack_require__(66),
-    isObjectLike = __webpack_require__(5);
+    isObjectLike = __webpack_require__(4);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -2032,7 +2032,7 @@ module.exports = eq;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsEqualDeep = __webpack_require__(101),
-    isObjectLike = __webpack_require__(5);
+    isObjectLike = __webpack_require__(4);
 
 /**
  * The base implementation of `_.isEqual` which supports partial comparisons
@@ -2320,7 +2320,8 @@ module.exports = function (clientCredentials) {
          */
         (0, _render.renderResult)({
             store: store,
-            target: resultTarget ? resultTarget : inputTarget
+            target: resultTarget,
+            defaultTarget: inputTarget
         });
     };
 };
@@ -5907,7 +5908,7 @@ exports.renderResult = exports.renderInput = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _preact = __webpack_require__(3);
+var _preact = __webpack_require__(5);
 
 var _preact2 = __webpack_require__(12);
 
@@ -5945,22 +5946,53 @@ var renderInput = exports.renderInput = function renderInput(_ref) {
  */
 var renderResult = exports.renderResult = function renderResult(_ref2) {
     var target = _ref2.target,
+        defaultTarget = _ref2.defaultTarget,
         store = _ref2.store;
 
-    var targetNode = document.querySelector(target);
-    var parentNode = targetNode.parentNode;
-
-    // Create a temporary DIV to place
-    // the result-box on it
-    var tempContainer = document.createElement('DIV');
-    parentNode.insertBefore(tempContainer, targetNode.nextSibling);
-    var index = getTargetIndex(tempContainer);
-
-    (0, _preact.render)((0, _preact.h)(
+    var resultComponent = (0, _preact.h)(
         _preact2.Provider,
         { store: store },
         (0, _preact.h)(_ResultComponent.ResultComponent, null)
-    ), parentNode, parentNode.children[index]);
+    );
+    var isTargetDefined = typeof target !== 'undefined',
+        targetNode = void 0,
+        parentNode = void 0,
+        index = void 0;
+
+    if (isTargetDefined) {
+        /**
+         * Append the result-box to a custom target
+         */
+        targetNode = document.querySelector(target);
+
+        (0, _preact.render)(resultComponent, targetNode);
+    } else {
+        /**
+         * Create a temporary DIV to place
+         * the result-box on it
+         *
+         * @example
+         *  Append a temporary empty div next to the default target input
+         *  (
+         *        <input type="search" id="search-input" />
+         *      + <div></div>
+         *  )
+         *
+         *  To replace it by the current result-box
+         *  (
+         *        <input type="search" id="search-input" />
+         *      - <div></div>
+         *      + <div id="apisearch-listbox" role="listbox"></div>
+         *  )
+         */
+        targetNode = document.querySelector(defaultTarget);
+        parentNode = targetNode.parentNode;
+        var tempContainer = document.createElement('DIV');
+        parentNode.insertBefore(tempContainer, targetNode.nextSibling);
+        index = getTargetIndex(tempContainer);
+
+        (0, _preact.render)(resultComponent, parentNode, parentNode.children[index]);
+    }
 };
 
 /**
@@ -6006,7 +6038,7 @@ exports.InputComponent = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _preact = __webpack_require__(3);
+var _preact = __webpack_require__(5);
 
 var _actions = __webpack_require__(43);
 
@@ -6202,7 +6234,7 @@ exports.ResultComponent = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _preact = __webpack_require__(3);
+var _preact = __webpack_require__(5);
 
 var _preact2 = __webpack_require__(12);
 
@@ -7691,8 +7723,8 @@ module.exports = baseTimes;
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
-    isObjectLike = __webpack_require__(5);
+var baseGetTag = __webpack_require__(3),
+    isObjectLike = __webpack_require__(4);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]';
@@ -7739,9 +7771,9 @@ module.exports = stubFalse;
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
+var baseGetTag = __webpack_require__(3),
     isLength = __webpack_require__(16),
-    isObjectLike = __webpack_require__(5);
+    isObjectLike = __webpack_require__(4);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -9365,7 +9397,7 @@ var DataView = __webpack_require__(119),
     Promise = __webpack_require__(120),
     Set = __webpack_require__(121),
     WeakMap = __webpack_require__(122),
-    baseGetTag = __webpack_require__(4),
+    baseGetTag = __webpack_require__(3),
     toSource = __webpack_require__(24);
 
 /** `Object#toString` result references. */

@@ -6,55 +6,58 @@
 </head>
 <body>
     <form action="./autocomplete.html">
-        <h1>Hello world</h1>
-        <p>Hello this is a paragraph</p>
+        <h1>Apisearch autocomplete</h1>
+        <p>Search apisearch documentation</p>
         <input
             type="search"
             class="as-autocomplete"
             placeholder="search..."
             autofocus
         />
-        <p>Another paragraph</p>
-        <p>Another paragraph 2</p>
-        <p>Another paragraph 3</p>
     </form>
 
     <script>
         // Create instance
         var autocomplete = apisearchAutocomplete({
-            appId: 'adef5afd',
-            indexId: '01a5b867',
-            token: 'bc81352f-2115-47e8-aff9-cfe3d29ebbb7'
+            appId: '4186e76c',
+            indexId: '6de535c5',
+            token: 'e3aee575-2b0a-4a95-b0ce-88fa316c4eff'
         });
+
+        // item template
+        var itemTemplate = '' +
+            '<a href="http://docs.apisearch.io/{{metadata.url}}" target="_blank">' +
+                '{{#highlights.title}}{{{highlights.title}}}{{/highlights.title}}' +
+                '{{^highlights.title}}{{metadata.title}}{{/highlights.title}}' +
+                '<span>' +
+                    '{{#highlights.content}}{{{highlights.content}}}{{/highlights.content}}' +
+                    '{{^highlights.content}}{{metadata.content}}{{/highlights.content}}' +
+                '</span>' +
+            '</a>'
+        ;
 
         // Setup
         autocomplete({
             inputTarget: '.as-autocomplete',
             poweredBy: true,
-            itemsPerResult: 12,
+            itemsPerResult: 8,
             datasets: [{
-                type: 'object',
+                type: 'ui',
                 template: {
-                    header: '<h3>Objectes</h3>',
-                    item: '<a href="#{{metadata.slug}}">' +
-                        '{{#highlights.name}}{{{highlights.name}}}{{/highlights.name}}' +
-                        '{{^highlights.name}}{{metadata.name}}{{/highlights.name}}' +
-                    '</a>'
+                    header: '<h3>UI</h3>',
+                    item: itemTemplate
                 }
             },{
-                type: 'blogpost',
+                type: 'api-client',
                 template: {
-                    header: '<h3>Posts</h3>',
-                    item: '<a href="#{{indexed_metadata.path}}">{{indexed_metadata.title}}</a>'
+                    header: '<h3>API Reference</h3>',
+                    item: itemTemplate
                 }
             },{
-                type: 'book',
+                type: 'integrations',
                 template: {
-                    header: '<h3>Books</h3>',
-                    item: '<a href="#{{metadata.slug}}">' +
-                        '{{#highlights.name}}{{{highlights.name}}}{{/highlights.name}}' +
-                        '{{^highlights.name}}{{metadata.name}}{{/highlights.name}}' +
-                    '</a>'
+                    header: '<h3>Integrations</h3>',
+                    item: itemTemplate
                 }
             }]
         });

@@ -35,24 +35,61 @@ export const renderInput = ({
  */
 export const renderResult = ({
     target,
+    defaultTarget,
     store
 }) => {
-    let targetNode = document.querySelector(target);
-    let parentNode = targetNode.parentNode;
-
-    // Create a temporary DIV to place
-    // the result-box on it
-    let tempContainer = document.createElement('DIV');
-    parentNode.insertBefore(tempContainer, targetNode.nextSibling);
-    let index = getTargetIndex(tempContainer);
-
-    render(
+    const resultComponent = (
         <Provider store={store}>
             <ResultComponent />
-        </Provider>,
-        parentNode,
-        parentNode.children[index]
+        </Provider>
     );
+    let isTargetDefined = typeof target !== 'undefined',
+        targetNode,
+        parentNode,
+        index
+    ;
+
+    if (isTargetDefined) {
+        /**
+         * Append the result-box to a custom target
+         */
+        targetNode = document.querySelector(target);
+
+        render(
+            resultComponent,
+            targetNode
+        );
+    } else {
+        /**
+         * Create a temporary DIV to place
+         * the result-box on it
+         *
+         * @example
+         *  Append a temporary empty div next to the default target input
+         *  (
+         *        <input type="search" id="search-input" />
+         *      + <div></div>
+         *  )
+         *
+         *  To replace it by the current result-box
+         *  (
+         *        <input type="search" id="search-input" />
+         *      - <div></div>
+         *      + <div id="apisearch-listbox" role="listbox"></div>
+         *  )
+         */
+        targetNode = document.querySelector(defaultTarget);
+        parentNode = targetNode.parentNode;
+        let tempContainer = document.createElement('DIV');
+        parentNode.insertBefore(tempContainer, targetNode.nextSibling);
+        index = getTargetIndex(tempContainer);
+
+        render(
+            resultComponent,
+            parentNode,
+            parentNode.children[index]
+        );
+    }
 };
 
 /**
