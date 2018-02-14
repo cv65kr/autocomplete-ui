@@ -24,10 +24,8 @@ export const renderInput = ({
             } />
         </Provider>,
         parentNode,
-        parentNode.childNodes[index]
+        parentNode.children[index]
     );
-
-    targetNode.remove();
 };
 
 /**
@@ -42,14 +40,19 @@ export const renderResult = ({
 }) => {
     let targetNode = document.querySelector(target);
     let parentNode = targetNode.parentNode;
-    let index = getTargetIndex(targetNode);
+
+    // Create a temporal tiv to place
+    // the result div
+    let tempContainer = document.createElement('DIV');
+    parentNode.insertBefore(tempContainer, targetNode.nextSibling);
+    let index = getTargetIndex(tempContainer);
 
     render(
         <Provider store={store}>
             <ResultComponent />
         </Provider>,
         parentNode,
-        parentNode.childNodes[index + 1]
+        parentNode.children[index]
     );
 };
 

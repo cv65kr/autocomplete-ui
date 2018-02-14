@@ -5933,9 +5933,7 @@ var renderInput = exports.renderInput = function renderInput(_ref) {
         _preact2.Provider,
         { store: store },
         (0, _preact.h)(_InputComponent.InputComponent, { htmlNodeInheritProps: (0, _helpers.getNodeAttributes)(targetNode) })
-    ), parentNode, parentNode.childNodes[index]);
-
-    targetNode.remove();
+    ), parentNode, parentNode.children[index]);
 };
 
 /**
@@ -5950,13 +5948,18 @@ var renderResult = exports.renderResult = function renderResult(_ref2) {
 
     var targetNode = document.querySelector(target);
     var parentNode = targetNode.parentNode;
-    var index = getTargetIndex(targetNode);
+
+    // Create a temporal tiv to place
+    // the result div
+    var tempContainer = document.createElement('DIV');
+    parentNode.insertBefore(tempContainer, targetNode.nextSibling);
+    var index = getTargetIndex(tempContainer);
 
     (0, _preact.render)((0, _preact.h)(
         _preact2.Provider,
         { store: store },
         (0, _preact.h)(_ResultComponent.ResultComponent, null)
-    ), parentNode, parentNode.childNodes[index + 1]);
+    ), parentNode, parentNode.children[index]);
 };
 
 /**
