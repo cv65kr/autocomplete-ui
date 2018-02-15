@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultComponent /> should render 1`] = `
+preact-render-spy (1 nodes)
+-------
+<div
+  id="apisearch-listbox"
+  class="as-result"
+  role="listbox"
+  tabIndex="-1"
+>
+</div>
+
+`;

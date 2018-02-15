@@ -38,6 +38,10 @@ export const actions = store => ({
             .enableHighlights()
         ;
 
+        /**
+         * Empty query OR
+         * Query length smaller than min keywords
+         */
         if (
             query.q === '' ||
             query.q.length < state.startSearchOn

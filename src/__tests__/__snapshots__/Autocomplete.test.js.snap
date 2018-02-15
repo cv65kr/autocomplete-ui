@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Autocomplete should render 1`] = `
+Object {
+  "currentCursorIndex": 0,
+  "datasets": Array [
+    Object {
+      "template": Object {
+        "header": "<h3>Mock Dataset</h3>",
+        "item": "<p>{{metadata.name}}</p>",
+      },
+      "type": "mock",
+    },
+  ],
+  "items": Array [],
+  "itemsPerResult": 10,
+  "poweredBy": false,
+  "queryText": "",
+  "resultBoxOpen": false,
+  "startSearchOn": 0,
+  "total_hits": 0,
+}
+`;
+
+exports[`Autocomplete should render 2`] = `
+Object {
+  "currentCursorIndex": 0,
+  "datasets": Array [
+    Object {
+      "template": Object {
+        "header": "<h3>Mock Dataset</h3>",
+        "item": "<p>{{metadata.name}}</p>",
+      },
+      "type": "mock",
+    },
+  ],
+  "items": Array [
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item",
+      },
+      "uuid": Object {
+        "id": 1,
+        "type": "mock",
+      },
+    },
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item 2",
+      },
+      "uuid": Object {
+        "id": 2,
+        "type": "mock",
+      },
+    },
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item 3",
+      },
+      "uuid": Object {
+        "id": 3,
+        "type": "mock",
+      },
+    },
+  ],
+  "itemsPerResult": 10,
+  "poweredBy": false,
+  "queryText": "some query text",
+  "resultBoxOpen": true,
+  "startSearchOn": 0,
+  "total_hits": 3,
+}
+`;
+
+exports[`Autocomplete should render 3`] = `
+Object {
+  "currentCursorIndex": 1,
+  "datasets": Array [
+    Object {
+      "template": Object {
+        "header": "<h3>Mock Dataset</h3>",
+        "item": "<p>{{metadata.name}}</p>",
+      },
+      "type": "mock",
+    },
+  ],
+  "items": Array [
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item",
+      },
+      "uuid": Object {
+        "id": 1,
+        "type": "mock",
+      },
+    },
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item 2",
+      },
+      "uuid": Object {
+        "id": 2,
+        "type": "mock",
+      },
+    },
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item 3",
+      },
+      "uuid": Object {
+        "id": 3,
+        "type": "mock",
+      },
+    },
+  ],
+  "itemsPerResult": 10,
+  "poweredBy": false,
+  "queryText": "some query text",
+  "resultBoxOpen": true,
+  "startSearchOn": 0,
+  "total_hits": 3,
+}
+`;
+
+exports[`Autocomplete should render 4`] = `
+Object {
+  "currentCursorIndex": 1,
+  "datasets": Array [
+    Object {
+      "template": Object {
+        "header": "<h3>Mock Dataset</h3>",
+        "item": "<p>{{metadata.name}}</p>",
+      },
+      "type": "mock",
+    },
+  ],
+  "items": Array [
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item",
+      },
+      "uuid": Object {
+        "id": 1,
+        "type": "mock",
+      },
+    },
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item 2",
+      },
+      "uuid": Object {
+        "id": 2,
+        "type": "mock",
+      },
+    },
+    Object {
+      "metadata": Object {
+        "name": "This is a mocked item 3",
+      },
+      "uuid": Object {
+        "id": 3,
+        "type": "mock",
+      },
+    },
+  ],
+  "itemsPerResult": 10,
+  "poweredBy": false,
+  "queryText": "some query text",
+  "resultBoxOpen": false,
+  "startSearchOn": 0,
+  "total_hits": 3,
+}
+`;

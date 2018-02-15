@@ -1,7 +1,7 @@
 import {h, render} from "preact"
 import { Provider } from 'unistore/preact'
-import {InputComponent} from "./Components/InputComponent"
-import {ResultComponent} from "./Components/ResultComponent"
+import ConnectedInput from "./components/InputComponent"
+import ConnectedResult from "./components/ResultComponent"
 
 /**
  * Render Input widget
@@ -18,7 +18,7 @@ export const renderInput = ({
 
     render(
         <Provider store={store}>
-            <InputComponent htmlNodeInheritProps={
+            <ConnectedInput htmlNodeInheritProps={
                 getNodeAttributes(targetNode)
             } />
         </Provider>,
@@ -40,7 +40,7 @@ export const renderResult = ({
 }) => {
     const resultComponent = (
         <Provider store={store}>
-            <ResultComponent />
+            <ConnectedResult />
         </Provider>
     );
     let isTargetDefined = typeof target !== 'undefined',
@@ -52,6 +52,13 @@ export const renderResult = ({
     if (isTargetDefined) {
         /**
          * Append the result-box to a custom target
+         * @example
+         *  (
+         *        <input type="search" id="search-input" />
+         *        <div id="custom-result-box">
+         *            + <div id="apisearch-listbox" role="listbox"></div>
+         *        </div>
+         *  )
          */
         targetNode = document.querySelector(target);
 

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputComponent /> should render 1`] = `
+preact-render-spy (1 nodes)
+-------
+<input
+  id="apisearch-input-id"
+  class="some-class-name"
+  autocomplete="off"
+  spellCheck="false"
+  role="combobox"
+  aria-autocomplete="list"
+  aria-expanded="false"
+  aria-owns="apisearch-listbox"
+  data-search="Apisearch-autocomplete"
+ />
+
+`;
