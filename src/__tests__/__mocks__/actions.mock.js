@@ -3,40 +3,13 @@
  *
  * @param store
  */
+import {resultWithItems} from "./result.mock";
+
 export const actions = store => ({
     searchAction(state, event) {
         store.setState({
-            items: [
-                {
-                    uuid: {
-                        id: 1,
-                        type: 'mock'
-                    },
-                    metadata: {
-                        name: 'This is a mocked item'
-                    }
-                }, {
-                    uuid: {
-                        id: 2,
-                        type: 'mock'
-                    },
-                    metadata: {
-                        name: 'This is a mocked item 2'
-                    }
-                }, {
-                    uuid: {
-                        id: 3,
-                        type: 'mock'
-                    },
-                    metadata: {
-                        name: 'This is a mocked item 3'
-                    }
-                },
-            ],
-            total_hits: 3,
-            resultBoxOpen: true,
-            queryText: event.target.value,
-            currentCursorIndex: 0
+            ...resultWithItems,
+            queryText: event.target.value
         });
     },
 

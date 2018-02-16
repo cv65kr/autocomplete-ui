@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ResultComponent /> should render 1`] = `
+exports[`<ResultComponent /> should render initial state 1`] = `
+preact-render-spy (1 nodes)
+-------
+<div
+  id="apisearch-listbox"
+  class="as-result"
+  role="listbox"
+  tabIndex="-1"
+  style="display: none;"
+>
+</div>
+
+`;
+
+exports[`<ResultComponent /> should render results and navigate 1`] = `
 preact-render-spy (1 nodes)
 -------
 <div
@@ -9,6 +23,87 @@ preact-render-spy (1 nodes)
   role="listbox"
   tabIndex="-1"
 >
+  <div class="as-result__dataset as-result__dataset--mock">
+    <div class="as-result__datasetHeader">
+      <h3>Mock Dataset</h3>
+    </div>
+    <ul class="as-result__datasetItemsList">
+      <li
+        data-index={1}
+        class="as-result__datasetItem"
+      >
+        <p>This is a mocked item</p>
+      </li>
+      <li
+        data-index={2}
+        class="as-result__datasetItem"
+      >
+        <p>This is a mocked item 2</p>
+      </li>
+      <li
+        data-index={3}
+        class="as-result__datasetItem"
+      >
+        <p>This is a mocked item 3</p>
+      </li>
+    </ul>
+  </div>
+  <div class="as-poweredBy">
+    <a href="http://apisearch.io">
+                <img 
+                    src="http://apisearch.io/assets/media/powered-by.svg" 
+                    alt="Powered by Apisearch" 
+                    width="100px"
+                />
+            </a>
+  </div>
+</div>
+
+`;
+
+exports[`<ResultComponent /> should render results and navigate 2`] = `
+preact-render-spy (1 nodes)
+-------
+<div
+  id="apisearch-listbox"
+  class="as-result"
+  role="listbox"
+  tabIndex="-1"
+>
+  <div class="as-result__dataset as-result__dataset--mock">
+    <div class="as-result__datasetHeader">
+      <h3>Mock Dataset</h3>
+    </div>
+    <ul class="as-result__datasetItemsList">
+      <li
+        data-index={1}
+        class="as-result__datasetItem"
+      >
+        <p>This is a mocked item</p>
+      </li>
+      <li
+        data-index={2}
+        class="as-result__datasetItem as-result__datasetItem--active"
+      >
+        <p>This is a mocked item 2</p>
+      </li>
+      <li
+        data-index={3}
+        class="as-result__datasetItem"
+      >
+        <p>This is a mocked item 3</p>
+      </li>
+    </ul>
+  </div>
+  <div class="as-poweredBy">
+    <a href="http://apisearch.io">
+                <img 
+                    src="http://apisearch.io/assets/media/powered-by.svg" 
+                    alt="Powered by Apisearch" 
+                    width="100px"
+                />
+            </a>
+  </div>
 </div>
 
 `;
