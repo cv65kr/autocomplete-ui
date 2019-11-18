@@ -11,9 +11,12 @@ This is the easiest way to create your first Autocomplete UI.
 ```javascript
 // Create an instance
 const autocomplete = apisearchAutocomplete({
-    appId: '234ede3Y',
-    indexId: 'e3d223J',
-    token: 'bc81352f-2115-47e8-aff9-cfe3d29ebbb7'
+    app_id: '9c078fa1a748',
+    index_id: 'e742fbfbac24',
+    token: 'daf93c2b-40bc-49f2-870e-f8f62ea524ad',
+    options: {
+       endpoint: 'https://apisearch.global.ssl.fastly.net',
+    }
 });
 
 // Configure it!
