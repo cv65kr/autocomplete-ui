@@ -1,11 +1,11 @@
-import apisearch from "apisearch";
+import apisearch, { Client } from "apisearch";
 import createStore from 'unistore';
 import {renderInput, renderResult} from "./render";
 
 
 module.exports = function(clientCredentials)
 {
-    const client = apisearch(clientCredentials);
+    const client = apisearch.createRepository(clientCredentials);
 
     return ({
         inputTarget,

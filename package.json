@@ -53,10 +53,11 @@
     "yargs": "^8.0.2"
   },
   "dependencies": {
-    "apisearch": "^0.1.22",
+    "apisearch": "^0.2.22",
     "hogan.js": "^3.0.2",
     "lodash": "^4.17.5",
     "preact": "^8.2.7",
+    "tslib": "^1.10.0",
     "unistore": "^3.0.4"
   }
 }

@@ -70,14 +70,730 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 78);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["__extends"] = __extends;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (immutable) */ __webpack_exports__["__rest"] = __rest;
+/* harmony export (immutable) */ __webpack_exports__["__decorate"] = __decorate;
+/* harmony export (immutable) */ __webpack_exports__["__param"] = __param;
+/* harmony export (immutable) */ __webpack_exports__["__metadata"] = __metadata;
+/* harmony export (immutable) */ __webpack_exports__["__awaiter"] = __awaiter;
+/* harmony export (immutable) */ __webpack_exports__["__generator"] = __generator;
+/* harmony export (immutable) */ __webpack_exports__["__exportStar"] = __exportStar;
+/* harmony export (immutable) */ __webpack_exports__["__values"] = __values;
+/* harmony export (immutable) */ __webpack_exports__["__read"] = __read;
+/* harmony export (immutable) */ __webpack_exports__["__spread"] = __spread;
+/* harmony export (immutable) */ __webpack_exports__["__spreadArrays"] = __spreadArrays;
+/* harmony export (immutable) */ __webpack_exports__["__await"] = __await;
+/* harmony export (immutable) */ __webpack_exports__["__asyncGenerator"] = __asyncGenerator;
+/* harmony export (immutable) */ __webpack_exports__["__asyncDelegator"] = __asyncDelegator;
+/* harmony export (immutable) */ __webpack_exports__["__asyncValues"] = __asyncValues;
+/* harmony export (immutable) */ __webpack_exports__["__makeTemplateObject"] = __makeTemplateObject;
+/* harmony export (immutable) */ __webpack_exports__["__importStar"] = __importStar;
+/* harmony export (immutable) */ __webpack_exports__["__importDefault"] = __importDefault;
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(22);
+"use strict";
+
+
+var bind = __webpack_require__(38);
+var isBuffer = __webpack_require__(82);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * Class InvalidFormatError
+ */
+var InvalidFormatError = /** @class */ (function (_super) {
+    tslib_1.__extends(InvalidFormatError, _super);
+    function InvalidFormatError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    InvalidFormatError.getTransportableHTTPError = function () {
+        return 400;
+    };
+    /**
+     * Item representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.itemRepresentationNotValid = function () {
+        return new InvalidFormatError("Item representation not valid. Expecting Item array serialized but found malformed data");
+    };
+    /**
+     * Item UUID representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.itemUUIDRepresentationNotValid = function () {
+        return new InvalidFormatError("Item UUID representation not valid. Expecting UUID array serialized but found malformed data");
+    };
+    /**
+     * Create Composed UUID bad format.
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.composedItemUUIDNotValid = function () {
+        return new InvalidFormatError("A composed UUID should always follow this format: {id}~{type}.");
+    };
+    /**
+     * Create Query sorted by distance without coordinate.
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.querySortedByDistanceWithoutCoordinate = function () {
+        return new InvalidFormatError("In order to be able to sort by coordinates, you need to create a Query by using Query::createLocated() instead of Query::create()");
+    };
+    /**
+     * Query representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.queryFormatNotValid = function () {
+        return new InvalidFormatError("Query Format not valid. Expecting a Query serialized but found malformed data");
+    };
+    /**
+     * Coordinate representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.coordinateFormatNotValid = function () {
+        return new InvalidFormatError("A Coordinate should always contain a lat (Latitude) and a lon (Longitude)");
+    };
+    /**
+     * Config representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.configFormatNotValid = function () {
+        return new InvalidFormatError("Config Format not valid. Expecting a Config serialized but found malformed data");
+    };
+    /**
+     * Token representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.tokenFormatNotValid = function () {
+        return new InvalidFormatError("Token Format not valid. Expecting a Token serialized but found malformed data");
+    };
+    /**
+     * Index format not valid.
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.indexFormatNotValid = function () {
+        return new InvalidFormatError('Index Format not valid. Expecting an Index serialized but found malformed data');
+    };
+    /**
+     * IndexUUI format not valid.
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.indexUUIDFormatNotValid = function () {
+        return new InvalidFormatError('IndexUUID Format not valid. Expecting an IndexUUID serialized but found malformed data');
+    };
+    /**
+     * App format not valid.
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.appUUIDFormatNotValid = function () {
+        return new InvalidFormatError('AppUUID Format not valid. Expecting an AppUUID serialized but found malformed data');
+    };
+    /**
+     * Campaign representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.campaignFormatNotValid = function () {
+        return new InvalidFormatError("Campaign Format not valid. Expecting a Campaign serialized but found malformed data");
+    };
+    /**
+     * Changes representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.changesFormatNotValid = function () {
+        return new InvalidFormatError("Changes Format not valid. Expecting a Changes serialized but found malformed data");
+    };
+    /**
+     * Boost clause representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.boostClauseFormatNotValid = function () {
+        return new InvalidFormatError("Boost clause Format not valid. Expecting a Boost clause serialized but found malformed data");
+    };
+    /**
+     * token uuid representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.tokenUUIDFormatNotValid = function () {
+        return new InvalidFormatError("Token UUID Format not valid. Expecting a TokenUUID serialized but found malformed data");
+    };
+    /**
+     * User representation not valid
+     *
+     * @return {InvalidFormatError}
+     */
+    InvalidFormatError.userFormatNotValid = function () {
+        return new InvalidFormatError("User Format not valid. Expecting a User serialized but found malformed data");
+    };
+    return InvalidFormatError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.InvalidFormatError = InvalidFormatError;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+/**
+ * ConnectError
+ */
+var ErrorWithMessage = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param message
+     */
+    function ErrorWithMessage(message) {
+        this.message = message;
+    }
+    return ErrorWithMessage;
+}());
+exports.ErrorWithMessage = ErrorWithMessage;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__(62);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -89,7 +805,7 @@ module.exports = root;
 
 
 /***/ }),
-/* 1 */
+/* 5 */
 /***/ (function(module, exports) {
 
 /**
@@ -121,11 +837,568 @@ module.exports = isArray;
 
 
 /***/ }),
-/* 2 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsNative = __webpack_require__(48),
-    getValue = __webpack_require__(53);
+"use strict";
+
+exports.__esModule = true;
+/**
+ * filter constants
+ */
+exports.FILTER_MUST_ALL = 4;
+exports.FILTER_MUST_ALL_WITH_LEVELS = 5;
+exports.FILTER_AT_LEAST_ONE = 8;
+exports.FILTER_EXCLUDE = 16;
+exports.FILTER_PROMOTE = 32;
+exports.FILTER_TYPE_FIELD = "field";
+exports.FILTER_TYPE_RANGE = "range";
+exports.FILTER_TYPE_DATE_RANGE = "date_range";
+exports.FILTER_TYPE_GEO = "geo";
+exports.FILTER_TYPE_QUERY = "query";
+/**
+ * Filter class
+ */
+var Filter = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param field
+     * @param values
+     * @param applicationType
+     * @param filterType
+     * @param filterTerms
+     */
+    function Filter(field, values, applicationType, filterType, filterTerms) {
+        this.field = field;
+        this.values = values;
+        this.applicationType = applicationType;
+        this.filterType = filterType;
+        this.filterTerms = filterTerms;
+    }
+    /**
+     * Get field
+     *
+     * @returns {string}
+     */
+    Filter.prototype.getField = function () {
+        return this.field;
+    };
+    /**
+     * Get values
+     *
+     * @returns {any}
+     */
+    Filter.prototype.getValues = function () {
+        return this.values;
+    };
+    /**
+     * Has value
+     *
+     * @param value
+     *
+     * @returns {boolean}
+     */
+    Filter.prototype.hasValue = function (value) {
+        return typeof this.values[value] == "undefined";
+    };
+    /**
+     * getApplicationType
+     *
+     * @returns {number}
+     */
+    Filter.prototype.getApplicationType = function () {
+        return this.applicationType;
+    };
+    /**
+     * Get filter type
+     *
+     * @return {string}
+     */
+    Filter.prototype.getFilterType = function () {
+        return this.filterType;
+    };
+    /**
+     * Get filter type
+     *
+     * @return {{}}
+     */
+    Filter.prototype.getFilterTerms = function () {
+        return this.filterTerms;
+    };
+    /**
+     * Create
+     *
+     * @param field
+     * @param values
+     * @param applicationType
+     * @param filterType
+     * @param filterTerms
+     *
+     * @return {Filter}
+     */
+    Filter.create = function (field, values, applicationType, filterType, filterTerms) {
+        if (filterTerms === void 0) { filterTerms = []; }
+        return new Filter(field, values, applicationType, filterType, filterTerms);
+    };
+    /**
+     * To array
+     *
+     * @returns {Array}
+     */
+    Filter.prototype.toArray = function () {
+        var filterAsArray = {};
+        if (this.field != "uuid.type") {
+            filterAsArray.field = this.field;
+        }
+        if (this.values.length > 0 ||
+            Object.keys(this.values).length > 0) {
+            filterAsArray.values = this.values;
+        }
+        if (this.applicationType != exports.FILTER_AT_LEAST_ONE) {
+            filterAsArray.application_type = this.applicationType;
+        }
+        if (this.filterType != exports.FILTER_TYPE_FIELD) {
+            filterAsArray.filter_type = this.filterType;
+        }
+        if (this.filterTerms.length > 0) {
+            filterAsArray.filter_terms = this.filterTerms;
+        }
+        return filterAsArray;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @returns {Filter}
+     */
+    Filter.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        if (typeof array.field == "undefined") {
+            array.field = "uuid.type";
+        }
+        if (typeof array.values == "undefined") {
+            array.values = [];
+        }
+        if (typeof array.application_type == "undefined") {
+            array.application_type = exports.FILTER_AT_LEAST_ONE;
+        }
+        if (typeof array.filter_type == "undefined") {
+            array.filter_type = exports.FILTER_TYPE_FIELD;
+        }
+        if (typeof array.filter_terms == "undefined") {
+            array.filter_terms = [];
+        }
+        return Filter.create(array.field, array.values, array.application_type, array.filter_type, array.filter_terms);
+    };
+    return Filter;
+}());
+exports.Filter = Filter;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var InvalidFormatError_1 = __webpack_require__(2);
+var Coordinate_1 = __webpack_require__(10);
+var ItemUUID_1 = __webpack_require__(11);
+/**
+ * Item class
+ */
+var Item = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param uuid
+     * @param coordinate
+     * @param metadata
+     * @param indexedMetadata
+     * @param searchableMetadata
+     * @param exactMatchingMetadata
+     * @param suggest
+     */
+    function Item(uuid, coordinate, metadata, indexedMetadata, searchableMetadata, exactMatchingMetadata, suggest) {
+        this.metadata = {};
+        this.indexedMetadata = {};
+        this.searchableMetadata = {};
+        this.exactMatchingMetadata = [];
+        this.suggest = [];
+        this.highlights = {};
+        this.promoted = false;
+        this.uuid = uuid;
+        this.coordinate = coordinate;
+        this.metadata = metadata;
+        this.indexedMetadata = indexedMetadata;
+        this.searchableMetadata = searchableMetadata;
+        this.exactMatchingMetadata = exactMatchingMetadata;
+        this.suggest = suggest;
+    }
+    /**
+     * Create new Item
+     *
+     * @param uuid
+     * @param metadata
+     * @param indexedMetadata
+     * @param searchableMetadata
+     * @param exactMatchingMetadata
+     * @param suggest
+     * @returns {Item}
+     */
+    Item.create = function (uuid, metadata, indexedMetadata, searchableMetadata, exactMatchingMetadata, suggest) {
+        if (metadata === void 0) { metadata = {}; }
+        if (indexedMetadata === void 0) { indexedMetadata = {}; }
+        if (searchableMetadata === void 0) { searchableMetadata = {}; }
+        if (exactMatchingMetadata === void 0) { exactMatchingMetadata = []; }
+        if (suggest === void 0) { suggest = []; }
+        return new Item(uuid, null, metadata, indexedMetadata, searchableMetadata, exactMatchingMetadata, suggest);
+    };
+    /**
+     * Create new located Item
+     *
+     * @param uuid
+     * @param coordinate
+     * @param metadata
+     * @param indexedMetadata
+     * @param searchableMetadata
+     * @param exactMatchingMetadata
+     * @param suggest
+     * @returns {Item}
+     */
+    Item.createLocated = function (uuid, coordinate, metadata, indexedMetadata, searchableMetadata, exactMatchingMetadata, suggest) {
+        if (metadata === void 0) { metadata = {}; }
+        if (indexedMetadata === void 0) { indexedMetadata = {}; }
+        if (searchableMetadata === void 0) { searchableMetadata = {}; }
+        if (exactMatchingMetadata === void 0) { exactMatchingMetadata = []; }
+        if (suggest === void 0) { suggest = []; }
+        return new Item(uuid, coordinate, metadata, indexedMetadata, searchableMetadata, exactMatchingMetadata, suggest);
+    };
+    /**
+     * Get uuid
+     *
+     * @returns ItemUUID
+     */
+    Item.prototype.getUUID = function () {
+        return this.uuid;
+    };
+    /**
+     * Get id
+     *
+     * @returns string
+     */
+    Item.prototype.getId = function () {
+        return this.uuid.getId();
+    };
+    /**
+     * Get type
+     *
+     * @returns string
+     */
+    Item.prototype.getType = function () {
+        return this.uuid.getType();
+    };
+    /**
+     * Get coordinate
+     *
+     * @returns Coordinate|null
+     */
+    Item.prototype.getCoordinate = function () {
+        return this.coordinate;
+    };
+    /**
+     * Get distance
+     *
+     * @returns int
+     */
+    Item.prototype.getDistance = function () {
+        return this.distance;
+    };
+    /**
+     * Get metadata
+     *
+     * @returns Array
+     */
+    Item.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    /**
+     * Set metadata
+     *
+     * @param metadata
+     */
+    Item.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+    };
+    /**
+     * Add metadata
+     *
+     * @param key
+     * @param value
+     */
+    Item.prototype.addMetadata = function (key, value) {
+        this.metadata[key] = value;
+    };
+    /**
+     * Get indexed metadata
+     *
+     * @returns Array
+     */
+    Item.prototype.getIndexedMetadata = function () {
+        return this.indexedMetadata;
+    };
+    /**
+     * Set indexed metadata
+     *
+     * @param indexedMetadata
+     */
+    Item.prototype.setIndexedMetadata = function (indexedMetadata) {
+        this.indexedMetadata = indexedMetadata;
+    };
+    /**
+     * Add indexed metadata
+     *
+     * @param key
+     * @param value
+     */
+    Item.prototype.addIndexedMetadata = function (key, value) {
+        this.indexedMetadata[key] = value;
+    };
+    /**
+     * Get searchable metadata
+     *
+     * @returns Array
+     */
+    Item.prototype.getSearchableMetadata = function () {
+        return this.searchableMetadata;
+    };
+    /**
+     * Set searchable metadata
+     *
+     * @param searchableMetadata
+     */
+    Item.prototype.setSearchableMetadata = function (searchableMetadata) {
+        this.searchableMetadata = searchableMetadata;
+    };
+    /**
+     * Add searchable metadata
+     *
+     * @param key
+     * @param value
+     */
+    Item.prototype.addSearchableMetadata = function (key, value) {
+        this.searchableMetadata[key] = value;
+    };
+    /**
+     * Get exactMatching metadata
+     *
+     * @returns Array
+     */
+    Item.prototype.getExactMatchingMetadata = function () {
+        return this.exactMatchingMetadata;
+    };
+    /**
+     * Set exactMatching metadata
+     *
+     * @param exactMatchingMetadata
+     */
+    Item.prototype.setExactMatchingMetadata = function (exactMatchingMetadata) {
+        this.exactMatchingMetadata = exactMatchingMetadata;
+    };
+    /**
+     * Add exactMatching metadata
+     *
+     * @param value
+     */
+    Item.prototype.addExactMatchingMetadata = function (value) {
+        this.exactMatchingMetadata.push(value);
+    };
+    /**
+     * Get all metadata
+     *
+     * @returns {{}}
+     */
+    Item.prototype.getAllMetadata = function () {
+        return tslib_1.__assign({}, this.metadata, this.indexedMetadata);
+    };
+    /**
+     * Get
+     *
+     * @param key
+     *
+     * @returns mixed|null
+     */
+    Item.prototype.get = function (key) {
+        var allMetadata = this.getAllMetadata();
+        return (typeof allMetadata[key] != "undefined")
+            ? allMetadata[key]
+            : null;
+    };
+    /**
+     * Get suggest
+     *
+     * @returns Array
+     */
+    Item.prototype.getSuggest = function () {
+        return this.suggest;
+    };
+    /**
+     * Get highlights
+     *
+     * @returns Array
+     */
+    Item.prototype.getHighlights = function () {
+        return this.highlights;
+    };
+    /**
+     * Get highlight
+     *
+     * @param key
+     *
+     * @return string|null
+     */
+    Item.prototype.getHighlight = function (key) {
+        return (typeof this.highlights[key] != "undefined")
+            ? this.highlights[key]
+            : null;
+    };
+    /**
+     * Is promoted
+     *
+     * @returns boolean
+     */
+    Item.prototype.isPromoted = function () {
+        return this.promoted;
+    };
+    /**
+     * Set score
+     *
+     * @param score
+     *
+     * @return {Item}
+     */
+    Item.prototype.setScore = function (score) {
+        this.score = score;
+        return this;
+    };
+    /**
+     * Get score
+     *
+     * @return {number}
+     */
+    Item.prototype.getScore = function () {
+        return this.score;
+    };
+    /**
+     * To array
+     */
+    Item.prototype.toArray = function () {
+        var itemAsArray = {
+            uuid: this.uuid.toArray()
+        };
+        if (this.coordinate instanceof Coordinate_1.Coordinate) {
+            itemAsArray.coordinate = this.coordinate.toArray();
+        }
+        if (Object.keys(this.metadata).length > 0) {
+            itemAsArray.metadata = this.metadata;
+        }
+        if (Object.keys(this.indexedMetadata).length > 0) {
+            itemAsArray.indexed_metadata = this.indexedMetadata;
+        }
+        if (Object.keys(this.searchableMetadata).length > 0) {
+            itemAsArray.searchable_metadata = this.searchableMetadata;
+        }
+        if (this.exactMatchingMetadata.length > 0) {
+            itemAsArray.exact_matching_metadata = this.exactMatchingMetadata;
+        }
+        if (this.suggest.length > 0) {
+            itemAsArray.suggest = this.suggest;
+        }
+        if (Object.keys(this.highlights).length > 0) {
+            itemAsArray.highlights = this.highlights;
+        }
+        if (this.isPromoted()) {
+            itemAsArray.is_promoted = true;
+        }
+        if (typeof this.distance != "undefined") {
+            itemAsArray.distance = this.distance;
+        }
+        if (typeof this.score != "undefined") {
+            itemAsArray.score = this.score;
+        }
+        return itemAsArray;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     */
+    Item.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        if (typeof array.uuid != "object") {
+            throw InvalidFormatError_1.InvalidFormatError.itemUUIDRepresentationNotValid();
+        }
+        if (typeof array.coordinate != "undefined" &&
+            typeof array.coordinate != "object") {
+            throw InvalidFormatError_1.InvalidFormatError.coordinateFormatNotValid();
+        }
+        var item = (typeof array.coordinate == "object" &&
+            array.coordinate != null)
+            ? Item.createLocated(ItemUUID_1.ItemUUID.createFromArray(array.uuid), Coordinate_1.Coordinate.createFromArray(array.coordinate), ((typeof array.metadata == "undefined") ? {} : array.metadata), ((typeof array.indexed_metadata == "undefined") ? {} : array.indexed_metadata), ((typeof array.searchable_metadata == "undefined") ? {} : array.searchable_metadata), ((typeof array.exact_matching_metadata == "undefined") ? [] : array.exact_matching_metadata), ((typeof array.suggest == "undefined") ? [] : array.suggest))
+            : Item.create(ItemUUID_1.ItemUUID.createFromArray(array.uuid), ((typeof array.metadata == "undefined") ? {} : array.metadata), ((typeof array.indexed_metadata == "undefined") ? {} : array.indexed_metadata), ((typeof array.searchable_metadata == "undefined") ? {} : array.searchable_metadata), ((typeof array.exact_matching_metadata == "undefined") ? [] : array.exact_matching_metadata), ((typeof array.suggest == "undefined") ? [] : array.suggest));
+        if (typeof array.distance != "undefined" &&
+            array.distance != null) {
+            item.distance = array.distance;
+        }
+        if (typeof array.highlights == "object" &&
+            array.distance != null) {
+            item.highlights = array.highlights;
+        }
+        if (typeof array.is_promoted != "undefined" &&
+            array.is_promoted != null) {
+            item.promoted = array.is_promoted;
+        }
+        if (typeof array.score != "undefined" &&
+            array.score != null) {
+            item.score = array.score;
+        }
+        return item;
+    };
+    /**
+     * Compose uuid
+     *
+     * @returns string
+     */
+    Item.prototype.composeUUID = function () {
+        return this.uuid.composedUUID();
+    };
+    /**
+     * Get path by field.
+     *
+     * @param field
+     *
+     * @returns {string}
+     */
+    Item.getPathByField = function (field) {
+        return (["id", "type"].indexOf(field) > -1)
+            ? "uuid." + field
+            : "indexed_metadata." + field;
+    };
+    return Item;
+}());
+exports.Item = Item;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsNative = __webpack_require__(118),
+    getValue = __webpack_require__(123);
 
 /**
  * Gets the native function at `key` of `object`.
@@ -144,7 +1417,1370 @@ module.exports = getNative;
 
 
 /***/ }),
-/* 3 */
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var Coordinate_1 = __webpack_require__(10);
+var ItemUUID_1 = __webpack_require__(11);
+var Item_1 = __webpack_require__(7);
+var User_1 = __webpack_require__(46);
+var Aggregation_1 = __webpack_require__(24);
+var Filter_1 = __webpack_require__(6);
+var Filter_2 = __webpack_require__(6);
+var Aggregation_2 = __webpack_require__(24);
+var InvalidFormatError_1 = __webpack_require__(2);
+var Filter_3 = __webpack_require__(6);
+var ScoreStrategies_1 = __webpack_require__(47);
+var SortBy_1 = __webpack_require__(25);
+var IndexUUID_1 = __webpack_require__(49);
+/**
+ * Query constants
+ */
+exports.QUERY_DEFAULT_PAGE = 1;
+exports.QUERY_DEFAULT_SIZE = 10;
+exports.NO_MIN_SCORE = 0.0;
+/**
+ * Query class
+ */
+var Query = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param queryText
+     */
+    function Query(queryText) {
+        this.fields = [];
+        this.universeFilters = {};
+        this.filters = {};
+        this.itemsPromoted = [];
+        this.aggregations = {};
+        this.resultsEnabled = true;
+        this.aggregationsEnabled = true;
+        this.suggestionsEnabled = false;
+        this.highlightsEnabled = false;
+        this.searchableFields = [];
+        this.minScore = exports.NO_MIN_SCORE;
+        this.metadata = {};
+        this.subqueries = {};
+        this.sortByInstance = SortBy_1.SortBy.create();
+        this.filters._query = Filter_1.Filter.create("", [queryText], 0, Filter_3.FILTER_TYPE_QUERY);
+    }
+    /**
+     * Created located
+     *
+     * @param coordinate
+     * @param queryText
+     * @param page
+     * @param size
+     *
+     * @returns {Query}
+     */
+    Query.createLocated = function (coordinate, queryText, page, size) {
+        if (page === void 0) { page = exports.QUERY_DEFAULT_PAGE; }
+        if (size === void 0) { size = exports.QUERY_DEFAULT_SIZE; }
+        var query = Query.create(queryText, page, size);
+        query.coordinate = coordinate;
+        return query;
+    };
+    /**
+     * Create
+     *
+     * @param queryText
+     * @param page
+     * @param size
+     *
+     * @returns {Query}
+     */
+    Query.create = function (queryText, page, size) {
+        if (page === void 0) { page = exports.QUERY_DEFAULT_PAGE; }
+        if (size === void 0) { size = exports.QUERY_DEFAULT_SIZE; }
+        page = Math.max(1, page);
+        var query = new Query(queryText);
+        query.from = (page - 1) * size;
+        query.size = size;
+        query.page = page;
+        return query;
+    };
+    /**
+     * Create match all
+     *
+     * @return {Query}
+     */
+    Query.createMatchAll = function () {
+        return Query.create("", exports.QUERY_DEFAULT_PAGE, exports.QUERY_DEFAULT_SIZE);
+    };
+    /**
+     * Create by UUID
+     *
+     * @param uuid
+     *
+     * @return {Query}
+     */
+    Query.createByUUID = function (uuid) {
+        return Query.createByUUIDs(uuid);
+    };
+    /**
+     * Create by UUIDs
+     *
+     * @param uuids
+     *
+     * @return {Query}
+     */
+    Query.createByUUIDs = function () {
+        var uuids = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            uuids[_i] = arguments[_i];
+        }
+        var ids = [];
+        for (var i in uuids) {
+            ids.push(uuids[i].composedUUID());
+        }
+        var query = Query.create("", exports.QUERY_DEFAULT_PAGE, ids.length)
+            .disableAggregations()
+            .disableSuggestions();
+        query.filters._id = Filter_1.Filter.create("_id", ids, Filter_2.FILTER_AT_LEAST_ONE, Filter_2.FILTER_TYPE_FIELD);
+        return query;
+    };
+    /**
+     * Create by UUIDs
+     *
+     * @param queries
+     *
+     * @return {Query}
+     */
+    Query.createMultiquery = function (queries) {
+        var query = Query.createMatchAll();
+        query.subqueries = queries;
+        return query;
+    };
+    /**
+     * set fields
+     *
+     * @param fields
+     *
+     * @return {Query}
+     */
+    Query.prototype.setFields = function (fields) {
+        this.fields = fields;
+        return this;
+    };
+    /**
+     * get fields
+     *
+     * @return {string[]}
+     */
+    Query.prototype.getFields = function () {
+        return this.fields;
+    };
+    /**
+     * Filter universe by types
+     *
+     * @param values
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterUniverseByTypes = function (values) {
+        var _a;
+        var fieldPath = Item_1.Item.getPathByField("type");
+        if (values.length > 0) {
+            this.universeFilters = tslib_1.__assign({}, this.universeFilters, (_a = {}, _a["type"] = Filter_1.Filter.create(fieldPath, values, Filter_2.FILTER_AT_LEAST_ONE, Filter_2.FILTER_TYPE_FIELD), _a));
+        }
+        else {
+            delete this.universeFilters.type;
+        }
+        return this;
+    };
+    /**
+     * Filter by types
+     *
+     * @param values
+     * @param aggregate
+     * @param aggregationSort
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterByTypes = function (values, aggregate, aggregationSort) {
+        if (aggregate === void 0) { aggregate = true; }
+        if (aggregationSort === void 0) { aggregationSort = Aggregation_2.AGGREGATION_SORT_BY_COUNT_DESC; }
+        var _a, _b;
+        var fieldPath = Item_1.Item.getPathByField("type");
+        if (values.length > 0) {
+            this.filters = tslib_1.__assign({}, this.filters, (_a = {}, _a["type"] = Filter_1.Filter.create(fieldPath, values, Filter_2.FILTER_AT_LEAST_ONE, Filter_2.FILTER_TYPE_FIELD), _a));
+        }
+        else {
+            delete this.filters.type;
+        }
+        if (aggregate) {
+            this.aggregations = tslib_1.__assign({}, this.aggregations, (_b = {}, _b["type"] = Aggregation_1.Aggregation.create("type", fieldPath, Filter_2.FILTER_AT_LEAST_ONE, Filter_2.FILTER_TYPE_FIELD, [], aggregationSort), _b));
+        }
+        return this;
+    };
+    /**
+     * Filter universe by ids
+     *
+     * @param values
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterUniverseByIds = function (values) {
+        var _a;
+        var fieldPath = Item_1.Item.getPathByField("id");
+        if (values.length > 0) {
+            this.universeFilters = tslib_1.__assign({}, this.universeFilters, (_a = {}, _a["id"] = Filter_1.Filter.create(fieldPath, values, Filter_2.FILTER_AT_LEAST_ONE, Filter_2.FILTER_TYPE_FIELD), _a));
+        }
+        else {
+            delete this.universeFilters.id;
+        }
+        return this;
+    };
+    /**
+     * Filter by ids
+     *
+     * @param values
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterByIds = function (values) {
+        var _a;
+        var fieldPath = Item_1.Item.getPathByField("id");
+        if (values.length > 0) {
+            this.filters = tslib_1.__assign({}, this.filters, (_a = {}, _a["id"] = Filter_1.Filter.create(fieldPath, values, Filter_2.FILTER_AT_LEAST_ONE, Filter_2.FILTER_TYPE_FIELD), _a));
+        }
+        else {
+            delete this.filters.id;
+        }
+        return this;
+    };
+    /**
+     * Filter universe by
+     *
+     * @param field
+     * @param values
+     * @param applicationType
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterUniverseBy = function (field, values, applicationType) {
+        if (applicationType === void 0) { applicationType = Filter_2.FILTER_AT_LEAST_ONE; }
+        var _a;
+        var fieldPath = Item_1.Item.getPathByField(field);
+        if (values.length > 0) {
+            this.universeFilters = tslib_1.__assign({}, this.universeFilters, (_a = {}, _a[field] = Filter_1.Filter.create(fieldPath, values, applicationType, Filter_2.FILTER_TYPE_FIELD), _a));
+        }
+        else {
+            delete this.universeFilters[field];
+        }
+        return this;
+    };
+    /**
+     * Filter by
+     *
+     * @param filterName
+     * @param field
+     * @param values
+     * @param applicationType
+     * @param aggregate
+     * @param aggregationSort
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterBy = function (filterName, field, values, applicationType, aggregate, aggregationSort) {
+        if (applicationType === void 0) { applicationType = Filter_2.FILTER_AT_LEAST_ONE; }
+        if (aggregate === void 0) { aggregate = true; }
+        if (aggregationSort === void 0) { aggregationSort = Aggregation_2.AGGREGATION_SORT_BY_COUNT_DESC; }
+        var _a;
+        var fieldPath = Item_1.Item.getPathByField(field);
+        if (values.length > 0) {
+            this.filters = tslib_1.__assign({}, this.filters, (_a = {}, _a[filterName] = Filter_1.Filter.create(fieldPath, values, applicationType, Filter_2.FILTER_TYPE_FIELD), _a));
+        }
+        else {
+            delete this.filters[filterName];
+        }
+        if (aggregate) {
+            this.aggregateBy(filterName, field, applicationType, aggregationSort);
+        }
+        return this;
+    };
+    /**
+     * Filter universe by range
+     *
+     * @param field
+     * @param values
+     * @param applicationType
+     * @param rangeType
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterUniverseByRange = function (field, values, applicationType, rangeType) {
+        if (applicationType === void 0) { applicationType = Filter_2.FILTER_AT_LEAST_ONE; }
+        if (rangeType === void 0) { rangeType = Filter_2.FILTER_TYPE_RANGE; }
+        var _a;
+        var fieldPath = Item_1.Item.getPathByField(field);
+        if (values.length > 0) {
+            this.universeFilters = tslib_1.__assign({}, this.universeFilters, (_a = {}, _a[field] = Filter_1.Filter.create(fieldPath, values, applicationType, rangeType), _a));
+        }
+        else {
+            delete this.universeFilters[field];
+        }
+        return this;
+    };
+    /**
+     * Filter universe by date range
+     *
+     * @param field
+     * @param values
+     * @param applicationType
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterUniverseByDateRange = function (field, values, applicationType) {
+        if (applicationType === void 0) { applicationType = Filter_2.FILTER_AT_LEAST_ONE; }
+        return this.filterUniverseByRange(field, values, applicationType, Filter_2.FILTER_TYPE_DATE_RANGE);
+    };
+    /**
+     * Filter by range
+     *
+     * @param filterName
+     * @param field
+     * @param options
+     * @param values
+     * @param applicationType
+     * @param rangeType
+     * @param aggregate
+     * @param aggregationSort
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterByRange = function (filterName, field, options, values, applicationType, rangeType, aggregate, aggregationSort) {
+        if (applicationType === void 0) { applicationType = Filter_2.FILTER_AT_LEAST_ONE; }
+        if (rangeType === void 0) { rangeType = Filter_2.FILTER_TYPE_RANGE; }
+        if (aggregate === void 0) { aggregate = true; }
+        if (aggregationSort === void 0) { aggregationSort = Aggregation_2.AGGREGATION_SORT_BY_COUNT_DESC; }
+        var _a;
+        var fieldPath = Item_1.Item.getPathByField(field);
+        if (values.length !== 0) {
+            this.filters = tslib_1.__assign({}, this.filters, (_a = {}, _a[filterName] = Filter_1.Filter.create(fieldPath, values, applicationType, rangeType), _a));
+        }
+        else {
+            delete this.filters[filterName];
+        }
+        if (aggregate) {
+            this.aggregateByRange(filterName, fieldPath, options, applicationType, rangeType, aggregationSort);
+        }
+        return this;
+    };
+    /**
+     * Filter by date range
+     *
+     * @param filterName
+     * @param field
+     * @param options
+     * @param values
+     * @param applicationType
+     * @param aggregate
+     * @param aggregationSort
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterByDateRange = function (filterName, field, options, values, applicationType, aggregate, aggregationSort) {
+        if (applicationType === void 0) { applicationType = Filter_2.FILTER_AT_LEAST_ONE; }
+        if (aggregate === void 0) { aggregate = true; }
+        if (aggregationSort === void 0) { aggregationSort = Aggregation_2.AGGREGATION_SORT_BY_COUNT_DESC; }
+        return this.filterByRange(filterName, field, options, values, applicationType, Filter_2.FILTER_TYPE_DATE_RANGE, aggregate, aggregationSort);
+    };
+    /**
+     * Filter universe by location
+     *
+     * @param locationRange
+     *
+     * @return {Query}
+     */
+    Query.prototype.filterUniverseByLocation = function (locationRange) {
+        var _a;
+        this.universeFilters = tslib_1.__assign({}, this.universeFilters, (_a = {}, _a["coordinate"] = Filter_1.Filter.create("coordinate", locationRange.toArray(), Filter_2.FILTER_AT_LEAST_ONE, Filter_2.FILTER_TYPE_GEO), _a));
+        return this;
+    };
+    /**
+     * Set filter fields
+     *
+     * @param searchableFields
+     *
+     * @return {Query}
+     */
+    Query.prototype.setSearchableFields = function (searchableFields) {
+        this.searchableFields = searchableFields;
+        return this;
+    };
+    /**
+     * Get filter fields
+     *
+     * @return {string[]}
+     */
+    Query.prototype.getSearchableFields = function () {
+        return this.searchableFields;
+    };
+    /**
+     * Sort by
+     *
+     * @param sortBy
+     *
+     * @return {Query}
+     */
+    Query.prototype.sortBy = function (sortBy) {
+        if (sortBy.isSortedByGeoDistance()) {
+            if (!(this.coordinate instanceof Coordinate_1.Coordinate)) {
+                throw InvalidFormatError_1.InvalidFormatError.querySortedByDistanceWithoutCoordinate();
+            }
+            sortBy.setCoordinate(this.coordinate);
+        }
+        this.sortByInstance = sortBy;
+        return this;
+    };
+    /**
+     * Aggregate by
+     *
+     * @param filterName
+     * @param field
+     * @param applicationType
+     * @param aggregationSort
+     * @param limit
+     *
+     * @return {Query}
+     */
+    Query.prototype.aggregateBy = function (filterName, field, applicationType, aggregationSort, limit) {
+        if (aggregationSort === void 0) { aggregationSort = Aggregation_2.AGGREGATION_SORT_BY_COUNT_DESC; }
+        if (limit === void 0) { limit = Aggregation_2.AGGREGATION_NO_LIMIT; }
+        var _a;
+        this.aggregations = tslib_1.__assign({}, this.aggregations, (_a = {}, _a[filterName] = Aggregation_1.Aggregation.create(filterName, Item_1.Item.getPathByField(field), applicationType, Filter_2.FILTER_TYPE_FIELD, [], aggregationSort, limit), _a));
+        return this;
+    };
+    /**
+     * Aggregate by range
+     *
+     * @param filterName
+     * @param field
+     * @param options
+     * @param applicationType
+     * @param rangeType
+     * @param aggregationSort
+     * @param limit
+     *
+     * @return {Query}
+     */
+    Query.prototype.aggregateByRange = function (filterName, field, options, applicationType, rangeType, aggregationSort, limit) {
+        if (rangeType === void 0) { rangeType = Filter_2.FILTER_TYPE_RANGE; }
+        if (aggregationSort === void 0) { aggregationSort = Aggregation_2.AGGREGATION_SORT_BY_COUNT_DESC; }
+        if (limit === void 0) { limit = Aggregation_2.AGGREGATION_NO_LIMIT; }
+        var _a;
+        if (options.length === 0) {
+            return this;
+        }
+        this.aggregations = tslib_1.__assign({}, this.aggregations, (_a = {}, _a[filterName] = Aggregation_1.Aggregation.create(filterName, Item_1.Item.getPathByField(field), applicationType, rangeType, options, aggregationSort, limit), _a));
+        return this;
+    };
+    /**
+     * Aggregate by date range
+     *
+     * @param filterName
+     * @param field
+     * @param options
+     * @param applicationType
+     * @param aggregationSort
+     * @param limit
+     *
+     * @return {Query}
+     */
+    Query.prototype.aggregateByDateRange = function (filterName, field, options, applicationType, aggregationSort, limit) {
+        if (aggregationSort === void 0) { aggregationSort = Aggregation_2.AGGREGATION_SORT_BY_COUNT_DESC; }
+        if (limit === void 0) { limit = Aggregation_2.AGGREGATION_NO_LIMIT; }
+        return this.aggregateByRange(filterName, field, options, applicationType, Filter_2.FILTER_TYPE_DATE_RANGE, aggregationSort, limit);
+    };
+    /**
+     * Get aggregations
+     *
+     * @return {{}}
+     */
+    Query.prototype.getAggregations = function () {
+        return this.aggregations;
+    };
+    /**
+     * Get aggregation by name
+     *
+     * @param aggregationName
+     *
+     * @return {Aggregation|null}
+     */
+    Query.prototype.getAggregation = function (aggregationName) {
+        return this.aggregations[aggregationName] instanceof Aggregation_1.Aggregation
+            ? this.aggregations[aggregationName]
+            : null;
+    };
+    /**
+     * Get query text
+     *
+     * @return {string}
+     */
+    Query.prototype.getQueryText = function () {
+        var filter = this.filters._query;
+        return filter instanceof Filter_1.Filter
+            ? filter.getValues()[0]
+            : "";
+    };
+    /**
+     * Get universe filters
+     *
+     * @return {{}}
+     */
+    Query.prototype.getUniverseFilters = function () {
+        return this.universeFilters;
+    };
+    /**
+     * Get universe filter by name
+     *
+     * @param filterName
+     *
+     * @return {Filter|null}
+     */
+    Query.prototype.getUniverseFilter = function (filterName) {
+        return this.universeFilters[filterName] instanceof Filter_1.Filter
+            ? this.universeFilters[filterName]
+            : null;
+    };
+    /**
+     * Get filters
+     *
+     * @return {{}}
+     */
+    Query.prototype.getFilters = function () {
+        return this.filters;
+    };
+    /**
+     * Get filter by name
+     *
+     * @param filterName
+     *
+     * @return {Filter|null}
+     */
+    Query.prototype.getFilter = function (filterName) {
+        return this.filters[filterName] instanceof Filter_1.Filter
+            ? this.filters[filterName]
+            : null;
+    };
+    /**
+     * Get filter by field
+     *
+     * @param fieldName
+     *
+     * @return {Filter|null}
+     */
+    Query.prototype.getFilterByField = function (fieldName) {
+        var fieldPath = Item_1.Item.getPathByField(fieldName);
+        for (var i in this.filters) {
+            if (this.filters[i].getField() == fieldPath) {
+                return this.filters[i];
+            }
+        }
+        return null;
+    };
+    /**
+     * Get sort by
+     *
+     * @return {SortBy}
+     */
+    Query.prototype.getSortBy = function () {
+        return this.sortByInstance;
+    };
+    /**
+     * Get from
+     *
+     * @return {number}
+     */
+    Query.prototype.getFrom = function () {
+        return this.from;
+    };
+    /**
+     * Get size
+     *
+     * @return {number}
+     */
+    Query.prototype.getSize = function () {
+        return this.size;
+    };
+    /**
+     * Get page
+     *
+     * @return {number}
+     */
+    Query.prototype.getPage = function () {
+        return this.page;
+    };
+    /**
+     * Enable results
+     *
+     * @return {Query}
+     */
+    Query.prototype.enableResults = function () {
+        this.resultsEnabled = true;
+        return this;
+    };
+    /**
+     * Disable results
+     *
+     * @return {Query}
+     */
+    Query.prototype.disableResults = function () {
+        this.resultsEnabled = false;
+        return this;
+    };
+    /**
+     * Are results enabled
+     *
+     * @return {boolean}
+     */
+    Query.prototype.areResultsEnabled = function () {
+        return this.resultsEnabled;
+    };
+    /**
+     * Enable aggregations
+     *
+     * @return {Query}
+     */
+    Query.prototype.enableAggregations = function () {
+        this.aggregationsEnabled = true;
+        return this;
+    };
+    /**
+     * Disable aggregations
+     *
+     * @return {Query}
+     */
+    Query.prototype.disableAggregations = function () {
+        this.aggregationsEnabled = false;
+        return this;
+    };
+    /**
+     * Are aggregations enabled
+     *
+     * @return {boolean}
+     */
+    Query.prototype.areAggregationsEnabled = function () {
+        return this.aggregationsEnabled;
+    };
+    /**
+     * Enable suggestions
+     *
+     * @return {Query}
+     */
+    Query.prototype.enableSuggestions = function () {
+        this.suggestionsEnabled = true;
+        return this;
+    };
+    /**
+     * Disable suggestions
+     *
+     * @return {Query}
+     */
+    Query.prototype.disableSuggestions = function () {
+        this.suggestionsEnabled = false;
+        return this;
+    };
+    /**
+     * Are suggestions enabled
+     *
+     * @return {boolean}
+     */
+    Query.prototype.areSuggestionsEnabled = function () {
+        return this.suggestionsEnabled;
+    };
+    /**
+     * Enable highlights
+     *
+     * @return {Query}
+     */
+    Query.prototype.enableHighlights = function () {
+        this.highlightsEnabled = true;
+        return this;
+    };
+    /**
+     * Disable highlights
+     *
+     * @return {Query}
+     */
+    Query.prototype.disableHighlights = function () {
+        this.highlightsEnabled = false;
+        return this;
+    };
+    /**
+     * Are highlights enabled
+     *
+     * @return {boolean}
+     */
+    Query.prototype.areHighlightsEnabled = function () {
+        return this.highlightsEnabled;
+    };
+    /**
+     * Promote uuid
+     *
+     * @param itemUUID
+     *
+     * @return {Query}
+     */
+    Query.prototype.promoteUUID = function (itemUUID) {
+        this
+            .itemsPromoted
+            .push(itemUUID);
+        return this;
+    };
+    /**
+     * Promote UUIDs
+     *
+     * @param uuids
+     *
+     * @return {Query}
+     */
+    Query.prototype.promoteUUIDs = function () {
+        var uuids = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            uuids[_i] = arguments[_i];
+        }
+        this.itemsPromoted = uuids;
+        return this;
+    };
+    /**
+     * Get promoted UUIDs
+     *
+     * @return {ItemUUID[]}
+     */
+    Query.prototype.getItemsPromoted = function () {
+        return this.itemsPromoted;
+    };
+    /**
+     * Exclude id
+     *
+     * @param itemUUID
+     *
+     * @return {Query}
+     */
+    Query.prototype.excludeUUID = function (itemUUID) {
+        this.excludeUUIDs(itemUUID);
+        return this;
+    };
+    /**
+     * Exclude UUIDs
+     *
+     * @param uuids
+     *
+     * @return {Query}
+     */
+    Query.prototype.excludeUUIDs = function () {
+        var uuids = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            uuids[_i] = arguments[_i];
+        }
+        var _a;
+        this.filters = tslib_1.__assign({}, this.filters, (_a = {}, _a["excluded_ids"] = Filter_1.Filter.create("_id", uuids.map(function (uuid) { return uuid.composedUUID(); }), Filter_2.FILTER_EXCLUDE, Filter_2.FILTER_TYPE_FIELD), _a));
+        return this;
+    };
+    /**
+     * Get score strategies
+     *
+     * @return {ScoreStrategies}
+     */
+    Query.prototype.getScoreStrategies = function () {
+        return this.scoreStrategies;
+    };
+    /**
+     * Set score strategies
+     *
+     * @param scoreStrategies
+     */
+    Query.prototype.setScoreStrategies = function (scoreStrategies) {
+        this.scoreStrategies = scoreStrategies;
+        return this;
+    };
+    /**
+     * Get fuzziness
+     *
+     * @return any
+     */
+    Query.prototype.getFuzziness = function () {
+        return this.fuzziness;
+    };
+    /**
+     * Set fuzziness
+     *
+     * @param fuzziness
+     *
+     * @return {Query}
+     */
+    Query.prototype.setFuzziness = function (fuzziness) {
+        this.fuzziness = fuzziness;
+        return this;
+    };
+    /**
+     * Set auto fuzziness
+     *
+     * @return {Query}
+     */
+    Query.prototype.setAutoFuzziness = function () {
+        this.fuzziness = 'AUTO';
+        return this;
+    };
+    /**
+     * Get min score
+     *
+     * @return any
+     */
+    Query.prototype.getMinScore = function () {
+        return this.minScore;
+    };
+    /**
+     * Set min score
+     *
+     * @param minScore
+     *
+     * @return {Query}
+     */
+    Query.prototype.setMinScore = function (minScore) {
+        this.minScore = minScore;
+        return this;
+    };
+    /**
+     * By user
+     *
+     * @param user
+     *
+     * @return {Query}
+     */
+    Query.prototype.byUser = function (user) {
+        this.user = user;
+        return this;
+    };
+    /**
+     * By anyone
+     *
+     * @return {null}
+     */
+    Query.prototype.anonymously = function () {
+        this.user = null;
+        return null;
+    };
+    /**
+     * Get user
+     *
+     * @return {User}
+     */
+    Query.prototype.getUser = function () {
+        return this.user;
+    };
+    /**
+     * set metadata value
+     *
+     * @param name
+     * @param value
+     *
+     * @return {Query}
+     */
+    Query.prototype.setMetadataValue = function (name, value) {
+        this.metadata[name] = value;
+        return this;
+    };
+    /**
+     * Get metadata
+     *
+     * @return any
+     */
+    Query.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    /**
+     * Add subquery
+     *
+     * @param name
+     * @param subquery
+     *
+     * @return {Query}
+     */
+    Query.prototype.addSubquery = function (name, subquery) {
+        this.subqueries[name] = subquery;
+        return this;
+    };
+    /**
+     * Get subqueries
+     *
+     * @return {Object}
+     */
+    Query.prototype.getSubqueries = function () {
+        return this.subqueries;
+    };
+    /**
+     * Identify it
+     *
+     * @param UUID
+     *
+     * @return {Query}
+     */
+    Query.prototype.identifyWith = function (UUID) {
+        this.UUID = UUID;
+        return this;
+    };
+    /**
+     * Get identification
+     *
+     * @return {string|null}
+     */
+    Query.prototype.getUUID = function () {
+        return this.UUID;
+    };
+    /**
+     * Force Index UUID.
+     *
+     * @param indexUUID
+     *
+     * @return {Query}
+     */
+    Query.prototype.forceIndexUUID = function (indexUUID) {
+        this.indexUUID = indexUUID;
+        return this;
+    };
+    /**
+     * Get IndexUUID
+     *
+     * @return {IndexUUID|null}
+     */
+    Query.prototype.getIndexUUID = function () {
+        return this.indexUUID;
+    };
+    /**
+     * To array
+     *
+     * @return {any}
+     */
+    Query.prototype.toArray = function () {
+        var array = {};
+        array.UUID = this.UUID;
+        if (this.getQueryText() !== "") {
+            array.q = this.getQueryText();
+        }
+        if (this.coordinate instanceof Coordinate_1.Coordinate) {
+            array.coordinate = this.coordinate.toArray();
+        }
+        /**
+         * Fields
+         */
+        if (this.fields instanceof Array &&
+            this.fields.length > 0) {
+            array.fields = this.fields;
+        }
+        /**
+         * Universe Filters
+         */
+        if (Object.keys(this.universeFilters).length) {
+            array.universe_filters = {};
+            for (var i in this.universeFilters) {
+                var universeFilter = this.universeFilters[i];
+                array.universe_filters[i] = universeFilter.toArray();
+            }
+        }
+        /**
+         * Filters
+         */
+        if (this.filters instanceof Object &&
+            Object.keys(this.filters).length) {
+            array.filters = {};
+            for (var i in this.filters) {
+                var filter = this.filters[i];
+                if (filter.getFilterType() !== Filter_3.FILTER_TYPE_QUERY) {
+                    array.filters[i] = filter.toArray();
+                }
+            }
+        }
+        /**
+         * Aggregations
+         */
+        if (this.aggregations instanceof Object &&
+            Object.keys(this.aggregations).length) {
+            array.aggregations = {};
+            for (var i in this.aggregations) {
+                var aggregation = this.aggregations[i];
+                array.aggregations[i] = aggregation.toArray();
+            }
+        }
+        /**
+         * Sort
+         */
+        var sort = this.sortByInstance.toArray();
+        if (Object.keys(sort).length) {
+            array.sort = sort;
+        }
+        /**
+         * Page
+         */
+        var page = this.page;
+        if (page !== exports.QUERY_DEFAULT_PAGE) {
+            array.page = page;
+        }
+        /**
+         * Size
+         */
+        var size = this.size;
+        if (size !== exports.QUERY_DEFAULT_SIZE) {
+            array.size = size;
+        }
+        /**
+         * Booleans
+         */
+        if (this.resultsEnabled === false) {
+            array.results_enabled = false;
+        }
+        if (this.suggestionsEnabled === true) {
+            array.suggestions_enabled = true;
+        }
+        if (this.highlightsEnabled === true) {
+            array.highlights_enabled = true;
+        }
+        if (this.aggregationsEnabled === false) {
+            array.aggregations_enabled = false;
+        }
+        /**
+         * Filter fields
+         */
+        if (this.searchableFields instanceof Array &&
+            this.searchableFields.length > 0) {
+            array.searchable_fields = this.searchableFields;
+        }
+        /**
+         * Score strategies
+         */
+        if (this.scoreStrategies instanceof ScoreStrategies_1.ScoreStrategies) {
+            var scoreStrategiesAsArray = this.scoreStrategies.toArray();
+            if (Object.keys(scoreStrategiesAsArray).length > 0) {
+                array.score_strategies = scoreStrategiesAsArray;
+            }
+        }
+        if (this.fuzziness !== null) {
+            array.fuzziness = this.fuzziness;
+        }
+        /**
+         * Min score
+         */
+        var minScore = this.minScore;
+        if (minScore !== exports.NO_MIN_SCORE) {
+            array.min_score = minScore;
+        }
+        /**
+         * User
+         */
+        if (this.user instanceof User_1.User) {
+            array.user = this.user.toArray();
+        }
+        array.metadata = this.metadata;
+        if (this.subqueries instanceof Object &&
+            Object.keys(this.subqueries).length) {
+            array.subqueries = {};
+            for (var i in this.subqueries) {
+                var subquery = this.subqueries[i];
+                array.subqueries[i] = subquery.toArray();
+            }
+        }
+        if (this.indexUUID instanceof IndexUUID_1.IndexUUID) {
+            array.index_uuid = this.indexUUID.toArray();
+        }
+        /**
+         * items promoted
+         */
+        if (this.itemsPromoted.length > 0) {
+            array.items_promoted = [];
+            for (var i in this.itemsPromoted) {
+                array
+                    .items_promoted
+                    .push(this.itemsPromoted[i].toArray());
+            }
+        }
+        return array;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @returns {Query}
+     */
+    Query.createFromArray = function (array) {
+        var query = array.coordinate instanceof Object
+            ? Query.createLocated(Coordinate_1.Coordinate.createFromArray(array.coordinate), array.q ? array.q : "", array.page ? array.page : exports.QUERY_DEFAULT_PAGE, array.size ? array.size : exports.QUERY_DEFAULT_SIZE)
+            : Query.create(array.q ? array.q : "", array.page ? array.page : exports.QUERY_DEFAULT_PAGE, array.size ? array.size : exports.QUERY_DEFAULT_SIZE);
+        query.UUID = typeof array.UUID === typeof ''
+            ? array.UUID
+            : undefined;
+        /**
+         * Fields
+         */
+        query.fields = array.fields instanceof Array
+            ? array.fields
+            : [];
+        /**
+         * Aggregations
+         */
+        var aggregationsAsArray = typeof array.aggregations === typeof {}
+            ? array.aggregations
+            : {};
+        for (var i in aggregationsAsArray) {
+            query.aggregations[i] = Aggregation_1.Aggregation.createFromArray(aggregationsAsArray[i]);
+        }
+        /**
+         * Sort
+         */
+        var sortAsArray = typeof array.sort === typeof {}
+            ? array.sort
+            : {};
+        if (Object.keys(sortAsArray).length > 0) {
+            query.sortByInstance = SortBy_1.SortBy.createFromArray(sortAsArray);
+        }
+        /**
+         * Filters
+         */
+        var filtersAsArray = typeof array.filters === typeof {}
+            ? array.filters
+            : {};
+        for (var i in filtersAsArray) {
+            query.filters[i] = Filter_1.Filter.createFromArray(filtersAsArray[i]);
+        }
+        /**
+         * Universe Filters
+         */
+        var universeFiltersAsArray = typeof array.universe_filters === typeof {}
+            ? array.universe_filters
+            : {};
+        for (var i in universeFiltersAsArray) {
+            query.universeFilters[i] = Filter_1.Filter.createFromArray(universeFiltersAsArray[i]);
+        }
+        /**
+         * Booleans
+         */
+        query.resultsEnabled = typeof array.results_enabled === "boolean"
+            ? array.results_enabled
+            : true;
+        query.suggestionsEnabled = typeof array.suggestions_enabled === "boolean"
+            ? array.suggestions_enabled
+            : false;
+        query.aggregationsEnabled = typeof array.aggregations_enabled === "boolean"
+            ? array.aggregations_enabled
+            : true;
+        query.highlightsEnabled = typeof array.highlights_enabled === "boolean"
+            ? array.highlights_enabled
+            : false;
+        query.fuzziness = array.fuzziness;
+        query.minScore = array.min_score ? array.min_score : exports.NO_MIN_SCORE;
+        /**
+         * Items promoted
+         */
+        var itemsPromotedAsArray = typeof array.items_promoted === typeof {}
+            ? array.items_promoted
+            : {};
+        for (var i in itemsPromotedAsArray) {
+            query
+                .itemsPromoted
+                .push(ItemUUID_1.ItemUUID.createFromArray(itemsPromotedAsArray[i]));
+        }
+        /**
+         * Subqueries
+         */
+        var subqueriesAsArray = typeof array.subqueries === typeof {}
+            ? array.subqueries
+            : {};
+        for (var i in subqueriesAsArray) {
+            query.subqueries[i] = Query.createFromArray(subqueriesAsArray[i]);
+        }
+        /**
+         * Filter fields
+         */
+        query.metadata = typeof array.metadata === typeof {}
+            ? array.metadata
+            : {};
+        query.searchableFields = array.searchable_fields instanceof Array
+            ? array.searchable_fields
+            : [];
+        query.scoreStrategies = array.score_strategies instanceof Object
+            ? ScoreStrategies_1.ScoreStrategies.createFromArray(array.score_strategies)
+            : undefined;
+        query.user = array.user instanceof Object
+            ? User_1.User.createFromArray(array.user)
+            : undefined;
+        query.indexUUID = array.index_uuid instanceof Object
+            ? IndexUUID_1.IndexUUID.createFromArray(array.index_uuid)
+            : undefined;
+        return query;
+    };
+    return Query;
+}());
+exports.Query = Query;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var InvalidFormatError_1 = __webpack_require__(2);
+/**
+ * Coordinate Type cast
+ * @param coordinate
+ */
+var Coordinate = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param {number} lat
+     * @param {number} lon
+     */
+    function Coordinate(lat, lon) {
+        this.lat = lat;
+        this.lon = lon;
+    }
+    /**
+     * Get latitude
+     *
+     * @return float
+     */
+    Coordinate.prototype.getLatitude = function () {
+        return this.lat;
+    };
+    /**
+     * Get longitude
+     *
+     * @return float
+     */
+    Coordinate.prototype.getLongitude = function () {
+        return this.lon;
+    };
+    /**
+     * To array
+     *
+     * @return {{lat: number, lon: number}}
+     */
+    Coordinate.prototype.toArray = function () {
+        return {
+            lat: this.lat,
+            lon: this.lon
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return Coordinate
+     *
+     * @throws InvalidFormatError
+     */
+    Coordinate.createFromArray = function (array) {
+        if (typeof array.lat == "undefined" ||
+            typeof array.lon == "undefined") {
+            throw InvalidFormatError_1.InvalidFormatError.coordinateFormatNotValid();
+        }
+        return new Coordinate(array.lat, array.lon);
+    };
+    return Coordinate;
+}());
+exports.Coordinate = Coordinate;
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var InvalidFormatError_1 = __webpack_require__(2);
+/**
+ * ItemUUID class
+ */
+var ItemUUID = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param id
+     * @param type
+     */
+    function ItemUUID(id, type) {
+        this.id = id;
+        this.type = type;
+    }
+    /**
+     * Create composed UUID
+     *
+     * @param composedUUID
+     *
+     * @returns {ItemUUID}
+     */
+    ItemUUID.createByComposedUUID = function (composedUUID) {
+        var parts = composedUUID.split("~");
+        if (2 != parts.length) {
+            throw InvalidFormatError_1.InvalidFormatError.composedItemUUIDNotValid();
+        }
+        return new ItemUUID(parts[0], parts[1]);
+    };
+    /**
+     * Return id
+     *
+     * @returns {string}
+     */
+    ItemUUID.prototype.getId = function () {
+        return this.id;
+    };
+    /**
+     * Get type
+     *
+     * @returns {string}
+     */
+    ItemUUID.prototype.getType = function () {
+        return this.type;
+    };
+    /**
+     * To array
+     *
+     * @returns {{id: *, type: *}}
+     */
+    ItemUUID.prototype.toArray = function () {
+        return {
+            id: this.id,
+            type: this.type
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array {{id:string, type:string}}
+     *
+     * @return {ItemUUID}
+     */
+    ItemUUID.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        return new ItemUUID(array.id, array.type);
+    };
+    /**
+     * Compose unique id
+     *
+     * @returns {string}
+     */
+    ItemUUID.prototype.composedUUID = function () {
+        return this.id + "~" + this.type;
+    };
+    return ItemUUID;
+}());
+exports.ItemUUID = ItemUUID;
+
+
+/***/ }),
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1165,12 +3801,12 @@ var preact = {
 
 
 /***/ }),
-/* 4 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(6),
-    getRawTag = __webpack_require__(49),
-    objectToString = __webpack_require__(50);
+var Symbol = __webpack_require__(15),
+    getRawTag = __webpack_require__(119),
+    objectToString = __webpack_require__(120);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -1199,7 +3835,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 5 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /**
@@ -1234,10 +3870,10 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 6 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(0);
+var root = __webpack_require__(4);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -1246,14 +3882,14 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 7 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var listCacheClear = __webpack_require__(76),
-    listCacheDelete = __webpack_require__(77),
-    listCacheGet = __webpack_require__(78),
-    listCacheHas = __webpack_require__(79),
-    listCacheSet = __webpack_require__(80);
+var listCacheClear = __webpack_require__(146),
+    listCacheDelete = __webpack_require__(147),
+    listCacheGet = __webpack_require__(148),
+    listCacheHas = __webpack_require__(149),
+    listCacheSet = __webpack_require__(150);
 
 /**
  * Creates an list cache object.
@@ -1284,10 +3920,10 @@ module.exports = ListCache;
 
 
 /***/ }),
-/* 8 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var eq = __webpack_require__(31);
+var eq = __webpack_require__(71);
 
 /**
  * Gets the index at which the `key` is found in `array` of key-value pairs.
@@ -1311,10 +3947,10 @@ module.exports = assocIndexOf;
 
 
 /***/ }),
-/* 9 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(2);
+var getNative = __webpack_require__(8);
 
 /* Built-in method references that are verified to be native. */
 var nativeCreate = getNative(Object, 'create');
@@ -1323,10 +3959,10 @@ module.exports = nativeCreate;
 
 
 /***/ }),
-/* 10 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isKeyable = __webpack_require__(94);
+var isKeyable = __webpack_require__(164);
 
 /**
  * Gets the data for `map`.
@@ -1347,10 +3983,10 @@ module.exports = getMapData;
 
 
 /***/ }),
-/* 11 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isSymbol = __webpack_require__(20);
+var isSymbol = __webpack_require__(36);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;
@@ -1374,15 +4010,1088 @@ module.exports = toKey;
 
 
 /***/ }),
-/* 12 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var t=__webpack_require__(3);function n(t,n){"function"==typeof t&&(t=t(n));var r={};for(var e in t)r[e]=n.action(t[e]);return r}function r(t){return"string"==typeof t&&(t=t.split(/\s*,\s*/)),function(n){for(var r={},e=0;e<t.length;e++)r[t[e]]=n[t[e]];return r}}function e(t,n){for(var r in n)t[r]=n[r];return t}function o(o,i){return"function"!=typeof o&&(o=r(o||[])),function(r){function u(u,c){var f=this,s=c.store,p=o(s?s.getState():{},u),a=i?n(i,s):{store:s},l=function(){var t=o(s?s.getState():{},f.props);for(var n in t)if(t[n]!==p[n])return p=t,f.setState(null);for(var r in p)if(!(r in t))return p=t,f.setState(null)};this.componentDidMount=function(){l(),s.subscribe(l)},this.componentWillUnmount=function(){s.unsubscribe(l)},this.render=function(n){return t.h(r,e(e(e({},a),n),p))}}return(u.prototype=new t.Component).constructor=u}}function i(t){this.getChildContext=function(){return{store:t.store}}}i.prototype.render=function(t){return t.children[0]},exports.connect=o,exports.Provider=i;
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var Apisearch_1 = __webpack_require__(79);
+exports["default"] = Apisearch_1["default"];
+tslib_1.__exportStar(__webpack_require__(102), exports);
+tslib_1.__exportStar(__webpack_require__(60), exports);
+tslib_1.__exportStar(__webpack_require__(51), exports);
+tslib_1.__exportStar(__webpack_require__(3), exports);
+tslib_1.__exportStar(__webpack_require__(103), exports);
+tslib_1.__exportStar(__webpack_require__(104), exports);
+tslib_1.__exportStar(__webpack_require__(2), exports);
+tslib_1.__exportStar(__webpack_require__(52), exports);
+tslib_1.__exportStar(__webpack_require__(53), exports);
+tslib_1.__exportStar(__webpack_require__(54), exports);
+tslib_1.__exportStar(__webpack_require__(105), exports);
+tslib_1.__exportStar(__webpack_require__(106), exports);
+tslib_1.__exportStar(__webpack_require__(37), exports);
+tslib_1.__exportStar(__webpack_require__(43), exports);
+tslib_1.__exportStar(__webpack_require__(107), exports);
+tslib_1.__exportStar(__webpack_require__(23), exports);
+tslib_1.__exportStar(__webpack_require__(45), exports);
+tslib_1.__exportStar(__webpack_require__(44), exports);
+tslib_1.__exportStar(__webpack_require__(108), exports);
+tslib_1.__exportStar(__webpack_require__(10), exports);
+tslib_1.__exportStar(__webpack_require__(7), exports);
+tslib_1.__exportStar(__webpack_require__(11), exports);
+tslib_1.__exportStar(__webpack_require__(57), exports);
+tslib_1.__exportStar(__webpack_require__(46), exports);
+tslib_1.__exportStar(__webpack_require__(24), exports);
+tslib_1.__exportStar(__webpack_require__(6), exports);
+tslib_1.__exportStar(__webpack_require__(9), exports);
+tslib_1.__exportStar(__webpack_require__(109), exports);
+tslib_1.__exportStar(__webpack_require__(47), exports);
+tslib_1.__exportStar(__webpack_require__(48), exports);
+tslib_1.__exportStar(__webpack_require__(25), exports);
+tslib_1.__exportStar(__webpack_require__(50), exports);
+tslib_1.__exportStar(__webpack_require__(58), exports);
+tslib_1.__exportStar(__webpack_require__(55), exports);
+tslib_1.__exportStar(__webpack_require__(27), exports);
+tslib_1.__exportStar(__webpack_require__(56), exports);
+tslib_1.__exportStar(__webpack_require__(26), exports);
+tslib_1.__exportStar(__webpack_require__(59), exports);
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(1);
+var normalizeHeaderName = __webpack_require__(85);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(39);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(39);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  /**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(84)))
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+/**
+ * Response
+ */
+var Response = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param code
+     * @param body
+     */
+    function Response(code, body) {
+        this.code = code;
+        this.body = body;
+    }
+    /**
+     * Get code
+     *
+     * @return {number}
+     */
+    Response.prototype.getCode = function () {
+        return this.code;
+    };
+    /**
+     * Get body
+     *
+     * @return {any}
+     */
+    Response.prototype.getBody = function () {
+        return this.body;
+    };
+    return Response;
+}());
+exports.Response = Response;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var Filter_1 = __webpack_require__(6);
+/**
+ * Aggregation constants
+ */
+exports.AGGREGATION_SORT_BY_COUNT_ASC = ["_count", "asc"];
+exports.AGGREGATION_SORT_BY_COUNT_DESC = ["_count", "desc"];
+exports.AGGREGATION_SORT_BY_NAME_ASC = ["_term", "asc"];
+exports.AGGREGATION_SORT_BY_NAME_DESC = ["_term", "desc"];
+exports.AGGREGATION_NO_LIMIT = 0;
+/**
+ * Aggregation class
+ */
+var Aggregation = /** @class */ (function () {
+    /**
+     * Construct
+     *
+     * @param name
+     * @param field
+     * @param applicationType
+     * @param filterType
+     * @param subgroup
+     * @param sort
+     * @param limit
+     */
+    function Aggregation(name, field, applicationType, filterType, subgroup, sort, limit) {
+        this.subgroup = [];
+        this.name = name;
+        this.field = field;
+        this.applicationType = applicationType;
+        this.filterType = filterType;
+        this.subgroup = subgroup;
+        this.sort = sort;
+        this.limit = limit;
+    }
+    /**
+     * Get name
+     *
+     * @returns {string}
+     */
+    Aggregation.prototype.getName = function () {
+        return this.name;
+    };
+    /**
+     * Get field
+     *
+     * @returns {string}
+     */
+    Aggregation.prototype.getField = function () {
+        return this.field;
+    };
+    /**
+     * getApplicationType
+     *
+     * @returns {number}
+     */
+    Aggregation.prototype.getApplicationType = function () {
+        return this.applicationType;
+    };
+    /**
+     * Get filter type
+     *
+     * @return {string}
+     */
+    Aggregation.prototype.getFilterType = function () {
+        return this.filterType;
+    };
+    /**
+     * Get subgroup
+     *
+     * @return {[]}
+     */
+    Aggregation.prototype.getSubgroup = function () {
+        return this.subgroup;
+    };
+    /**
+     * Get sort
+     *
+     * @return {[]}
+     */
+    Aggregation.prototype.getSort = function () {
+        return this.sort;
+    };
+    /**
+     * Get limit
+     *
+     * @return {number}
+     */
+    Aggregation.prototype.getLimit = function () {
+        return this.limit;
+    };
+    /**
+     * Create
+     *
+     * @param name
+     * @param field
+     * @param applicationType
+     * @param filterType
+     * @param subgroup
+     * @param sort
+     * @param limit
+     *
+     * @returns {Aggregation}
+     */
+    Aggregation.create = function (name, field, applicationType, filterType, subgroup, sort, limit) {
+        if (subgroup === void 0) { subgroup = []; }
+        if (sort === void 0) { sort = exports.AGGREGATION_SORT_BY_COUNT_DESC; }
+        if (limit === void 0) { limit = exports.AGGREGATION_NO_LIMIT; }
+        return new Aggregation(name, field, applicationType, filterType, subgroup, sort, limit);
+    };
+    /**
+     * To array
+     *
+     * @returns {Array}
+     */
+    Aggregation.prototype.toArray = function () {
+        var aggregationAsArray = {
+            name: this.name
+        };
+        if (this.field != "uuid.type") {
+            aggregationAsArray.field = this.field;
+        }
+        if (this.applicationType != Filter_1.FILTER_AT_LEAST_ONE) {
+            aggregationAsArray.application_type = this.applicationType;
+        }
+        if (this.filterType != Filter_1.FILTER_TYPE_FIELD) {
+            aggregationAsArray.filter_type = this.filterType;
+        }
+        if (this.subgroup.length > 0) {
+            aggregationAsArray.subgroup = this.subgroup;
+        }
+        if (JSON.stringify(this.sort) !== JSON.stringify(exports.AGGREGATION_SORT_BY_COUNT_DESC)) {
+            aggregationAsArray.sort = this.sort;
+        }
+        if (this.limit != exports.AGGREGATION_NO_LIMIT) {
+            aggregationAsArray.limit = this.limit;
+        }
+        return aggregationAsArray;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @returns {Aggregation}
+     */
+    Aggregation.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        if (typeof array.field == "undefined") {
+            array.field = "uuid.type";
+        }
+        if (typeof array.application_type == "undefined") {
+            array.application_type = Filter_1.FILTER_AT_LEAST_ONE;
+        }
+        if (typeof array.filter_type == "undefined") {
+            array.filter_type = Filter_1.FILTER_TYPE_FIELD;
+        }
+        if (typeof array.subgroup == "undefined") {
+            array.subgroup = [];
+        }
+        if (typeof array.sort == "undefined") {
+            array.sort = exports.AGGREGATION_SORT_BY_COUNT_DESC;
+        }
+        if (typeof array.limit == "undefined") {
+            array.limit = exports.AGGREGATION_NO_LIMIT;
+        }
+        return Aggregation.create(array.name, array.field, array.application_type, array.filter_type, array.subgroup, array.sort, array.limit);
+    };
+    return Aggregation;
+}());
+exports.Aggregation = Aggregation;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var Item_1 = __webpack_require__(7);
+/**
+ export * Sort by constants
+ */
+exports.SORT_BY_TYPE_FIELD = 'field';
+exports.SORT_BY_TYPE_NESTED = 'nested';
+exports.SORT_BY_TYPE_SCORE = 'score';
+exports.SORT_BY_TYPE_DISTANCE = 'distance';
+exports.SORT_BY_TYPE_FUNCTION = 'function';
+exports.SORT_BY_TYPE_RANDOM = 'random';
+exports.SORT_BY_ASC = "asc";
+exports.SORT_BY_DESC = "desc";
+exports.SORT_BY_MODE_AVG = "avg";
+exports.SORT_BY_MODE_SUM = "sum";
+exports.SORT_BY_MODE_MIN = "min";
+exports.SORT_BY_MODE_MAX = "max";
+exports.SORT_BY_MODE_MEDIAN = "median";
+exports.SORT_BY_SCORE = {
+    type: exports.SORT_BY_TYPE_SCORE
+};
+exports.SORT_BY_RANDOM = {
+    type: exports.SORT_BY_TYPE_RANDOM
+};
+exports.SORT_BY_AL_TUN_TUN = exports.SORT_BY_RANDOM;
+exports.SORT_BY_ID_ASC = {
+    field: "uuid.id",
+    order: exports.SORT_BY_ASC
+};
+exports.SORT_BY_ID_DESC = {
+    field: "uuid.id",
+    order: exports.SORT_BY_DESC
+};
+exports.SORT_BY_TYPE_ASC = {
+    field: "uuid.type",
+    order: exports.SORT_BY_ASC
+};
+exports.SORT_BY_TYPE_DESC = {
+    field: "uuid.type",
+    order: exports.SORT_BY_DESC
+};
+exports.SORT_BY_LOCATION_KM_ASC = {
+    type: exports.SORT_BY_TYPE_DISTANCE,
+    unit: "km"
+};
+exports.SORT_BY_LOCATION_MI_ASC = {
+    type: exports.SORT_BY_TYPE_DISTANCE,
+    unit: "mi"
+};
+var Coordinate_1 = __webpack_require__(10);
+var Filter_1 = __webpack_require__(6);
+/**
+ * ScoreStrategy
+ */
+var SortBy = /** @class */ (function () {
+    function SortBy() {
+        this.sortsBy = [];
+    }
+    /**
+     * Create
+     *
+     * @return {SortBy}
+     */
+    SortBy.create = function () {
+        return new SortBy;
+    };
+    /**
+     * Sort By fields values
+     *
+     * @param shortSortByElements
+     *
+     * @return {SortBy}
+     */
+    SortBy.byFieldsValues = function (shortSortByElements) {
+        var sortBy = SortBy.create();
+        for (var key in shortSortByElements) {
+            sortBy.byFieldValue(key, shortSortByElements[key]);
+        }
+        return sortBy;
+    };
+    /**
+     * All
+     *
+     * @return {Array}
+     */
+    SortBy.prototype.all = function () {
+        return this.sortsBy.length > 0
+            ? this.sortsBy
+            : [exports.SORT_BY_SCORE];
+    };
+    /**
+     * Sort by value
+     *
+     * @param value
+     *
+     * @return {SortBy}
+     */
+    SortBy.prototype.byValue = function (value) {
+        if (exports.SORT_BY_SCORE != value &&
+            exports.SORT_BY_RANDOM != value) {
+            if (typeof value.type == "undefined") {
+                value.type = exports.SORT_BY_TYPE_FIELD;
+            }
+        }
+        if (exports.SORT_BY_SCORE != value) {
+            this.sortsBy.push(value);
+        }
+        return this;
+    };
+    /**
+     * Sort by field value
+     *
+     * @param field
+     * @param order
+     *
+     * @return {SortBy}
+     */
+    SortBy.prototype.byFieldValue = function (field, order) {
+        this.sortsBy.push({
+            type: exports.SORT_BY_TYPE_FIELD,
+            field: Item_1.Item.getPathByField(field),
+            order: order
+        });
+        return this;
+    };
+    /**
+     * Sort by nested field
+     *
+     * @param field
+     * @param order
+     * @param mode
+     *
+     * @return {SortBy}
+     */
+    SortBy.prototype.byNestedField = function (field, order, mode) {
+        if (mode === void 0) { mode = exports.SORT_BY_MODE_AVG; }
+        this.sortsBy.push({
+            type: exports.SORT_BY_TYPE_NESTED,
+            mode: mode,
+            field: 'indexed_metadata.' + field,
+            order: order
+        });
+        return this;
+    };
+    /**
+     * Sort by nested field and filter
+     *
+     * @param field
+     * @param order
+     * @param filter
+     * @param mode
+     *
+     * @return {SortBy}
+     */
+    SortBy.prototype.byNestedFieldAndFilter = function (field, order, filter, mode) {
+        if (mode === void 0) { mode = exports.SORT_BY_MODE_AVG; }
+        var fieldPath = Item_1.Item.getPathByField(filter.getField());
+        var filterAsArray = filter.toArray();
+        filterAsArray.field = fieldPath;
+        filter = Filter_1.Filter.createFromArray(filterAsArray);
+        this.sortsBy.push({
+            type: exports.SORT_BY_TYPE_NESTED,
+            mode: mode,
+            filter: filter,
+            field: 'indexed_metadata.' + field,
+            order: order
+        });
+        return this;
+    };
+    /**
+     * Sort by function
+     *
+     * @param func
+     * @param order
+     *
+     * @return {SortBy}
+     */
+    SortBy.prototype.byFunction = function (func, order) {
+        this.sortsBy.push({
+            type: exports.SORT_BY_TYPE_FUNCTION,
+            "function": func,
+            order: order
+        });
+        return this;
+    };
+    /**
+     * Is sorted by geo distance
+     *
+     * @return {boolean}
+     */
+    SortBy.prototype.isSortedByGeoDistance = function () {
+        for (var i in this.sortsBy) {
+            if (this.sortsBy[i].type === exports.SORT_BY_TYPE_DISTANCE) {
+                return true;
+            }
+        }
+        return false;
+    };
+    /**
+     * Set coordinate
+     *
+     * @param coordinate
+     *
+     * @return {SortBy}
+     */
+    SortBy.prototype.setCoordinate = function (coordinate) {
+        for (var i in this.sortsBy) {
+            if (this.sortsBy[i].type === exports.SORT_BY_TYPE_DISTANCE) {
+                this.sortsBy[i].coordinate = coordinate;
+            }
+        }
+        return this;
+    };
+    /**
+     * Has random sort
+     *
+     * @return {boolean}
+     */
+    SortBy.prototype.hasRandomSort = function () {
+        for (var i in this.sortsBy) {
+            if (this.sortsBy[i].type === exports.SORT_BY_TYPE_RANDOM) {
+                return true;
+            }
+        }
+        return false;
+    };
+    /**
+     * To array
+     *
+     * @return {[]}
+     */
+    SortBy.prototype.toArray = function () {
+        var copySortBy = this.copy();
+        var sortsByAsArray = copySortBy.sortsBy;
+        for (var i in sortsByAsArray) {
+            if (typeof sortsByAsArray[i].filter === typeof {} &&
+                sortsByAsArray[i].filter != null) {
+                sortsByAsArray[i].filter = sortsByAsArray[i].filter.toArray();
+            }
+            if (sortsByAsArray[i].coordinate !== null &&
+                sortsByAsArray[i].coordinate instanceof Coordinate_1.Coordinate) {
+                sortsByAsArray[i].coordinate = sortsByAsArray[i].coordinate.toArray();
+            }
+        }
+        return sortsByAsArray;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @returns {SortBy}
+     */
+    SortBy.createFromArray = function (array) {
+        var innerArray = JSON.parse(JSON.stringify(array));
+        var sortBy = SortBy.create();
+        for (var i in innerArray) {
+            var element = innerArray[i];
+            if (typeof element.type == "undefined") {
+                element.type = exports.SORT_BY_TYPE_FIELD;
+            }
+            if (typeof element.filter === typeof {} &&
+                element.filter != null) {
+                element.filter = Filter_1.Filter.createFromArray(element.filter);
+            }
+            if (element.coordinate != null &&
+                typeof element.coordinate === typeof {}) {
+                element.coordinate = Coordinate_1.Coordinate.createFromArray(element.coordinate);
+            }
+            sortBy.sortsBy.push(element);
+        }
+        return sortBy;
+    };
+    /**
+     * Make a copy of this
+     *
+     * @returns {SortBy}
+     */
+    SortBy.prototype.copy = function () {
+        var newSortBy = SortBy.create();
+        for (var i in this.sortsBy) {
+            var sortBy = this.sortsBy[i];
+            var sortByAsArray = JSON.parse(JSON.stringify(sortBy));
+            if (typeof sortBy.filter === typeof {} &&
+                sortBy.filter != null) {
+                sortByAsArray.filter = Filter_1.Filter.createFromArray(sortBy.filter.toArray());
+            }
+            if (sortBy.coordinate != null &&
+                typeof sortBy.coordinate == typeof {}) {
+                sortByAsArray.coordinate = Coordinate_1.Coordinate.createFromArray(sortBy.coordinate.toArray());
+            }
+            newSortBy.sortsBy.push(sortByAsArray);
+        }
+        return newSortBy;
+    };
+    return SortBy;
+}());
+exports.SortBy = SortBy;
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var Item_1 = __webpack_require__(7);
+var ResultAggregations_1 = __webpack_require__(27);
+/**
+ * Result class
+ */
+var Result = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param queryUUID
+     * @param totalItems
+     * @param totalHits
+     */
+    function Result(queryUUID, totalItems, totalHits) {
+        this.items = [];
+        this.suggests = [];
+        this.subresults = {};
+        this.queryUUID = queryUUID;
+        this.totalItems = totalItems;
+        this.totalHits = totalHits;
+    }
+    /**
+     * Create
+     *
+     * @param queryUUID
+     * @param totalItems
+     * @param totalHits
+     * @param aggregations
+     * @param suggests
+     * @param items
+     *
+     * @returns {Result}
+     */
+    Result.create = function (queryUUID, totalItems, totalHits, aggregations, suggests, items) {
+        var result = new Result(queryUUID, totalItems, totalHits);
+        result.aggregations = aggregations;
+        result.suggests = suggests;
+        result.items = items;
+        return result;
+    };
+    /**
+     * Create multi results
+     *
+     * @param subresults
+     *
+     * @returns {Result}
+     */
+    Result.createMultiresults = function (subresults) {
+        var result = new Result('', 0, 0);
+        result.subresults = subresults;
+        return result;
+    };
+    /**
+     * Add item
+     *
+     * @param item
+     */
+    Result.prototype.addItem = function (item) {
+        this.items.push(item);
+    };
+    /**
+     * Get items
+     *
+     * @return {Item[]}
+     */
+    Result.prototype.getItems = function () {
+        return this.items;
+    };
+    /**
+     * Get items grouped by types
+     *
+     * @return {any[]}
+     */
+    Result.prototype.getItemsGroupedByTypes = function () {
+        if (this.itemsGroupedByTypeCache instanceof Object &&
+            Object.keys(this.itemsGroupedByTypeCache).length > 0) {
+            return this.itemsGroupedByTypeCache;
+        }
+        var itemsGroupedByTypes = {};
+        for (var i in this.items) {
+            var item = this.items[i];
+            if (!(itemsGroupedByTypes[item.getType()] instanceof Array)) {
+                itemsGroupedByTypes[item.getType()] = [];
+            }
+            itemsGroupedByTypes[item.getType()].push(item);
+        }
+        this.itemsGroupedByTypeCache = itemsGroupedByTypes;
+        return itemsGroupedByTypes;
+    };
+    /**
+     * Get items by type
+     *
+     * @param type
+     *
+     * @return {Array}
+     */
+    Result.prototype.getItemsByType = function (type) {
+        var itemsGroupedByTypes = this.getItemsGroupedByTypes();
+        return itemsGroupedByTypes[type] == null
+            ? []
+            : itemsGroupedByTypes[type];
+    };
+    /**
+     * Get items by types
+     *
+     * @param types
+     */
+    Result.prototype.getItemsByTypes = function (types) {
+        return this.items.filter(function (item) { return types.indexOf(item.getType()) >= 0; });
+    };
+    /**
+     * Get first item
+     *
+     * @return {Item}
+     */
+    Result.prototype.getFirstItem = function () {
+        return this.items.length > 0
+            ? this.items[0]
+            : null;
+    };
+    /**
+     * Set aggregations
+     *
+     * @param aggregations
+     */
+    Result.prototype.setAggregations = function (aggregations) {
+        this.aggregations = aggregations;
+    };
+    /**
+     * Get aggregations
+     *
+     * @return {ResultAggregations}
+     */
+    Result.prototype.getAggregations = function () {
+        return this.aggregations instanceof ResultAggregations_1.ResultAggregations
+            ? this.aggregations
+            : null;
+    };
+    /**
+     * Get aggregation
+     *
+     * @param name
+     *
+     * @return {null}
+     */
+    Result.prototype.getAggregation = function (name) {
+        return this.aggregations == null
+            ? null
+            : this.aggregations.getAggregation(name);
+    };
+    /**
+     * Has no empty aggregation
+     *
+     * @param name
+     *
+     * @return {boolean}
+     */
+    Result.prototype.hasNotEmptyAggregation = function (name) {
+        return this.aggregations == null
+            ? false
+            : this.aggregations.hasNotEmptyAggregation(name);
+    };
+    /**
+     * Add suggest
+     *
+     * @param suggest
+     */
+    Result.prototype.addSuggest = function (suggest) {
+        this.suggests.push(suggest);
+    };
+    /**
+     * Get suggests
+     *
+     * @return {string[]}
+     */
+    Result.prototype.getSuggests = function () {
+        return this.suggests;
+    };
+    /**
+     * Get query uuid
+     *
+     * @return {string}
+     */
+    Result.prototype.getQueryUUID = function () {
+        return this.queryUUID;
+    };
+    /**
+     * Get total elements
+     *
+     * @return {number}
+     */
+    Result.prototype.getTotalItems = function () {
+        return this.totalItems;
+    };
+    /**
+     * Get total hits
+     *
+     * @return {number}
+     */
+    Result.prototype.getTotalHits = function () {
+        return this.totalHits;
+    };
+    /**
+     * Get subresults
+     *
+     * @return Object
+     */
+    Result.prototype.getSubresults = function () {
+        return this.subresults;
+    };
+    /**
+     * to array
+     *
+     * @return {{query: any, total_items: number, total_hits: number, items:any[], aggregations: any, suggests: string[]}}
+     */
+    Result.prototype.toArray = function () {
+        var array = {
+            query_uuid: this.queryUUID,
+            total_items: this.totalItems,
+            total_hits: this.totalHits,
+            items: this.items.map(function (item) { return item.toArray(); }),
+            aggregations: this.aggregations == null
+                ? null
+                : this.aggregations.toArray(),
+            suggests: this.suggests
+        };
+        if (this.subresults instanceof Object &&
+            Object.keys(this.subresults).length) {
+            array.subresults = {};
+            for (var i in this.subresults) {
+                var subresult = this.subresults[i];
+                array.subresults[i] = subresult.toArray();
+            }
+        }
+        return array;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return {Result}
+     */
+    Result.createFromArray = function (array) {
+        var result = Result.create(array.query_uuid
+            ? array.query_uuid
+            : '', array.total_items
+            ? array.total_items
+            : 0, array.total_hits
+            ? array.total_hits
+            : 0, array.aggregations instanceof Object
+            ? ResultAggregations_1.ResultAggregations.createFromArray(array.aggregations)
+            : null, array.suggests
+            ? array.suggests
+            : null, array.items instanceof Array
+            ? array.items.map(function (itemAsArray) { return Item_1.Item.createFromArray(itemAsArray); })
+            : []);
+        /**
+         * Subqueries
+         */
+        var subresultsAsArray = typeof array.subresults === typeof {}
+            ? array.subresults
+            : {};
+        for (var i in subresultsAsArray) {
+            result.subresults[i] = Result.createFromArray(subresultsAsArray[i]);
+        }
+        return result;
+    };
+    return Result;
+}());
+exports.Result = Result;
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var ResultAggregation_1 = __webpack_require__(55);
+/**
+ * ResultAggregation class
+ */
+var ResultAggregations = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param totalElements
+     */
+    function ResultAggregations(totalElements) {
+        this.aggregations = {};
+        this.totalElements = totalElements;
+    }
+    /**
+     * Add aggregation
+     *
+     * @param name
+     * @param aggregation
+     */
+    ResultAggregations.prototype.addAggregation = function (name, aggregation) {
+        this.aggregations[name] = aggregation;
+    };
+    /**
+     * Get aggregations
+     *
+     * @returns {{}}
+     */
+    ResultAggregations.prototype.getAggregations = function () {
+        return this.aggregations;
+    };
+    /**
+     * Get aggregation
+     *
+     * @param name
+     *
+     * @returns {Aggregation|null}
+     */
+    ResultAggregations.prototype.getAggregation = function (name) {
+        return this.aggregations[name] instanceof ResultAggregation_1.ResultAggregation
+            ? this.aggregations[name]
+            : null;
+    };
+    /**
+     * Has not empty aggregation
+     *
+     * @param name
+     *
+     * @returns {boolean}
+     */
+    ResultAggregations.prototype.hasNotEmptyAggregation = function (name) {
+        var aggregation = this.getAggregation(name);
+        return (aggregation instanceof ResultAggregation_1.ResultAggregation) &&
+            (!aggregation.isEmpty());
+    };
+    /**
+     * Get total elements
+     *
+     * @return {number}
+     */
+    ResultAggregations.prototype.getTotalElements = function () {
+        return this.totalElements;
+    };
+    /**
+     * To array
+     *
+     * @return {{total_elements?: number, aggregations?: {}}}
+     */
+    ResultAggregations.prototype.toArray = function () {
+        var aggregationCollection = {};
+        for (var i in this.aggregations) {
+            aggregationCollection[i] = this.aggregations[i].toArray();
+        }
+        var array = {};
+        if (this.totalElements > 0) {
+            array.total_elements = this.totalElements;
+        }
+        if (Object.keys(aggregationCollection).length > 0) {
+            array.aggregations = aggregationCollection;
+        }
+        return array;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return {ResultAggregations}
+     */
+    ResultAggregations.createFromArray = function (array) {
+        var aggregations = new ResultAggregations(typeof array.total_elements === "number"
+            ? array.total_elements
+            : 0);
+        if (typeof array.aggregations === typeof {}) {
+            for (var i in array.aggregations) {
+                aggregations.addAggregation(i, ResultAggregation_1.ResultAggregation.createFromArray(array.aggregations[i]));
+            }
+        }
+        return aggregations;
+    };
+    return ResultAggregations;
+}());
+exports.ResultAggregations = ResultAggregations;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var t=__webpack_require__(12);function n(t,n){"function"==typeof t&&(t=t(n));var r={};for(var e in t)r[e]=n.action(t[e]);return r}function r(t){return"string"==typeof t&&(t=t.split(/\s*,\s*/)),function(n){for(var r={},e=0;e<t.length;e++)r[t[e]]=n[t[e]];return r}}function e(t,n){for(var r in n)t[r]=n[r];return t}function o(o,i){return"function"!=typeof o&&(o=r(o||[])),function(r){function u(u,c){var f=this,s=c.store,p=o(s?s.getState():{},u),a=i?n(i,s):{store:s},l=function(){var t=o(s?s.getState():{},f.props);for(var n in t)if(t[n]!==p[n])return p=t,f.setState(null);for(var r in p)if(!(r in t))return p=t,f.setState(null)};this.componentDidMount=function(){l(),s.subscribe(l)},this.componentWillUnmount=function(){s.unsubscribe(l)},this.render=function(n){return t.h(r,e(e(e({},a),n),p))}}return(u.prototype=new t.Component).constructor=u}}function i(t){this.getChildContext=function(){return{store:t.store}}}i.prototype.render=function(t){return t.children[0]},exports.connect=o,exports.Provider=i;
 //# sourceMappingURL=preact.js.map
 
 
 /***/ }),
-/* 13 */
+/* 29 */
 /***/ (function(module, exports) {
 
 /**
@@ -1419,12 +5128,12 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 14 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(61),
-    baseKeys = __webpack_require__(68),
-    isArrayLike = __webpack_require__(29);
+var arrayLikeKeys = __webpack_require__(131),
+    baseKeys = __webpack_require__(138),
+    isArrayLike = __webpack_require__(69);
 
 /**
  * Creates an array of the own enumerable property names of `object`.
@@ -1462,7 +5171,7 @@ module.exports = keys;
 
 
 /***/ }),
-/* 15 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -1490,7 +5199,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 16 */
+/* 32 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -1531,11 +5240,11 @@ module.exports = isLength;
 
 
 /***/ }),
-/* 17 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(2),
-    root = __webpack_require__(0);
+var getNative = __webpack_require__(8),
+    root = __webpack_require__(4);
 
 /* Built-in method references that are verified to be native. */
 var Map = getNative(root, 'Map');
@@ -1544,14 +5253,14 @@ module.exports = Map;
 
 
 /***/ }),
-/* 18 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mapCacheClear = __webpack_require__(86),
-    mapCacheDelete = __webpack_require__(93),
-    mapCacheGet = __webpack_require__(95),
-    mapCacheHas = __webpack_require__(96),
-    mapCacheSet = __webpack_require__(97);
+var mapCacheClear = __webpack_require__(156),
+    mapCacheDelete = __webpack_require__(163),
+    mapCacheGet = __webpack_require__(165),
+    mapCacheHas = __webpack_require__(166),
+    mapCacheSet = __webpack_require__(167);
 
 /**
  * Creates a map cache object to store key-value pairs.
@@ -1582,11 +5291,11 @@ module.exports = MapCache;
 
 
 /***/ }),
-/* 19 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArray = __webpack_require__(1),
-    isSymbol = __webpack_require__(20);
+var isArray = __webpack_require__(5),
+    isSymbol = __webpack_require__(36);
 
 /** Used to match property names within property paths. */
 var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
@@ -1617,11 +5326,11 @@ module.exports = isKey;
 
 
 /***/ }),
-/* 20 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
-    isObjectLike = __webpack_require__(5);
+var baseGetTag = __webpack_require__(13),
+    isObjectLike = __webpack_require__(14);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -1652,11 +5361,2554 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 21 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
-    isObject = __webpack_require__(13);
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var axios_1 = __webpack_require__(80);
+var __1 = __webpack_require__(21);
+var Client_1 = __webpack_require__(43);
+var Response_1 = __webpack_require__(23);
+/**
+ * AxiosClient
+ */
+var AxiosClient = /** @class */ (function (_super) {
+    tslib_1.__extends(AxiosClient, _super);
+    /**
+     * Constructor
+     *
+     * @param host
+     * @param version
+     * @param timeout
+     * @param retryMap
+     * @param overrideQueries
+     */
+    function AxiosClient(host, version, timeout, retryMap, overrideQueries) {
+        var _this = _super.call(this, version, retryMap) || this;
+        _this.host = host;
+        _this.timeout = timeout;
+        _this.overrideQueries = overrideQueries;
+        _this.cancelToken = {};
+        return _this;
+    }
+    /**
+     * Get
+     *
+     * @param url
+     * @param method
+     * @param credentials
+     * @param parameters
+     * @param data
+     *
+     * @return {Promise<Response>}
+     */
+    AxiosClient.prototype.get = function (url, method, credentials, parameters, data) {
+        if (parameters === void 0) { parameters = {}; }
+        if (data === void 0) { data = {}; }
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var headers, axiosRequestConfig, sendRequest, retry, axiosResponse, error_1, response;
+            var _this = this;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        url = url.replace(/^\/*|\/*$/g, "");
+                        url = "/" + (this.version + "/" + url).replace(/^\/*|\/*$/g, "");
+                        method = method.toLowerCase();
+                        if ("get" === method &&
+                            this.overrideQueries) {
+                            this.abort(url);
+                        }
+                        headers = "get" === method
+                            ? {}
+                            : {
+                                "Content-Encoding": "gzip",
+                                "Content-Type": "application/json"
+                            };
+                        axiosRequestConfig = {
+                            baseURL: this.host.replace(/\/*$/g, ""),
+                            data: data,
+                            headers: headers,
+                            method: method,
+                            timeout: this.timeout,
+                            transformRequest: [function (rawData) { return JSON.stringify(rawData); }],
+                            url: url + "?" + Client_1.Client.objectToUrlParameters(tslib_1.__assign({}, parameters, {
+                                token: credentials.token
+                            }))
+                        };
+                        if (typeof this.cancelToken[url] !== "undefined") {
+                            axiosRequestConfig.cancelToken = this.cancelToken[url].token;
+                        }
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        sendRequest = function () { return tslib_1.__awaiter(_this, void 0, void 0, function () { return tslib_1.__generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, axios_1["default"].request(axiosRequestConfig)];
+                                case 1: return [2 /*return*/, _a.sent()];
+                            }
+                        }); }); };
+                        retry = this.retryMap.getRetry(axiosRequestConfig.url, axiosRequestConfig.method);
+                        return [4 /*yield*/, this.tryRequest(sendRequest, retry)];
+                    case 2:
+                        axiosResponse = _a.sent();
+                        return [2 /*return*/, new Response_1.Response(axiosResponse.status, axiosResponse.data)];
+                    case 3:
+                        error_1 = _a.sent();
+                        response = void 0;
+                        if (error_1.response) {
+                            response = new Response_1.Response(error_1.response.status, error_1.response.data);
+                        }
+                        else {
+                            response = new Response_1.Response(__1.ConnectionError.getTransportableHTTPError(), {
+                                message: "Connection failed or timed out"
+                            });
+                        }
+                        throw response;
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Abort current request
+     * And regenerate the cancellation token
+     *
+     * @param url
+     */
+    AxiosClient.prototype.abort = function (url) {
+        if (typeof this.cancelToken[url] !== "undefined") {
+            this.cancelToken[url].cancel();
+        }
+        this.generateCancelToken(url);
+    };
+    /**
+     * Generate a new cancellation token for a query
+     *
+     * @param url
+     */
+    AxiosClient.prototype.generateCancelToken = function (url) {
+        this.cancelToken[url] = axios_1["default"].CancelToken.source();
+    };
+    /**
+     * Performs the request and maybe retries in case of failure
+     *
+     * @param sendRequest The function that, when called, will perform the HTTP request
+     * @param retry       If it's an instance of Retry and the request fails it will retry the request
+     *
+     * @return {Promise<AxiosResponse>}
+     */
+    AxiosClient.prototype.tryRequest = function (sendRequest, retry) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var retries, millisecondsBetweenRetries, error_2;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        retries = 0;
+                        millisecondsBetweenRetries = 0;
+                        if (retry instanceof __1.Retry) {
+                            retries = retry.getRetries();
+                            millisecondsBetweenRetries = retry.getMicrosecondsBetweenRetries() / 1000;
+                        }
+                        _a.label = 1;
+                    case 1:
+                        if (false) return [3 /*break*/, 8];
+                        _a.label = 2;
+                    case 2:
+                        _a.trys.push([2, 4, , 7]);
+                        return [4 /*yield*/, sendRequest()];
+                    case 3: return [2 /*return*/, _a.sent()];
+                    case 4:
+                        error_2 = _a.sent();
+                        if (retries <= 0) {
+                            throw error_2;
+                        }
+                        retries -= 1;
+                        if (!(millisecondsBetweenRetries > 0)) return [3 /*break*/, 6];
+                        return [4 /*yield*/, new Promise(function (resolve) { return setTimeout(resolve, millisecondsBetweenRetries); })];
+                    case 5:
+                        _a.sent();
+                        _a.label = 6;
+                    case 6: return [3 /*break*/, 7];
+                    case 7: return [3 /*break*/, 1];
+                    case 8: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return AxiosClient;
+}(Client_1.Client));
+exports.AxiosClient = AxiosClient;
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(1);
+var settle = __webpack_require__(86);
+var buildURL = __webpack_require__(88);
+var parseHeaders = __webpack_require__(89);
+var isURLSameOrigin = __webpack_require__(90);
+var createError = __webpack_require__(40);
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request.onreadystatechange = function handleLoad() {
+      if (!request || request.readyState !== 4) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        status: request.status,
+        statusText: request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(91);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(87);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+/**
+ * Client
+ */
+var Client = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param version
+     * @param retryMap
+     */
+    function Client(version, retryMap) {
+        this.retryMap = retryMap;
+        this.version = version.replace(/^\/*|\/*$/g, "");
+    }
+    /**
+     * Build an url parameters array by an object
+     *
+     * @param params
+     *
+     * @returns {string}
+     */
+    Client.objectToUrlParameters = function (params) {
+        var builtParams = [];
+        for (var i in params) {
+            builtParams.push(i + "=" + params[i]);
+        }
+        return builtParams.join("&");
+    };
+    return Client;
+}());
+exports.Client = Client;
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var Retry_1 = __webpack_require__(45);
+/**
+ * Http class
+ */
+var RetryMap = /** @class */ (function () {
+    function RetryMap() {
+        this.retries = {};
+    }
+    /**
+     * Create from array
+     */
+    RetryMap.createFromArray = function (array) {
+        var retryMap = new RetryMap();
+        for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
+            var retryConfig = array_1[_i];
+            retryMap.addRetry(Retry_1.Retry.createFromArray(retryConfig));
+        }
+        return retryMap;
+    };
+    /**
+     * Add retry
+     *
+     * @param retry
+     */
+    RetryMap.prototype.addRetry = function (retry) {
+        this.retries[retry.getUrl() + "~~" + retry.getMethod()] = retry;
+    };
+    /**
+     * Get retry
+     *
+     * @param url
+     * @param method
+     *
+     * @returns {Retry}
+     */
+    RetryMap.prototype.getRetry = function (url, method) {
+        if (this.retries[url + "~~" + method] instanceof Retry_1.Retry) {
+            return this.retries[url + "~~" + method];
+        }
+        if (this.retries["*~~" + method] instanceof Retry_1.Retry) {
+            return this.retries["*~~" + method];
+        }
+        if (this.retries[url + "~~*"] instanceof Retry_1.Retry) {
+            return this.retries[url + "~~*"];
+        }
+        if (this.retries["*~~*"] instanceof Retry_1.Retry) {
+            return this.retries["*~~*"];
+        }
+        return null;
+    };
+    return RetryMap;
+}());
+exports.RetryMap = RetryMap;
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+exports.DEFAULT_MICROSECONDS_BETWEEN_RETRIES = 1000;
+/**
+ * Http class
+ */
+var Retry = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param url
+     * @param method
+     * @param retries
+     * @param microsecondsBetweenRetries
+     */
+    function Retry(url, method, retries, microsecondsBetweenRetries) {
+        this.url = url;
+        this.method = method;
+        this.retries = retries;
+        this.microsecondsBetweenRetries = microsecondsBetweenRetries;
+    }
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return {Retry}
+     */
+    Retry.createFromArray = function (array) {
+        return new Retry(array.url ? array.url : "*", array.method ? array.method : "*", array.retries ? array.retries : 0, array.microseconds_between_retries
+            ? array.microseconds_between_retries
+            : exports.DEFAULT_MICROSECONDS_BETWEEN_RETRIES);
+    };
+    /**
+     * Get url
+     *
+     * @return {string}
+     */
+    Retry.prototype.getUrl = function () {
+        return this.url;
+    };
+    /**
+     * Get method
+     *
+     * @return {string}
+     */
+    Retry.prototype.getMethod = function () {
+        return this.method;
+    };
+    /**
+     * Ge retries
+     *
+     * @return {number}
+     */
+    Retry.prototype.getRetries = function () {
+        return this.retries;
+    };
+    /**
+     * Get microseconds between retries
+     *
+     * @return {number}
+     */
+    Retry.prototype.getMicrosecondsBetweenRetries = function () {
+        return this.microsecondsBetweenRetries;
+    };
+    return Retry;
+}());
+exports.Retry = Retry;
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var InvalidFormatError_1 = __webpack_require__(2);
+/**
+ * User class
+ */
+var User = /** @class */ (function () {
+    /**
+     * Construct
+     *
+     * @param id string
+     * @param attributes Array
+     */
+    function User(id, attributes) {
+        if (attributes === void 0) { attributes = {}; }
+        this.id = id;
+        this.attributes = attributes;
+    }
+    /**
+     * Return the user id
+     *
+     * @return {string}
+     */
+    User.prototype.getId = function () {
+        return this.id;
+    };
+    /**
+     * Return array
+     *
+     * @returns {{}}
+     */
+    User.prototype.getAttributes = function () {
+        return this.attributes;
+    };
+    /**
+     * To array
+     *
+     * @returns {{id: string, attributes: {}}}
+     */
+    User.prototype.toArray = function () {
+        var array = {
+            id: this.id
+        };
+        if (Object.keys(this.attributes).length > 0) {
+            array.attributes = this.attributes;
+        }
+        return array;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return User
+     */
+    User.createFromArray = function (array) {
+        if (array == null ||
+            typeof array.id == "undefined" ||
+            array.id == null) {
+            throw InvalidFormatError_1.InvalidFormatError.userFormatNotValid();
+        }
+        var attributes = typeof array.attributes === typeof {}
+            ? array.attributes
+            : {};
+        return new User(array.id, attributes);
+    };
+    return User;
+}());
+exports.User = User;
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var ScoreStrategy_1 = __webpack_require__(48);
+/**
+ * ScoreStrategies constants
+ */
+exports.MULTIPLY = 'multiply';
+exports.SUM = 'sum';
+exports.AVG = 'avg';
+exports.MAX = 'max';
+exports.MIN = 'min';
+/**
+ * ScoreStrategies
+ */
+var ScoreStrategies = /** @class */ (function () {
+    function ScoreStrategies() {
+        this.scoreStrategies = [];
+    }
+    /**
+     * Create empty
+     *
+     * @param scoreMode
+     *
+     * @return {ScoreStrategies}
+     */
+    ScoreStrategies.createEmpty = function (scoreMode) {
+        if (scoreMode === void 0) { scoreMode = exports.SUM; }
+        var scoreStrategies = new ScoreStrategies;
+        scoreStrategies.scoreMode = scoreMode;
+        return scoreStrategies;
+    };
+    /**
+     * Add score strategy
+     *
+     * @param scoreStrategy
+     *
+     * @return {ScoreStrategies}
+     */
+    ScoreStrategies.prototype.addScoreStrategy = function (scoreStrategy) {
+        this.scoreStrategies.push(scoreStrategy);
+        return this;
+    };
+    /**
+     * Get score strategies
+     *
+     * @return {ScoreStrategy[]}
+     */
+    ScoreStrategies.prototype.getScoreStrategies = function () {
+        return this.scoreStrategies;
+    };
+    /**
+     * Get score mode
+     *
+     * @return {string}
+     */
+    ScoreStrategies.prototype.getScoreMode = function () {
+        return this.scoreMode;
+    };
+    /**
+     * To array
+     *
+     * @return {{
+     *      score_mode: string,
+     *      score_strategies: any
+     * }}
+     */
+    ScoreStrategies.prototype.toArray = function () {
+        var scoreStrategiesAsArray = [];
+        for (var i in this.scoreStrategies) {
+            scoreStrategiesAsArray.push(this.scoreStrategies[i].toArray());
+        }
+        return {
+            score_mode: this.scoreMode,
+            score_strategies: scoreStrategiesAsArray
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return {ScoreStrategies}
+     */
+    ScoreStrategies.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        var scoreStrategies = (typeof array.score_mode != "undefined")
+            ? ScoreStrategies.createEmpty(array.score_mode)
+            : ScoreStrategies.createEmpty();
+        scoreStrategies.scoreStrategies = [];
+        for (var i in array.score_strategies) {
+            scoreStrategies
+                .scoreStrategies
+                .push(ScoreStrategy_1.ScoreStrategy.createFromArray(array.score_strategies[i]));
+        }
+        return scoreStrategies;
+    };
+    return ScoreStrategies;
+}());
+exports.ScoreStrategies = ScoreStrategies;
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var Item_1 = __webpack_require__(7);
+var Filter_1 = __webpack_require__(6);
+/**
+ * ScoreStrategy constants
+ */
+exports.DEFAULT_TYPE = 'default';
+exports.DEFAULT_WEIGHT = 1.0;
+exports.BOOSTING_FIELD_VALUE = 'field_value';
+exports.CUSTOM_FUNCTION = 'custom_function';
+exports.DECAY = 'decay';
+exports.DECAY_LINEAR = 'linear';
+exports.DECAY_EXP = 'exp';
+exports.DECAY_GAUSS = 'gauss';
+exports.MODIFIER_NONE = 'none';
+exports.MODIFIER_SQRT = 'sqrt';
+exports.MODIFIER_LOG = 'log';
+exports.MODIFIER_LN = 'ln';
+exports.MODIFIER_SQUARE = 'square';
+exports.SCORE_MODE_NONE = 'none';
+exports.SCORE_MODE_SUM = 'sum';
+exports.SCORE_MODE_AVG = 'avg';
+exports.SCORE_MODE_MAX = 'max';
+exports.SCORE_MODE_MIN = 'min';
+exports.DEFAULT_MISSING = 1.0;
+exports.DEFAULT_FACTOR = 1.0;
+/**
+ * ScoreStrategy
+ */
+var ScoreStrategy = /** @class */ (function () {
+    function ScoreStrategy() {
+        this.type = exports.DEFAULT_TYPE;
+        this.filter = null;
+        this.weight = exports.DEFAULT_WEIGHT;
+        this.scoreMode = exports.SCORE_MODE_AVG;
+        this.configuration = {};
+    }
+    /**
+     * Get type
+     *
+     * @returns {string}
+     */
+    ScoreStrategy.prototype.getType = function () {
+        return this.type;
+    };
+    /**
+     * Get configuration value
+     *
+     * @returns {string}
+     */
+    ScoreStrategy.prototype.getConfigurationValue = function (element) {
+        if (typeof this.configuration[element] == "undefined") {
+            return null;
+        }
+        return this.configuration[element];
+    };
+    /**
+     * Get weight.
+     *
+     * @return {number}
+     */
+    ScoreStrategy.prototype.getWeight = function () {
+        return this.weight;
+    };
+    /**
+     * Get score mode.
+     *
+     * @return {string}
+     */
+    ScoreStrategy.prototype.getScoreMode = function () {
+        return this.scoreMode;
+    };
+    /**
+     * Get filter.
+     *
+     * @return {Filter}
+     */
+    ScoreStrategy.prototype.getFilter = function () {
+        return this.filter;
+    };
+    /**
+     * Create default
+     *
+     * @return {ScoreStrategy}
+     */
+    ScoreStrategy.createDefault = function () {
+        return new ScoreStrategy();
+    };
+    /**
+     * Create field boosting
+     *
+     * @param field
+     * @param factor
+     * @param missing
+     * @param modifier
+     * @param weight
+     * @param filter
+     * @param scoreMode
+     *
+     * @return {ScoreStrategy}
+     */
+    ScoreStrategy.createFieldBoosting = function (field, factor, missing, modifier, weight, filter, scoreMode) {
+        if (factor === void 0) { factor = exports.DEFAULT_FACTOR; }
+        if (missing === void 0) { missing = exports.DEFAULT_MISSING; }
+        if (modifier === void 0) { modifier = exports.MODIFIER_NONE; }
+        if (weight === void 0) { weight = exports.DEFAULT_WEIGHT; }
+        if (filter === void 0) { filter = null; }
+        if (scoreMode === void 0) { scoreMode = exports.SCORE_MODE_AVG; }
+        var scoreStrategy = ScoreStrategy.createDefault();
+        scoreStrategy.type = exports.BOOSTING_FIELD_VALUE;
+        scoreStrategy.configuration['field'] = field;
+        scoreStrategy.configuration['factor'] = factor;
+        scoreStrategy.configuration['missing'] = missing;
+        scoreStrategy.configuration['modifier'] = modifier;
+        scoreStrategy.weight = weight;
+        scoreStrategy.filter = ScoreStrategy.fixFilterFieldPath(filter);
+        scoreStrategy.scoreMode = scoreMode;
+        return scoreStrategy;
+    };
+    /**
+     * Create custom function
+     *
+     * @param func
+     * @param weight
+     * @param filter
+     * @param scoreMode
+     *
+     * @return {ScoreStrategy}
+     */
+    ScoreStrategy.createCustomFunction = function (func, weight, filter, scoreMode) {
+        if (weight === void 0) { weight = exports.DEFAULT_WEIGHT; }
+        if (filter === void 0) { filter = null; }
+        if (scoreMode === void 0) { scoreMode = exports.SCORE_MODE_AVG; }
+        var scoreStrategy = ScoreStrategy.createDefault();
+        scoreStrategy.type = exports.CUSTOM_FUNCTION;
+        scoreStrategy.configuration['function'] = func;
+        scoreStrategy.weight = weight;
+        scoreStrategy.filter = ScoreStrategy.fixFilterFieldPath(filter);
+        scoreStrategy.scoreMode = scoreMode;
+        return scoreStrategy;
+    };
+    /**
+     * Create decay function
+     *
+     * @param type
+     * @param field
+     * @param origin
+     * @param scale
+     * @param offset
+     * @param decay
+     * @param weight
+     * @param filter
+     * @param scoreMode
+     *
+     * @return {ScoreStrategy}
+     */
+    ScoreStrategy.createDecayFunction = function (type, field, origin, scale, offset, decay, weight, filter, scoreMode) {
+        if (weight === void 0) { weight = exports.DEFAULT_WEIGHT; }
+        if (filter === void 0) { filter = null; }
+        if (scoreMode === void 0) { scoreMode = exports.SCORE_MODE_AVG; }
+        var scoreStrategy = ScoreStrategy.createDefault();
+        scoreStrategy.type = exports.DECAY;
+        scoreStrategy.configuration['type'] = type;
+        scoreStrategy.configuration['field'] = field;
+        scoreStrategy.configuration['origin'] = origin;
+        scoreStrategy.configuration['scale'] = scale;
+        scoreStrategy.configuration['offset'] = offset;
+        scoreStrategy.configuration['decay'] = decay;
+        scoreStrategy.weight = weight;
+        scoreStrategy.filter = ScoreStrategy.fixFilterFieldPath(filter);
+        scoreStrategy.scoreMode = scoreMode;
+        return scoreStrategy;
+    };
+    /**
+     * Fix filter path.
+     *
+     * @param filter
+     *
+     * @return {Filter}
+     */
+    ScoreStrategy.fixFilterFieldPath = function (filter) {
+        if (filter == null) {
+            return filter;
+        }
+        var filterAsArray = filter.toArray();
+        filterAsArray['field'] = Item_1.Item.getPathByField(filterAsArray['field']);
+        return Filter_1.Filter.createFromArray(filterAsArray);
+    };
+    /**
+     * To array
+     *
+     * @return {{
+     *      type: string,
+     *      configuration: any,
+     *      weight: number,
+     *      score_mode: string,
+     *      filter: any
+     * }}
+     */
+    ScoreStrategy.prototype.toArray = function () {
+        return {
+            type: this.type,
+            configuration: this.configuration,
+            weight: this.weight,
+            score_mode: this.scoreMode,
+            filter: this.filter instanceof Filter_1.Filter
+                ? this.filter.toArray()
+                : null
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return {ScoreStrategy}
+     */
+    ScoreStrategy.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        var scoreStrategy = ScoreStrategy.createDefault();
+        if (typeof array.type != "undefined") {
+            scoreStrategy.type = array.type;
+        }
+        if (typeof array.configuration != "undefined") {
+            scoreStrategy.configuration = array.configuration;
+        }
+        if (typeof array.weight != "undefined") {
+            scoreStrategy.weight = array.weight;
+        }
+        if (typeof array.score_mode != "undefined") {
+            scoreStrategy.scoreMode = array.score_mode;
+        }
+        if (typeof array.filter === 'object' && array.filter !== null) {
+            scoreStrategy.filter = Filter_1.Filter.createFromArray(array.filter);
+        }
+        return scoreStrategy;
+    };
+    return ScoreStrategy;
+}());
+exports.ScoreStrategy = ScoreStrategy;
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var InvalidFormatError_1 = __webpack_require__(2);
+/**
+ * IndexUUID class
+ */
+var IndexUUID = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param id
+     */
+    function IndexUUID(id) {
+        if (id.indexOf('_') >= 0) {
+            throw InvalidFormatError_1.InvalidFormatError.indexUUIDFormatNotValid();
+        }
+        this.id = id;
+    }
+    /**
+     * Create by id
+     *
+     * @param id
+     *
+     * @returns {ItemUUID}
+     */
+    IndexUUID.createById = function (id) {
+        return new IndexUUID(id);
+    };
+    /**
+     * Return id
+     *
+     * @returns {string}
+     */
+    IndexUUID.prototype.getId = function () {
+        return this.id;
+    };
+    /**
+     * To array
+     *
+     * @returns {{id: *, type: *}}
+     */
+    IndexUUID.prototype.toArray = function () {
+        return {
+            id: this.id
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array {{id:string, type:string}}
+     *
+     * @return {ItemUUID}
+     */
+    IndexUUID.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        return new IndexUUID(array.id);
+    };
+    /**
+     * Compose unique id
+     *
+     * @returns {string}
+     */
+    IndexUUID.prototype.composedUUID = function () {
+        return this.id;
+    };
+    return IndexUUID;
+}());
+exports.IndexUUID = IndexUUID;
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ConnectionError_1 = __webpack_require__(51);
+var InvalidFormatError_1 = __webpack_require__(2);
+var InvalidTokenError_1 = __webpack_require__(52);
+var ResourceExistsError_1 = __webpack_require__(53);
+var ResourceNotAvailableError_1 = __webpack_require__(54);
+var UnknownError_1 = __webpack_require__(99);
+var Response_1 = __webpack_require__(23);
+var Index_1 = __webpack_require__(100);
+var Item_1 = __webpack_require__(7);
+var ItemUUID_1 = __webpack_require__(11);
+var Result_1 = __webpack_require__(26);
+var Repository_1 = __webpack_require__(58);
+/**
+ * Aggregation class
+ */
+var HttpRepository = /** @class */ (function (_super) {
+    tslib_1.__extends(HttpRepository, _super);
+    /**
+     * Constructor
+     *
+     * @param httpClient
+     * @param appId
+     * @param indexId
+     * @param token
+     * @param transformer
+     */
+    function HttpRepository(httpClient, appId, indexId, token, transformer) {
+        var _this = _super.call(this, appId, indexId, token) || this;
+        _this.httpClient = httpClient;
+        _this.transformer = transformer;
+        return _this;
+    }
+    /**
+     * Get transformer
+     *
+     * @return {Transformer}
+     */
+    HttpRepository.prototype.getTransformer = function () {
+        return this.transformer;
+    };
+    /**
+     * Generate item document by a simple object.
+     *
+     * @param object
+     *
+     * @returns {void}
+     */
+    HttpRepository.prototype.addObject = function (object) {
+        var item = this
+            .transformer
+            .toItem(object);
+        if (item instanceof Item_1.Item) {
+            this.addItem(item);
+        }
+    };
+    /**
+     * Delete item document by uuid.
+     *
+     * @param object
+     *
+     * @returns {void}
+     */
+    HttpRepository.prototype.deleteObject = function (object) {
+        var itemUUID = this
+            .transformer
+            .toItemUUID(object);
+        if (itemUUID instanceof ItemUUID_1.ItemUUID) {
+            this.deleteItem(itemUUID);
+        }
+    };
+    /**
+     * Flush update items
+     *
+     * @param {Item[]} itemsToUpdate
+     *
+     * @return {Promise<void>}
+     */
+    HttpRepository.prototype.flushUpdateItems = function (itemsToUpdate) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response_1;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (itemsToUpdate.length === 0) {
+                            return [2 /*return*/];
+                        }
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId + "/items", "put", this.getCredentials(), {}, itemsToUpdate.map(function (item) {
+                                return item.toArray();
+                            }))];
+                    case 2:
+                        _a.sent();
+                        return [3 /*break*/, 4];
+                    case 3:
+                        response_1 = _a.sent();
+                        throw this.createErrorFromResponse(response_1);
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Flush delete items
+     *
+     * @param {ItemUUID[]} itemsToDelete
+     *
+     * @return {Promise<void>}
+     */
+    HttpRepository.prototype.flushDeleteItems = function (itemsToDelete) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response_2;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (itemsToDelete.length === 0) {
+                            return [2 /*return*/];
+                        }
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId + "/items", "delete", this.getCredentials(), {}, itemsToDelete.map(function (itemUUID) {
+                                return itemUUID.toArray();
+                            }))];
+                    case 2:
+                        _a.sent();
+                        return [3 /*break*/, 4];
+                    case 3:
+                        response_2 = _a.sent();
+                        throw this.createErrorFromResponse(response_2);
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Query
+     *
+     * @param {Query} query
+     *
+     * @return {Promise<Result>}
+     */
+    HttpRepository.prototype.query = function (query) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response, response_3, result;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId, "get", this.getCredentials(), {
+                                query: JSON.stringify(query.toArray())
+                            }, {})];
+                    case 1:
+                        response = _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_3 = _a.sent();
+                        throw this.createErrorFromResponse(response_3);
+                    case 3:
+                        result = Result_1.Result.createFromArray(response.getBody());
+                        return [2 /*return*/, this.applyTransformersToResult(result)];
+                }
+            });
+        });
+    };
+    /**
+     * Update items
+     *
+     * @param {Query} query
+     * @param {Changes} changes
+     *
+     * @return {Promise<void>}
+     */
+    HttpRepository.prototype.updateItems = function (query, changes) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response_4;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId + "/items/update-by-query", "post", this.getCredentials(), {}, {
+                                changes: changes.toArray(),
+                                query: query.toArray()
+                            })];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_4 = _a.sent();
+                        throw this.createErrorFromResponse(response_4);
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Create index
+     *
+     * @param {IndexUUID} indexUUID
+     * @param {Config} config
+     *
+     * @return {Promise<void>}
+     */
+    HttpRepository.prototype.createIndex = function (indexUUID, config) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response_5;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + indexUUID.composedUUID(), "put", this.getCredentials(), {}, config.toArray())];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_5 = _a.sent();
+                        throw this.createErrorFromResponse(response_5);
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete index
+     *
+     * @param {IndexUUID} indexUUID
+     *
+     * @return {Promise<void>}
+     */
+    HttpRepository.prototype.deleteIndex = function (indexUUID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response_6;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId, "delete", this.getCredentials(), {}, {})];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_6 = _a.sent();
+                        throw this.createErrorFromResponse(response_6);
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Reset index
+     *
+     * @param {IndexUUID} indexUUID
+     *
+     * @return {Promise<void>}
+     */
+    HttpRepository.prototype.resetIndex = function (indexUUID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response_7;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId + "/reset", "post", this.getCredentials(), {}, {})];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_7 = _a.sent();
+                        throw this.createErrorFromResponse(response_7);
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Check index
+     *
+     * @param {IndexUUID} indexUUID
+     *
+     * @return {Promise<boolean>}
+     */
+    HttpRepository.prototype.checkIndex = function (indexUUID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response, response_8;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId, "head", this.getCredentials(), {}, {})];
+                    case 1:
+                        response = _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_8 = _a.sent();
+                        throw this.createErrorFromResponse(response_8);
+                    case 3: return [2 /*return*/, response.getCode() === 200];
+                }
+            });
+        });
+    };
+    /**
+     * Check index
+     *
+     * @return {Promise<Index[]>}
+     */
+    HttpRepository.prototype.getIndices = function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response, response_9, result, _i, _a, indexAsArray;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _b.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/", "get", this.getCredentials(), {}, {})];
+                    case 1:
+                        response = _b.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_9 = _b.sent();
+                        throw this.createErrorFromResponse(response_9);
+                    case 3:
+                        result = [];
+                        for (_i = 0, _a = response.getBody(); _i < _a.length; _i++) {
+                            indexAsArray = _a[_i];
+                            result.push(Index_1.Index.createFromArray(indexAsArray));
+                        }
+                        return [2 /*return*/, result];
+                }
+            });
+        });
+    };
+    /**
+     * Configure index
+     *
+     * @param {IndexUUID} indexUUID
+     * @param {Config} config
+     *
+     * @return {Promise<void>}
+     */
+    HttpRepository.prototype.configureIndex = function (indexUUID, config) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response_10;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.httpClient.get("/" + this.appId + "/indices/" + this.indexId + "/configure", "post", this.getCredentials(), {}, config.toArray())];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        response_10 = _a.sent();
+                        throw this.createErrorFromResponse(response_10);
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Get query values
+     *
+     * @returns any
+     */
+    HttpRepository.prototype.getCredentials = function () {
+        return {
+            app_id: this.appId,
+            token: this.token
+        };
+    };
+    /**
+     * Apply transformers to results
+     *
+     * @param {Result} result
+     *
+     * @return {Result}
+     */
+    HttpRepository.prototype.applyTransformersToResult = function (result) {
+        var subresults = result.getSubresults();
+        if (Object.keys(subresults).length > 0) {
+            Object.keys(subresults).map(function (key) {
+                subresults[key] = this.applyTransformersToResult(subresults[key]);
+            }.bind(this));
+            return Result_1.Result.createMultiresults(subresults);
+        }
+        return Result_1.Result.create(result.getQueryUUID(), result.getTotalItems(), result.getTotalHits(), result.getAggregations(), result.getSuggests(), this
+            .transformer
+            .fromItems(result.getItems()));
+    };
+    /**
+     * Create exception to match an error response
+     *
+     * @param any response
+     */
+    HttpRepository.prototype.createErrorFromResponse = function (response) {
+        var error;
+        if (response instanceof Response_1.Response) {
+            switch (response.getCode()) {
+                case ResourceNotAvailableError_1.ResourceNotAvailableError.getTransportableHTTPError():
+                    error = new ResourceNotAvailableError_1.ResourceNotAvailableError(response.getBody().message);
+                    break;
+                case InvalidTokenError_1.InvalidTokenError.getTransportableHTTPError():
+                    error = new InvalidTokenError_1.InvalidTokenError(response.getBody().message);
+                    break;
+                case InvalidFormatError_1.InvalidFormatError.getTransportableHTTPError():
+                    error = new InvalidFormatError_1.InvalidFormatError(response.getBody().message);
+                    break;
+                case ResourceExistsError_1.ResourceExistsError.getTransportableHTTPError():
+                    error = new ResourceExistsError_1.ResourceExistsError(response.getBody().message);
+                    break;
+                case ConnectionError_1.ConnectionError.getTransportableHTTPError():
+                    error = new ConnectionError_1.ConnectionError(response.getBody().message);
+                    break;
+            }
+        }
+        return undefined === error
+            ? UnknownError_1.UnknownError.createUnknownError()
+            : error;
+    };
+    return HttpRepository;
+}(Repository_1.Repository));
+exports.HttpRepository = HttpRepository;
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * Connection error
+ */
+var ConnectionError = /** @class */ (function (_super) {
+    tslib_1.__extends(ConnectionError, _super);
+    function ConnectionError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    ConnectionError.getTransportableHTTPError = function () {
+        return 500;
+    };
+    return ConnectionError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.ConnectionError = ConnectionError;
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * Invalid token error
+ */
+var InvalidTokenError = /** @class */ (function (_super) {
+    tslib_1.__extends(InvalidTokenError, _super);
+    function InvalidTokenError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    InvalidTokenError.getTransportableHTTPError = function () {
+        return 401;
+    };
+    /**
+     * Invalid token permissions
+     *
+     * @param tokenReference
+     *
+     * @return {InvalidTokenError}
+     */
+    InvalidTokenError.createInvalidTokenPermissions = function (tokenReference) {
+        return new InvalidTokenError("Token " + tokenReference + "not valid");
+    };
+    /**
+     * Invalid token permissions
+     *
+     * @param tokenReference
+     * @param maxHitsPerQuery
+     *
+     * @return {InvalidTokenError}
+     */
+    InvalidTokenError.createInvalidTokenMaxHitsPerQuery = function (tokenReference, maxHitsPerQuery) {
+        return new InvalidTokenError("Token " + tokenReference + "not valid. Max " + maxHitsPerQuery + " hits allowed");
+    };
+    return InvalidTokenError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.InvalidTokenError = InvalidTokenError;
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * Resource exists error
+ */
+var ResourceExistsError = /** @class */ (function (_super) {
+    tslib_1.__extends(ResourceExistsError, _super);
+    function ResourceExistsError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    ResourceExistsError.getTransportableHTTPError = function () {
+        return 409;
+    };
+    /**
+     * Index not available
+     *
+     * @return {InvalidFormatError}
+     */
+    ResourceExistsError.indexAvailable = function () {
+        return new ResourceExistsError("Index exists and cannot be created again");
+    };
+    /**
+     * Events not available
+     *
+     * @return {InvalidFormatError}
+     */
+    ResourceExistsError.eventsIndexAvailable = function () {
+        return new ResourceExistsError("Events index exists and cannot be created again");
+    };
+    /**
+     * Logs not available
+     *
+     * @return {InvalidFormatError}
+     */
+    ResourceExistsError.logsIndexAvailable = function () {
+        return new ResourceExistsError("Logs index exists and cannot be created again");
+    };
+    return ResourceExistsError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.ResourceExistsError = ResourceExistsError;
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * Resource not available error
+ */
+var ResourceNotAvailableError = /** @class */ (function (_super) {
+    tslib_1.__extends(ResourceNotAvailableError, _super);
+    function ResourceNotAvailableError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    ResourceNotAvailableError.getTransportableHTTPError = function () {
+        return 404;
+    };
+    /**
+     * Index not available
+     *
+     * @param resourceId
+     *
+     * @return {InvalidFormatError}
+     */
+    ResourceNotAvailableError.indexNotAvailable = function (resourceId) {
+        return new ResourceNotAvailableError("Index not available - " + resourceId);
+    };
+    /**
+     * Events not available
+     *
+     * @param resourceId
+     *
+     * @return {InvalidFormatError}
+     */
+    ResourceNotAvailableError.eventsIndexNotAvailable = function (resourceId) {
+        return new ResourceNotAvailableError("Events not available - " + resourceId);
+    };
+    /**
+     * Logs not available
+     *
+     * @param resourceId
+     *
+     * @return {InvalidFormatError}
+     */
+    ResourceNotAvailableError.logsIndexNotAvailable = function (resourceId) {
+        return new ResourceNotAvailableError("Logs not available - " + resourceId);
+    };
+    /**
+     * Engine not available
+     *
+     * @param resourceId
+     *
+     * @return {InvalidFormatError}
+     */
+    ResourceNotAvailableError.engineNotAvailable = function (resourceId) {
+        return new ResourceNotAvailableError("Engine not available - " + resourceId);
+    };
+    return ResourceNotAvailableError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.ResourceNotAvailableError = ResourceNotAvailableError;
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var Filter_1 = __webpack_require__(6);
+var Counter_1 = __webpack_require__(56);
+/**
+ * ResultAggregation class
+ */
+var ResultAggregation = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param name
+     * @param applicationType
+     * @param totalElements
+     * @param activeElements
+     */
+    function ResultAggregation(name, applicationType, totalElements, activeElements) {
+        this.counters = {};
+        this.highestActiveElement = 0;
+        this.name = name;
+        this.applicationType = applicationType;
+        this.totalElements = totalElements;
+        this.activeElements = {};
+        for (var i in activeElements) {
+            var activeElement = activeElements[i];
+            this.activeElements[activeElement] = activeElement;
+        }
+    }
+    /**
+     * Add counter
+     *
+     * @param name
+     * @param counter
+     */
+    ResultAggregation.prototype.addCounter = function (name, counter) {
+        if (counter == 0) {
+            return;
+        }
+        var counterInstance = Counter_1.Counter.createByActiveElements(name, counter, Object.keys(this.activeElements));
+        if (!(counterInstance instanceof Counter_1.Counter)) {
+            return;
+        }
+        if ((this.applicationType & Filter_1.FILTER_MUST_ALL_WITH_LEVELS) &&
+            (this.applicationType & ~Filter_1.FILTER_MUST_ALL) &&
+            counterInstance.isUsed()) {
+            this.activeElements[counterInstance.getId()] = counterInstance;
+            this.highestActiveElement = Math.max(counterInstance.getLevel(), this.highestActiveElement);
+            return;
+        }
+        this.counters[counterInstance.getId()] = counterInstance;
+    };
+    /**
+     * Get name
+     *
+     * @return {string}
+     */
+    ResultAggregation.prototype.getName = function () {
+        return this.name;
+    };
+    /**
+     * Get counter
+     *
+     * @return {any}
+     */
+    ResultAggregation.prototype.getCounters = function () {
+        return this.counters;
+    };
+    /**
+     * Return if the aggregation belongs to a filter.
+     *
+     * @return {boolean}
+     */
+    ResultAggregation.prototype.isFilter = function () {
+        return (this.applicationType & Filter_1.FILTER_MUST_ALL) > 0;
+    };
+    /**
+     * Aggregation has levels.
+     *
+     * @return {boolean}
+     */
+    ResultAggregation.prototype.hasLevels = function () {
+        return (this.applicationType & Filter_1.FILTER_MUST_ALL_WITH_LEVELS) > 0;
+    };
+    /**
+     * Get counter by name
+     *
+     * @param name
+     *
+     * @return {null}
+     */
+    ResultAggregation.prototype.getCounter = function (name) {
+        return this.counters[name] instanceof Counter_1.Counter
+            ? this.counters[name]
+            : null;
+    };
+    /**
+     * Get all elements
+     *
+     * @return {{}}
+     */
+    ResultAggregation.prototype.getAllElements = function () {
+        return tslib_1.__assign({}, this.activeElements, this.counters);
+    };
+    /**
+     * Get total elements
+     *
+     * @return {number}
+     */
+    ResultAggregation.prototype.getTotalElements = function () {
+        return this.totalElements;
+    };
+    /**
+     * Get active elements
+     *
+     * @return {any}
+     */
+    ResultAggregation.prototype.getActiveElements = function () {
+        if (Object.keys(this.activeElements).length === 0) {
+            return {};
+        }
+        if (this.applicationType === Filter_1.FILTER_MUST_ALL_WITH_LEVELS) {
+            var value = null;
+            for (var i in this.activeElements) {
+                var activeElement = this.activeElements[i];
+                if (!(activeElement instanceof Counter_1.Counter)) {
+                    continue;
+                }
+                if (value == null) {
+                    value = activeElement;
+                }
+                value = value.getLevel() > activeElement.getLevel()
+                    ? value
+                    : activeElement;
+            }
+            return value instanceof Counter_1.Counter
+                ? { 0: value }
+                : null;
+        }
+        return this.activeElements;
+    };
+    /**
+     * Clean results by level and remove all levels higher than the lowest.
+     */
+    ResultAggregation.prototype.cleanCountersByLevel = function () {
+        for (var i in this.counters) {
+            var counter = this.counters[i];
+            if (counter.getLevel() !== this.highestActiveElement + 1) {
+                delete this.counters[i];
+            }
+        }
+    };
+    /**
+     * Is empty
+     *
+     * @returns {boolean}
+     */
+    ResultAggregation.prototype.isEmpty = function () {
+        return Object.keys(this.activeElements).length == 0 &&
+            Object.keys(this.counters).length == 0;
+    };
+    /**
+     * To array
+     *
+     * @return {any}
+     */
+    ResultAggregation.prototype.toArray = function () {
+        var array = {
+            name: this.name,
+            counters: [],
+            active_elements: []
+        };
+        for (var i in this.counters) {
+            array.counters.push(this.counters[i].toArray());
+        }
+        if (this.applicationType !== Filter_1.FILTER_AT_LEAST_ONE) {
+            array.application_type = this.applicationType;
+        }
+        if (this.totalElements > 0) {
+            array.total_elements = this.totalElements;
+        }
+        for (var i in this.activeElements) {
+            var activeElement = this.activeElements[i];
+            array.active_elements.push(activeElement instanceof Counter_1.Counter
+                ? activeElement.toArray()
+                : activeElement);
+        }
+        if (this.highestActiveElement > 0) {
+            array.highest_active_level = this.highestActiveElement;
+        }
+        if (array.counters.length === 0) {
+            delete array.counters;
+        }
+        if (array.active_elements.length === 0) {
+            delete array.active_elements;
+        }
+        return array;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     */
+    ResultAggregation.createFromArray = function (array) {
+        var activeElements = [];
+        var activeElementsAsArray = array.active_elements;
+        activeElementsAsArray = typeof activeElementsAsArray === typeof []
+            ? activeElementsAsArray
+            : [];
+        for (var i in activeElementsAsArray) {
+            var activeElementAsArray = activeElementsAsArray[i];
+            activeElements.push(typeof activeElementAsArray === typeof {}
+                ? Counter_1.Counter.createFromArray(activeElementAsArray)
+                : activeElementAsArray);
+        }
+        var aggregation = new ResultAggregation(array.name, parseInt(array.application_type ? array.application_type : Filter_1.FILTER_AT_LEAST_ONE), parseInt(array.total_elements ? array.total_elements : 0), []);
+        aggregation.activeElements = activeElements;
+        var countersAsArray = typeof array.counters === typeof []
+            ? array.counters
+            : [];
+        for (var i in countersAsArray) {
+            var counterAsArray = countersAsArray[i];
+            var counter = Counter_1.Counter.createFromArray(counterAsArray);
+            aggregation.counters[counter.getId()] = counter;
+        }
+        aggregation.highestActiveElement = typeof array.highest_active_level === "number"
+            ? array.highest_active_level
+            : 0;
+        return aggregation;
+    };
+    return ResultAggregation;
+}());
+exports.ResultAggregation = ResultAggregation;
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var Metadata_1 = __webpack_require__(57);
+/**
+ * Aggregation class
+ */
+var Counter = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param values
+     * @param used
+     * @param n
+     */
+    function Counter(values, used, n) {
+        this.values = values;
+        this.used = used;
+        this.n = n;
+    }
+    /**
+     * Get id
+     *
+     * @return {string|null}
+     */
+    Counter.prototype.getId = function () {
+        return typeof this.values.id == "string"
+            ? this.values.id
+            : null;
+    };
+    /**
+     * Get name
+     *
+     * @return {string|null}
+     */
+    Counter.prototype.getName = function () {
+        return typeof this.values.name == "string"
+            ? this.values.name
+            : null;
+    };
+    /**
+     * Get slug
+     *
+     * @return {string|null}
+     */
+    Counter.prototype.getSlug = function () {
+        return typeof this.values.slug == "string"
+            ? this.values.slug
+            : null;
+    };
+    /**
+     * Get level
+     *
+     * @return {number}
+     */
+    Counter.prototype.getLevel = function () {
+        return typeof this.values.level == "number"
+            ? this.values.level
+            : 0;
+    };
+    /**
+     * Get values
+     *
+     * @returns {{}}
+     */
+    Counter.prototype.getValues = function () {
+        return this.values;
+    };
+    /**
+     * Is used
+     *
+     * @returns {boolean}
+     */
+    Counter.prototype.isUsed = function () {
+        return this.used;
+    };
+    /**
+     * Get N
+     *
+     * @returns {number}
+     */
+    Counter.prototype.getN = function () {
+        return this.n;
+    };
+    /**
+     * Create by active elements
+     *
+     * @param name
+     * @param n
+     * @param activeElements
+     */
+    Counter.createByActiveElements = function (name, n, activeElements) {
+        var values = Metadata_1.Metadata.fromMetadata(name);
+        if (values == null) {
+            return null;
+        }
+        var i = activeElements.length;
+        var inActiveElements = false;
+        while (i--) {
+            if (activeElements[i] == values.id) {
+                inActiveElements = true;
+            }
+        }
+        return new Counter(values, inActiveElements, n);
+    };
+    /**
+     * To array
+     *
+     * @return {{}}
+     */
+    Counter.prototype.toArray = function () {
+        var values = {
+            values: this.values,
+            n: this.n
+        };
+        if (this.used === true) {
+            values.used = true;
+        }
+        return values;
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return {Counter}
+     */
+    Counter.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        return new Counter(array.values, (typeof array.used == "boolean")
+            ? array.used
+            : false, array.n);
+    };
+    return Counter;
+}());
+exports.Counter = Counter;
+
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+/**
+ * User class
+ */
+var Metadata = /** @class */ (function () {
+    function Metadata() {
+    }
+    /**
+     * To metadata
+     *
+     * @param array:{}
+     *
+     * @returns {string}
+     */
+    Metadata.toMetadata = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        var parts = [];
+        for (var key in array) {
+            parts.push(key + "##" + array[key]);
+        }
+        return parts.join("~~");
+    };
+    /**
+     * From metadata
+     *
+     * @param metadata
+     *
+     * @return {{}}
+     */
+    Metadata.fromMetadata = function (metadata) {
+        var values = {};
+        var splittedParts = metadata.split("~~");
+        var iterator = 0;
+        var size = 0;
+        var lastElement = null;
+        for (var key in splittedParts) {
+            var part = splittedParts[key];
+            var parts = part.split("##");
+            if (parts.length > 1) {
+                lastElement = parts[1];
+                values[parts[0]] = lastElement;
+            }
+            else {
+                lastElement = part;
+                values[iterator++] = lastElement;
+            }
+            size++;
+        }
+        if (size == 1) {
+            values = {
+                id: lastElement,
+                name: lastElement
+            };
+        }
+        if (typeof values.id == "undefined") {
+            return null;
+        }
+        return values;
+    };
+    return Metadata;
+}());
+exports.Metadata = Metadata;
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+/**
+ * Aggregation class
+ */
+var Repository = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param appId
+     * @param indexId
+     * @param token
+     */
+    function Repository(appId, indexId, token) {
+        this.itemsToUpdate = [];
+        this.itemsToDelete = [];
+        this.appId = appId;
+        this.indexId = indexId;
+        this.token = token;
+    }
+    /**
+     * Reset cached elements
+     */
+    Repository.prototype.resetCachedElements = function () {
+        this.itemsToUpdate = [];
+        this.itemsToDelete = [];
+    };
+    /**
+     * Add element
+     *
+     * @param item
+     */
+    Repository.prototype.addItem = function (item) {
+        this.itemsToUpdate.push(item);
+    };
+    /**
+     * Add elements
+     *
+     * @param items
+     */
+    Repository.prototype.addItems = function (items) {
+        for (var i in items) {
+            this.addItem(items[i]);
+        }
+    };
+    /**
+     * Delete item
+     *
+     * @param itemUUID
+     */
+    Repository.prototype.deleteItem = function (itemUUID) {
+        this.itemsToDelete.push(itemUUID);
+    };
+    /**
+     * Delete items
+     *
+     * @param itemsUUID
+     */
+    Repository.prototype.deleteItems = function (itemsUUID) {
+        for (var i in itemsUUID) {
+            this.deleteItem(itemsUUID[i]);
+        }
+    };
+    /**
+     * flush
+     *
+     * @param bulkNumber
+     * @param skipIfLess
+     *
+     * @return {Promise<any[]>}
+     */
+    Repository.prototype.flush = function (bulkNumber, skipIfLess) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var promise, resetCachedElements;
+            var _this = this;
+            return tslib_1.__generator(this, function (_a) {
+                if (!bulkNumber) {
+                    bulkNumber = 500;
+                }
+                if (!skipIfLess) {
+                    skipIfLess = false;
+                }
+                if (skipIfLess &&
+                    this.itemsToUpdate.length < bulkNumber) {
+                    return [2 /*return*/];
+                }
+                promise = Promise.all(Repository
+                    .chunkArray(this.itemsToUpdate, bulkNumber)
+                    .map(function (arrayOfItems) {
+                    return _this.flushUpdateItems(arrayOfItems);
+                })
+                    .concat(Repository
+                    .chunkArray(this.itemsToDelete, bulkNumber)
+                    .map(function (arrayOfItemsUUID) {
+                    return _this.flushDeleteItems(arrayOfItemsUUID);
+                })));
+                resetCachedElements = function () {
+                    _this.resetCachedElements();
+                };
+                promise.then(resetCachedElements, resetCachedElements);
+                return [2 /*return*/, promise];
+            });
+        });
+    };
+    /**
+     * Make chunks of n elements
+     *
+     * @param array
+     * @param chunk
+     *
+     * @return any[]
+     */
+    Repository.chunkArray = function (array, chunk) {
+        var arrayChunked = [];
+        for (var i = 0, j = array.length; i < j; i += chunk) {
+            arrayChunked.push(array.slice(i, i + chunk));
+        }
+        return arrayChunked;
+    };
+    return Repository;
+}());
+exports.Repository = Repository;
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var Item_1 = __webpack_require__(7);
+var ItemUUID_1 = __webpack_require__(11);
+/**
+ * Transformer
+ */
+var Transformer = /** @class */ (function () {
+    function Transformer() {
+        this.readTransformers = [];
+        this.writeTransformers = [];
+    }
+    /**
+     * Add read transformer
+     *
+     * @param readTransformer
+     */
+    Transformer.prototype.addReadTransformer = function (readTransformer) {
+        this
+            .readTransformers
+            .push(readTransformer);
+    };
+    /**
+     * Add write transformer
+     *
+     * @param writeTransformer
+     */
+    Transformer.prototype.addWriteTransformer = function (writeTransformer) {
+        this
+            .writeTransformers
+            .push(writeTransformer);
+    };
+    /**
+     * Items to objects
+     *
+     * @param items
+     *
+     * @returns {any[]}
+     */
+    Transformer.prototype.fromItems = function (items) {
+        var objects = [];
+        for (var i in items) {
+            objects.push(this.fromItem(items[i]));
+        }
+        return objects;
+    };
+    /**
+     * Item to object
+     *
+     * @param item
+     *
+     * @returns {any}
+     */
+    Transformer.prototype.fromItem = function (item) {
+        for (var i in this.readTransformers) {
+            var transformer = this.readTransformers[i];
+            if (transformer.isValidItem(item)) {
+                return transformer.fromItem(item);
+            }
+        }
+        return item;
+    };
+    /**
+     * Objects to items
+     *
+     * @param objects
+     *
+     * @returns {Item[]}
+     */
+    Transformer.prototype.toItems = function (objects) {
+        var items = [];
+        for (var i in objects) {
+            var item = this.toItem(objects[i]);
+            if (item instanceof Item_1.Item) {
+                items.push(item);
+            }
+        }
+        return items;
+    };
+    /**
+     * Object to item
+     *
+     * @param object
+     *
+     * @returns {any}
+     */
+    Transformer.prototype.toItem = function (object) {
+        for (var i in this.writeTransformers) {
+            var transformer = this.writeTransformers[i];
+            if (transformer.isValidObject(object)) {
+                return transformer.toItem(object);
+            }
+        }
+        return object;
+    };
+    /**
+     * Objects to items
+     *
+     * @param objects
+     *
+     * @returns {ItemUUID[]}
+     */
+    Transformer.prototype.toItemUUIDs = function (objects) {
+        var itemUUIDs = [];
+        for (var i in objects) {
+            var itemUUID = this.toItemUUID(objects[i]);
+            if (itemUUID instanceof ItemUUID_1.ItemUUID) {
+                itemUUIDs.push(itemUUID);
+            }
+        }
+        return itemUUIDs;
+    };
+    /**
+     * Object to item
+     *
+     * @param object
+     *
+     * @returns {any}
+     */
+    Transformer.prototype.toItemUUID = function (object) {
+        for (var i in this.writeTransformers) {
+            var transformer = this.writeTransformers[i];
+            if (transformer.isValidObject(object)) {
+                return transformer.toItemUUID(object);
+            }
+        }
+        return object;
+    };
+    return Transformer;
+}());
+exports.Transformer = Transformer;
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+/**
+ * Result class
+ */
+var Synonym = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param words
+     */
+    function Synonym(words) {
+        this.words = words;
+    }
+    /**
+     * get words
+     *
+     * @return {string[]}
+     */
+    Synonym.prototype.getWords = function () {
+        return this.words;
+    };
+    /**
+     * Create by words
+     *
+     * @param words
+     *
+     * @return {Synonym}
+     */
+    Synonym.createbyWords = function (words) {
+        return new Synonym(words);
+    };
+    /**
+     * To array
+     *
+     * @return {{words: string[]}}
+     */
+    Synonym.prototype.toArray = function () {
+        return {
+            words: this.words
+        };
+    };
+    /**
+     * create from array
+     *
+     * @param array
+     *
+     * @returns {Synonym}
+     */
+    Synonym.createFromArray = function (array) {
+        return new Synonym(array.words instanceof Object
+            ? array.words
+            : []);
+    };
+    /**
+     * Expand
+     *
+     * @returns {string}
+     */
+    Synonym.prototype.expand = function () {
+        return this.words.join(",");
+    };
+    return Synonym;
+}());
+exports.Synonym = Synonym;
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(13),
+    isObject = __webpack_require__(29);
 
 /** `Object#toString` result references. */
 var asyncTag = '[object AsyncFunction]',
@@ -1695,7 +7947,7 @@ module.exports = isFunction;
 
 
 /***/ }),
-/* 22 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -1703,10 +7955,10 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(63)))
 
 /***/ }),
-/* 23 */
+/* 63 */
 /***/ (function(module, exports) {
 
 var g;
@@ -1733,7 +7985,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 24 */
+/* 64 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -1765,11 +8017,11 @@ module.exports = toSource;
 
 
 /***/ }),
-/* 25 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(63),
-    isObjectLike = __webpack_require__(5);
+var baseIsArguments = __webpack_require__(133),
+    isObjectLike = __webpack_require__(14);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -1807,11 +8059,11 @@ module.exports = isArguments;
 
 
 /***/ }),
-/* 26 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(0),
-    stubFalse = __webpack_require__(64);
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(4),
+    stubFalse = __webpack_require__(134);
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -1849,10 +8101,10 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)(module)))
 
 /***/ }),
-/* 27 */
+/* 67 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -1883,12 +8135,12 @@ module.exports = isIndex;
 
 
 /***/ }),
-/* 28 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsTypedArray = __webpack_require__(65),
-    baseUnary = __webpack_require__(66),
-    nodeUtil = __webpack_require__(67);
+var baseIsTypedArray = __webpack_require__(135),
+    baseUnary = __webpack_require__(136),
+    nodeUtil = __webpack_require__(137);
 
 /* Node.js helper references. */
 var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -1916,11 +8168,11 @@ module.exports = isTypedArray;
 
 
 /***/ }),
-/* 29 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(21),
-    isLength = __webpack_require__(16);
+var isFunction = __webpack_require__(61),
+    isLength = __webpack_require__(32);
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -1955,15 +8207,15 @@ module.exports = isArrayLike;
 
 
 /***/ }),
-/* 30 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(7),
-    stackClear = __webpack_require__(81),
-    stackDelete = __webpack_require__(82),
-    stackGet = __webpack_require__(83),
-    stackHas = __webpack_require__(84),
-    stackSet = __webpack_require__(85);
+var ListCache = __webpack_require__(16),
+    stackClear = __webpack_require__(151),
+    stackDelete = __webpack_require__(152),
+    stackGet = __webpack_require__(153),
+    stackHas = __webpack_require__(154),
+    stackSet = __webpack_require__(155);
 
 /**
  * Creates a stack cache object to store key-value pairs.
@@ -1988,7 +8240,7 @@ module.exports = Stack;
 
 
 /***/ }),
-/* 31 */
+/* 71 */
 /***/ (function(module, exports) {
 
 /**
@@ -2031,11 +8283,11 @@ module.exports = eq;
 
 
 /***/ }),
-/* 32 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqualDeep = __webpack_require__(98),
-    isObjectLike = __webpack_require__(5);
+var baseIsEqualDeep = __webpack_require__(168),
+    isObjectLike = __webpack_require__(14);
 
 /**
  * The base implementation of `_.isEqual` which supports partial comparisons
@@ -2065,12 +8317,12 @@ module.exports = baseIsEqual;
 
 
 /***/ }),
-/* 33 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var SetCache = __webpack_require__(99),
-    arraySome = __webpack_require__(102),
-    cacheHas = __webpack_require__(103);
+var SetCache = __webpack_require__(169),
+    arraySome = __webpack_require__(172),
+    cacheHas = __webpack_require__(173);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -2154,10 +8406,10 @@ module.exports = equalArrays;
 
 
 /***/ }),
-/* 34 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(13);
+var isObject = __webpack_require__(29);
 
 /**
  * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
@@ -2175,7 +8427,7 @@ module.exports = isStrictComparable;
 
 
 /***/ }),
-/* 35 */
+/* 75 */
 /***/ (function(module, exports) {
 
 /**
@@ -2201,11 +8453,11 @@ module.exports = matchesStrictComparable;
 
 
 /***/ }),
-/* 36 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var castPath = __webpack_require__(37),
-    toKey = __webpack_require__(11);
+var castPath = __webpack_require__(77),
+    toKey = __webpack_require__(20);
 
 /**
  * The base implementation of `_.get` without support for default values.
@@ -2231,13 +8483,13 @@ module.exports = baseGet;
 
 
 /***/ }),
-/* 37 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArray = __webpack_require__(1),
-    isKey = __webpack_require__(19),
-    stringToPath = __webpack_require__(123),
-    toString = __webpack_require__(126);
+var isArray = __webpack_require__(5),
+    isKey = __webpack_require__(35),
+    stringToPath = __webpack_require__(193),
+    toString = __webpack_require__(196);
 
 /**
  * Casts `value` to a path array if it's not one.
@@ -2258,26 +8510,26 @@ module.exports = castPath;
 
 
 /***/ }),
-/* 38 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _apisearch = __webpack_require__(39);
+var _apisearch = __webpack_require__(21);
 
 var _apisearch2 = _interopRequireDefault(_apisearch);
 
-var _unistore = __webpack_require__(40);
+var _unistore = __webpack_require__(110);
 
 var _unistore2 = _interopRequireDefault(_unistore);
 
-var _render = __webpack_require__(41);
+var _render = __webpack_require__(111);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = function (clientCredentials) {
-    var client = (0, _apisearch2.default)(clientCredentials);
+    var client = _apisearch2.default.createRepository(clientCredentials);
 
     return function (_ref) {
         var inputTarget = _ref.inputTarget,
@@ -2336,646 +8588,331 @@ var ensureTargetIsDefined = function ensureTargetIsDefined(targetNode) {
 };
 
 /***/ }),
-/* 39 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["apisearch"] = factory();
-	else
-		root["apisearch"] = factory();
-})(typeof self !== 'undefined' ? self : this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var AxiosClient_1 = __webpack_require__(37);
+var RetryMap_1 = __webpack_require__(44);
+var Query_1 = __webpack_require__(9);
+var Query_2 = __webpack_require__(9);
+var Query_3 = __webpack_require__(9);
+var SortBy_1 = __webpack_require__(25);
+var HttpRepository_1 = __webpack_require__(50);
+var Result_1 = __webpack_require__(26);
+var ResultAggregations_1 = __webpack_require__(27);
+var Transformer_1 = __webpack_require__(59);
+/**
+ * Apisearch class
+ */
+var Apisearch = /** @class */ (function () {
+    function Apisearch() {
+    }
+    /**
+     * Constructor
+     *
+     * @param config
+     *
+     * @return {HttpRepository}
+     */
+    Apisearch.createRepository = function (config) {
+        Apisearch.ensureRepositoryConfigIsValid(config);
+        config.options = tslib_1.__assign({ api_version: "v1", override_queries: true, retry_map_config: [], timeout: 5000 }, config.options);
+        /**
+         * Client
+         */
+        var httpClient = typeof config.options.http_client !== "undefined"
+            ? config.options.http_client
+            : new AxiosClient_1.AxiosClient(config.options.endpoint, config.options.api_version, config.options.timeout, RetryMap_1.RetryMap.createFromArray(config.options.retry_map_config), config.options.override_queries);
+        return new HttpRepository_1.HttpRepository(httpClient, config.app_id, config.index_id, config.token, new Transformer_1.Transformer());
+    };
+    /**
+     * Ensure the Repository configuration is valid
+     *
+     * @param config
+     */
+    Apisearch.ensureRepositoryConfigIsValid = function (config) {
+        Apisearch.ensureIsDefined(config.app_id, "app_id");
+        Apisearch.ensureIsDefined(config.index_id, "index_id");
+        Apisearch.ensureIsDefined(config.token, "token");
+        Apisearch.ensureIsDefined(config.options.endpoint, "options.endpoint");
+    };
+    /**
+     * Ensure the value is not undefined
+     *
+     * @param param
+     * @param name
+     */
+    Apisearch.ensureIsDefined = function (param, name) {
+        if (typeof param === "undefined") {
+            throw new TypeError(name + " parameter must be defined.");
+        }
+    };
+    /**
+     * Created located
+     *
+     * @param coordinate
+     * @param queryText
+     * @param page
+     * @param size
+     *
+     * @returns {Query}
+     */
+    Apisearch.createQueryLocated = function (coordinate, queryText, page, size) {
+        if (page === void 0) { page = Query_1.QUERY_DEFAULT_PAGE; }
+        if (size === void 0) { size = Query_2.QUERY_DEFAULT_SIZE; }
+        return Query_3.Query.createLocated(coordinate, queryText, page, size);
+    };
+    /**
+     * Create
+     *
+     * @param queryText
+     * @param page
+     * @param size
+     *
+     * @returns {Query}
+     */
+    Apisearch.createQuery = function (queryText, page, size) {
+        if (page === void 0) { page = Query_1.QUERY_DEFAULT_PAGE; }
+        if (size === void 0) { size = Query_2.QUERY_DEFAULT_SIZE; }
+        return Query_3.Query.create(queryText, page, size);
+    };
+    /**
+     * Create match all
+     *
+     * @return {Query}
+     */
+    Apisearch.createQueryMatchAll = function () {
+        return Query_3.Query.createMatchAll();
+    };
+    /**
+     * Create by UUID
+     *
+     * @param uuid
+     *
+     * @return {Query}
+     */
+    Apisearch.createQueryByUUID = function (uuid) {
+        return Query_3.Query.createByUUID(uuid);
+    };
+    /**
+     * Create by UUIDs
+     *
+     * @param uuids
+     *
+     * @return {Query}
+     */
+    Apisearch.createQueryByUUIDs = function () {
+        var uuids = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            uuids[_i] = arguments[_i];
+        }
+        return Query_3.Query.createByUUIDs.apply(Query_3.Query, uuids);
+    };
+    /**
+     * Create empty result
+     *
+     * @return {Result}
+     */
+    Apisearch.createEmptyResult = function () {
+        return Result_1.Result.create("", 0, 0, new ResultAggregations_1.ResultAggregations(0), [], []);
+    };
+    /**
+     * Create empty sortby
+     *
+     * @return {SortBy}
+     */
+    Apisearch.createEmptySortBy = function () {
+        return SortBy_1.SortBy.create();
+    };
+    return Apisearch;
+}());
+exports["default"] = Apisearch;
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(81);
+
+/***/ }),
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(5);
-var isBuffer = __webpack_require__(18);
-
-/*global toString:true*/
-
-// utils is a library of generic helper functions non-specific to axios
-
-var toString = Object.prototype.toString;
+var utils = __webpack_require__(1);
+var bind = __webpack_require__(38);
+var Axios = __webpack_require__(83);
+var defaults = __webpack_require__(22);
 
 /**
- * Determine if a value is an Array
+ * Create an instance of Axios
  *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Array, otherwise false
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
  */
-function isArray(val) {
-  return toString.call(val) === '[object Array]';
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Factory for creating new instances
+axios.create = function create(instanceConfig) {
+  return createInstance(utils.merge(defaults, instanceConfig));
+};
+
+// Expose Cancel & CancelToken
+axios.Cancel = __webpack_require__(42);
+axios.CancelToken = __webpack_require__(97);
+axios.isCancel = __webpack_require__(41);
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = __webpack_require__(98);
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var defaults = __webpack_require__(22);
+var utils = __webpack_require__(1);
+var InterceptorManager = __webpack_require__(92);
+var dispatchRequest = __webpack_require__(93);
+
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
 }
 
 /**
- * Determine if a value is an ArrayBuffer
+ * Dispatch a request
  *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ * @param {Object} config The config specific for this request (merged with this.defaults)
  */
-function isArrayBuffer(val) {
-  return toString.call(val) === '[object ArrayBuffer]';
-}
-
-/**
- * Determine if a value is a FormData
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an FormData, otherwise false
- */
-function isFormData(val) {
-  return (typeof FormData !== 'undefined') && (val instanceof FormData);
-}
-
-/**
- * Determine if a value is a view on an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */
-function isArrayBufferView(val) {
-  var result;
-  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
-    result = ArrayBuffer.isView(val);
-  } else {
-    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
-  }
-  return result;
-}
-
-/**
- * Determine if a value is a String
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a String, otherwise false
- */
-function isString(val) {
-  return typeof val === 'string';
-}
-
-/**
- * Determine if a value is a Number
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Number, otherwise false
- */
-function isNumber(val) {
-  return typeof val === 'number';
-}
-
-/**
- * Determine if a value is undefined
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if the value is undefined, otherwise false
- */
-function isUndefined(val) {
-  return typeof val === 'undefined';
-}
-
-/**
- * Determine if a value is an Object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Object, otherwise false
- */
-function isObject(val) {
-  return val !== null && typeof val === 'object';
-}
-
-/**
- * Determine if a value is a Date
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Date, otherwise false
- */
-function isDate(val) {
-  return toString.call(val) === '[object Date]';
-}
-
-/**
- * Determine if a value is a File
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a File, otherwise false
- */
-function isFile(val) {
-  return toString.call(val) === '[object File]';
-}
-
-/**
- * Determine if a value is a Blob
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Blob, otherwise false
- */
-function isBlob(val) {
-  return toString.call(val) === '[object Blob]';
-}
-
-/**
- * Determine if a value is a Function
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Function, otherwise false
- */
-function isFunction(val) {
-  return toString.call(val) === '[object Function]';
-}
-
-/**
- * Determine if a value is a Stream
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Stream, otherwise false
- */
-function isStream(val) {
-  return isObject(val) && isFunction(val.pipe);
-}
-
-/**
- * Determine if a value is a URLSearchParams object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a URLSearchParams object, otherwise false
- */
-function isURLSearchParams(val) {
-  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
-}
-
-/**
- * Trim excess whitespace off the beginning and end of a string
- *
- * @param {String} str The String to trim
- * @returns {String} The String freed of excess whitespace
- */
-function trim(str) {
-  return str.replace(/^\s*/, '').replace(/\s*$/, '');
-}
-
-/**
- * Determine if we're running in a standard browser environment
- *
- * This allows axios to run in a web worker, and react-native.
- * Both environments support XMLHttpRequest, but not fully standard globals.
- *
- * web workers:
- *  typeof window -> undefined
- *  typeof document -> undefined
- *
- * react-native:
- *  navigator.product -> 'ReactNative'
- */
-function isStandardBrowserEnv() {
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
-    return false;
-  }
-  return (
-    typeof window !== 'undefined' &&
-    typeof document !== 'undefined'
-  );
-}
-
-/**
- * Iterate over an Array or an Object invoking a function for each item.
- *
- * If `obj` is an Array callback will be called passing
- * the value, index, and complete array for each item.
- *
- * If 'obj' is an Object callback will be called passing
- * the value, key, and complete object for each property.
- *
- * @param {Object|Array} obj The object to iterate
- * @param {Function} fn The callback to invoke for each item
- */
-function forEach(obj, fn) {
-  // Don't bother if no value provided
-  if (obj === null || typeof obj === 'undefined') {
-    return;
+Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
   }
 
-  // Force an array if not already something iterable
-  if (typeof obj !== 'object') {
-    /*eslint no-param-reassign:0*/
-    obj = [obj];
-  }
+  config = utils.merge(defaults, {method: 'get'}, this.defaults, config);
+  config.method = config.method.toLowerCase();
 
-  if (isArray(obj)) {
-    // Iterate over array values
-    for (var i = 0, l = obj.length; i < l; i++) {
-      fn.call(null, obj[i], i, obj);
-    }
-  } else {
-    // Iterate over object keys
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        fn.call(null, obj[key], key, obj);
-      }
-    }
-  }
-}
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
 
-/**
- * Accepts varargs expecting each argument to be an object, then
- * immutably merges the properties of each object and returns result.
- *
- * When multiple objects contain the same key the later object in
- * the arguments list will take precedence.
- *
- * Example:
- *
- * ```js
- * var result = merge({foo: 123}, {foo: 456});
- * console.log(result.foo); // outputs 456
- * ```
- *
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-function merge(/* obj1, obj2, obj3, ... */) {
-  var result = {};
-  function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
-      result[key] = merge(result[key], val);
-    } else {
-      result[key] = val;
-    }
-  }
-
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    forEach(arguments[i], assignValue);
-  }
-  return result;
-}
-
-/**
- * Extends object a by mutably adding to it the properties of object b.
- *
- * @param {Object} a The object to be extended
- * @param {Object} b The object to copy properties from
- * @param {Object} thisArg The object to bind function to
- * @return {Object} The resulting value of object a
- */
-function extend(a, b, thisArg) {
-  forEach(b, function assignValue(val, key) {
-    if (thisArg && typeof val === 'function') {
-      a[key] = bind(val, thisArg);
-    } else {
-      a[key] = val;
-    }
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
   });
-  return a;
-}
 
-module.exports = {
-  isArray: isArray,
-  isArrayBuffer: isArrayBuffer,
-  isBuffer: isBuffer,
-  isFormData: isFormData,
-  isArrayBufferView: isArrayBufferView,
-  isString: isString,
-  isNumber: isNumber,
-  isObject: isObject,
-  isUndefined: isUndefined,
-  isDate: isDate,
-  isFile: isFile,
-  isBlob: isBlob,
-  isFunction: isFunction,
-  isStream: isStream,
-  isURLSearchParams: isURLSearchParams,
-  isStandardBrowserEnv: isStandardBrowserEnv,
-  forEach: forEach,
-  merge: merge,
-  extend: extend,
-  trim: trim
-};
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
 
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Coordinate Type cast
- * @param coordinate
- */
-var Coordinate = function Coordinate(latitude, longitude) {
-    _classCallCheck(this, Coordinate);
-
-    if (typeof latitude === 'undefined' || typeof latitude === 'undefined') {
-        throw new Error('Not valid coordinates object type given.');
-    }
-
-    this.lat = latitude;
-    this.lon = longitude;
-};
-
-exports.default = Coordinate;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Abstract Location Range class
- */
-var AbstractLocationRange = function AbstractLocationRange() {
-    _classCallCheck(this, AbstractLocationRange);
-
-    if (this.constructor.name === AbstractLocationRange) {
-        throw TypeError('You can\'t instantiate an Abstract class');
-    }
-
-    if (typeof this.toFilterObject === 'undefined') {
-        throw new TypeError('toFilterObject() method must be implemented.');
-    }
-};
-
-exports.default = AbstractLocationRange;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Typechecking
- */
-var TypeChecker = function () {
-    function TypeChecker() {
-        _classCallCheck(this, TypeChecker);
-    }
-
-    _createClass(TypeChecker, null, [{
-        key: 'isDefined',
-        value: function isDefined(value) {
-            if (typeof value === 'undefined') {
-                throw new TypeError('Method parameter must be defined.');
-            }
-        }
-    }, {
-        key: 'isInteger',
-        value: function isInteger(integer) {
-            if (typeof integer !== 'number') {
-                throw new TypeError('\n                "' + integer + '" must be type of Integer, \n                "' + integer.constructor.name + '" given.\n            ');
-            }
-        }
-    }, {
-        key: 'isBool',
-        value: function isBool(bool) {
-            if (typeof bool !== 'boolean') {
-                throw new TypeError('\n                "' + bool + '" must be type of Boolean, \n                "' + bool.constructor.name + '" given.\n            ');
-            }
-        }
-    }, {
-        key: 'isString',
-        value: function isString(string) {
-            if (typeof string !== 'string') {
-                throw new TypeError('\n                "' + string + '" must be type of String, \n                "' + string.constructor.name + '" given.\n            ');
-            }
-        }
-    }, {
-        key: 'isArray',
-        value: function isArray(array) {
-            if (array instanceof Array === false) {
-                throw new TypeError('\n                "' + array + '" must be type of Array, \n                "' + array.constructor.name + '" given.\n            ');
-            }
-        }
-    }, {
-        key: 'isObjectTypeOf',
-        value: function isObjectTypeOf(givenObject, mustBe) {
-            if (givenObject instanceof mustBe !== true) {
-                throw new TypeError('\n                "' + givenObject.constructor.name + '" must be type ' + mustBe.name + ', \n                "' + givenObject.constructor.name + '" given.\n            ');
-            }
-        }
-    }]);
-
-    return TypeChecker;
-}();
-
-exports.default = TypeChecker;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(20);
-
-var DEFAULT_CONTENT_TYPE = {
-  'Content-Type': 'application/x-www-form-urlencoded'
-};
-
-function setContentTypeIfUnset(headers, value) {
-  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
-    headers['Content-Type'] = value;
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
   }
-}
 
-function getDefaultAdapter() {
-  var adapter;
-  if (typeof XMLHttpRequest !== 'undefined') {
-    // For browsers use XHR adapter
-    adapter = __webpack_require__(7);
-  } else if (typeof process !== 'undefined') {
-    // For node use HTTP adapter
-    adapter = __webpack_require__(7);
-  }
-  return adapter;
-}
-
-var defaults = {
-  adapter: getDefaultAdapter(),
-
-  transformRequest: [function transformRequest(data, headers) {
-    normalizeHeaderName(headers, 'Content-Type');
-    if (utils.isFormData(data) ||
-      utils.isArrayBuffer(data) ||
-      utils.isBuffer(data) ||
-      utils.isStream(data) ||
-      utils.isFile(data) ||
-      utils.isBlob(data)
-    ) {
-      return data;
-    }
-    if (utils.isArrayBufferView(data)) {
-      return data.buffer;
-    }
-    if (utils.isURLSearchParams(data)) {
-      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
-      return data.toString();
-    }
-    if (utils.isObject(data)) {
-      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
-      return JSON.stringify(data);
-    }
-    return data;
-  }],
-
-  transformResponse: [function transformResponse(data) {
-    /*eslint no-param-reassign:0*/
-    if (typeof data === 'string') {
-      try {
-        data = JSON.parse(data);
-      } catch (e) { /* Ignore */ }
-    }
-    return data;
-  }],
-
-  timeout: 0,
-
-  xsrfCookieName: 'XSRF-TOKEN',
-  xsrfHeaderName: 'X-XSRF-TOKEN',
-
-  maxContentLength: -1,
-
-  validateStatus: function validateStatus(status) {
-    return status >= 200 && status < 300;
-  }
+  return promise;
 };
 
-defaults.headers = {
-  common: {
-    'Accept': 'application/json, text/plain, */*'
-  }
-};
-
-utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
-  defaults.headers[method] = {};
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url
+    }));
+  };
 });
 
 utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
 });
 
-module.exports = defaults;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function bind(fn, thisArg) {
-  return function wrap() {
-    var args = new Array(arguments.length);
-    for (var i = 0; i < args.length; i++) {
-      args[i] = arguments[i];
-    }
-    return fn.apply(thisArg, args);
-  };
-};
+module.exports = Axios;
 
 
 /***/ }),
-/* 6 */
+/* 84 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -3165,931 +9102,13 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(0);
-var settle = __webpack_require__(21);
-var buildURL = __webpack_require__(23);
-var parseHeaders = __webpack_require__(24);
-var isURLSameOrigin = __webpack_require__(25);
-var createError = __webpack_require__(8);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(26);
-
-module.exports = function xhrAdapter(config) {
-  return new Promise(function dispatchXhrRequest(resolve, reject) {
-    var requestData = config.data;
-    var requestHeaders = config.headers;
-
-    if (utils.isFormData(requestData)) {
-      delete requestHeaders['Content-Type']; // Let the browser set it
-    }
-
-    var request = new XMLHttpRequest();
-    var loadEvent = 'onreadystatechange';
-    var xDomain = false;
-
-    // For IE 8/9 CORS support
-    // Only supports POST and GET calls and doesn't returns the response headers.
-    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-    if (process.env.NODE_ENV !== 'test' &&
-        typeof window !== 'undefined' &&
-        window.XDomainRequest && !('withCredentials' in request) &&
-        !isURLSameOrigin(config.url)) {
-      request = new window.XDomainRequest();
-      loadEvent = 'onload';
-      xDomain = true;
-      request.onprogress = function handleProgress() {};
-      request.ontimeout = function handleTimeout() {};
-    }
-
-    // HTTP basic authentication
-    if (config.auth) {
-      var username = config.auth.username || '';
-      var password = config.auth.password || '';
-      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
-    }
-
-    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
-
-    // Set the request timeout in MS
-    request.timeout = config.timeout;
-
-    // Listen for ready state
-    request[loadEvent] = function handleLoad() {
-      if (!request || (request.readyState !== 4 && !xDomain)) {
-        return;
-      }
-
-      // The request errored out and we didn't get a response, this will be
-      // handled by onerror instead
-      // With one exception: request that using file: protocol, most browsers
-      // will return status as 0 even though it's a successful request
-      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
-        return;
-      }
-
-      // Prepare the response
-      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
-      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
-      var response = {
-        data: responseData,
-        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
-        status: request.status === 1223 ? 204 : request.status,
-        statusText: request.status === 1223 ? 'No Content' : request.statusText,
-        headers: responseHeaders,
-        config: config,
-        request: request
-      };
-
-      settle(resolve, reject, response);
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle low level network errors
-    request.onerror = function handleError() {
-      // Real errors are hidden from us by the browser
-      // onerror should only fire if it's a network error
-      reject(createError('Network Error', config, null, request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle timeout
-    request.ontimeout = function handleTimeout() {
-      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
-        request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Add xsrf header
-    // This is only done if running in a standard browser environment.
-    // Specifically not if we're in a web worker, or react-native.
-    if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(27);
-
-      // Add xsrf header
-      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
-          cookies.read(config.xsrfCookieName) :
-          undefined;
-
-      if (xsrfValue) {
-        requestHeaders[config.xsrfHeaderName] = xsrfValue;
-      }
-    }
-
-    // Add headers to the request
-    if ('setRequestHeader' in request) {
-      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
-        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
-          // Remove Content-Type if data is undefined
-          delete requestHeaders[key];
-        } else {
-          // Otherwise add header to the request
-          request.setRequestHeader(key, val);
-        }
-      });
-    }
-
-    // Add withCredentials to request if needed
-    if (config.withCredentials) {
-      request.withCredentials = true;
-    }
-
-    // Add responseType to request if needed
-    if (config.responseType) {
-      try {
-        request.responseType = config.responseType;
-      } catch (e) {
-        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
-        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
-        if (config.responseType !== 'json') {
-          throw e;
-        }
-      }
-    }
-
-    // Handle progress if needed
-    if (typeof config.onDownloadProgress === 'function') {
-      request.addEventListener('progress', config.onDownloadProgress);
-    }
-
-    // Not all browsers support upload events
-    if (typeof config.onUploadProgress === 'function' && request.upload) {
-      request.upload.addEventListener('progress', config.onUploadProgress);
-    }
-
-    if (config.cancelToken) {
-      // Handle cancellation
-      config.cancelToken.promise.then(function onCanceled(cancel) {
-        if (!request) {
-          return;
-        }
-
-        request.abort();
-        reject(cancel);
-        // Clean up request
-        request = null;
-      });
-    }
-
-    if (requestData === undefined) {
-      requestData = null;
-    }
-
-    // Send the request
-    request.send(requestData);
-  });
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
-
-/***/ }),
-/* 8 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(22);
-
-/**
- * Create an Error with the specified message, config, error code, request and response.
- *
- * @param {string} message The error message.
- * @param {Object} config The config.
- * @param {string} [code] The error code (for example, 'ECONNABORTED').
- * @param {Object} [request] The request.
- * @param {Object} [response] The response.
- * @returns {Error} The created error.
- */
-module.exports = function createError(message, config, code, request, response) {
-  var error = new Error(message);
-  return enhanceError(error, config, code, request, response);
-};
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isCancel(value) {
-  return !!(value && value.__CANCEL__);
-};
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * A `Cancel` is an object that is thrown when an operation is canceled.
- *
- * @class
- * @param {string=} message The message.
- */
-function Cancel(message) {
-  this.message = message;
-}
-
-Cancel.prototype.toString = function toString() {
-  return 'Cancel' + (this.message ? ': ' + this.message : '');
-};
-
-Cancel.prototype.__CANCEL__ = true;
-
-module.exports = Cancel;
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var Cancel = __webpack_require__(10);
-
-/**
- * A `CancelToken` is an object that can be used to request cancellation of an operation.
- *
- * @class
- * @param {Function} executor The executor function.
- */
-function CancelToken(executor) {
-  if (typeof executor !== 'function') {
-    throw new TypeError('executor must be a function.');
-  }
-
-  var resolvePromise;
-  this.promise = new Promise(function promiseExecutor(resolve) {
-    resolvePromise = resolve;
-  });
-
-  var token = this;
-  executor(function cancel(message) {
-    if (token.reason) {
-      // Cancellation has already been requested
-      return;
-    }
-
-    token.reason = new Cancel(message);
-    resolvePromise(token.reason);
-  });
-}
-
-/**
- * Throws a `Cancel` if cancellation has been requested.
- */
-CancelToken.prototype.throwIfRequested = function throwIfRequested() {
-  if (this.reason) {
-    throw this.reason;
-  }
-};
-
-/**
- * Returns an object that contains a new `CancelToken` and a function that, when called,
- * cancels the `CancelToken`.
- */
-CancelToken.source = function source() {
-  var cancel;
-  var token = new CancelToken(function executor(c) {
-    cancel = c;
-  });
-  return {
-    token: token,
-    cancel: cancel
-  };
-};
-
-module.exports = CancelToken;
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * ItemUUID class
- */
-var ItemUUID = function () {
-    function ItemUUID(id, type) {
-        _classCallCheck(this, ItemUUID);
-
-        this.id = id;
-        this.type = type;
-    }
-
-    _createClass(ItemUUID, [{
-        key: "composedUUID",
-        value: function composedUUID() {
-            return this.id + "~" + this.type;
-        }
-    }]);
-
-    return ItemUUID;
-}();
-
-exports.default = ItemUUID;
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * filter constants
- */
-var FILTER_IT_DOESNT_MATTER = exports.FILTER_IT_DOESNT_MATTER = 0;
-var FILTER_MUST_ALL = exports.FILTER_MUST_ALL = 4;
-var FILTER_MUST_ALL_WITH_LEVELS = exports.FILTER_MUST_ALL_WITH_LEVELS = 5;
-var FILTER_AT_LEAST_ONE = exports.FILTER_AT_LEAST_ONE = 8;
-var FILTER_EXCLUDE = exports.FILTER_EXCLUDE = 16;
-var FILTER_PROMOTE = exports.FILTER_PROMOTE = 32;
-var FILTER_TYPE_FIELD = exports.FILTER_TYPE_FIELD = 'field';
-var FILTER_TYPE_RANGE = exports.FILTER_TYPE_RANGE = 'range';
-var FILTER_TYPE_DATE_RANGE = exports.FILTER_TYPE_DATE_RANGE = 'date_range';
-var FILTER_TYPE_GEO = exports.FILTER_TYPE_GEO = 'geo';
-var FILTER_TYPE_QUERY = exports.FILTER_TYPE_QUERY = 'query';
-
-/**
- * Filter class
- */
-
-var Filter = function () {
-    function Filter(field, values, applicationType, filterType) {
-        var filterTerms = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : [];
-
-        _classCallCheck(this, Filter);
-
-        this.field = field;
-        this.values = values;
-        this.application_type = applicationType;
-        this.filter_type = filterType;
-        this.filter_terms = filterTerms;
-
-        return this;
-    }
-
-    _createClass(Filter, null, [{
-        key: 'getFilterPathByField',
-        value: function getFilterPathByField(field) {
-            return ['id', 'type'].indexOf(field) > -1 ? 'uuid.' + field : 'indexed_metadata.' + field;
-        }
-    }]);
-
-    return Filter;
-}();
-
-exports.default = Filter;
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _Apisearch = __webpack_require__(15);
-
-var _Apisearch2 = _interopRequireDefault(_Apisearch);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Entry point for the Apisearch client
- *
- * @param appId
- * @param apiKey
- * @param options
- *
- * @returns {Apisearch}
- */
-
-module.exports = function (_ref) {
-    var appId = _ref.appId,
-        indexId = _ref.indexId,
-        token = _ref.token,
-        _ref$options = _ref.options,
-        options = _ref$options === undefined ? {} : _ref$options;
-
-    ensureIsDefined(appId, 'appId');
-    ensureIsDefined(indexId, 'indexId');
-    ensureIsDefined(token, 'token');
-
-    options = _extends({
-        endpoint: 'https://apisearch.global.ssl.fastly.net',
-        apiVersion: 'v1',
-        timeout: 10000,
-        overrideQueries: true,
-        cache: true
-    }, options);
-
-    return new _Apisearch2.default({
-        appId: appId,
-        indexId: indexId,
-        token: token,
-        options: options
-    });
-};
-
-function ensureIsDefined(param, name) {
-    if (typeof param === 'undefined') {
-        throw new TypeError(name + ' parameter must be defined.');
-    }
-}
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _HttpClient = __webpack_require__(16);
-
-var _HttpClient2 = _interopRequireDefault(_HttpClient);
-
-var _SecureObjectFactory = __webpack_require__(34);
-
-var _SecureObjectFactory2 = _interopRequireDefault(_SecureObjectFactory);
-
-var _QueryFactory = __webpack_require__(38);
-
-var _QueryFactory2 = _interopRequireDefault(_QueryFactory);
-
-var _MemoryCache = __webpack_require__(43);
-
-var _MemoryCache2 = _interopRequireDefault(_MemoryCache);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Apisearch class
- */
-var Apisearch = function () {
-    /**
-     * Constructor.
-     */
-    function Apisearch(_ref) {
-        var appId = _ref.appId,
-            indexId = _ref.indexId,
-            token = _ref.token,
-            _ref$options = _ref.options,
-            endpoint = _ref$options.endpoint,
-            apiVersion = _ref$options.apiVersion,
-            timeout = _ref$options.timeout,
-            overrideQueries = _ref$options.overrideQueries,
-            inMemoryCache = _ref$options.cache;
-
-        _classCallCheck(this, Apisearch);
-
-        /**
-         * Api
-         */
-        this.appId = appId;
-        this.indexId = indexId;
-        this.token = token;
-        this.apiVersion = apiVersion;
-        this.endpoint = endpoint;
-        this.timeout = timeout;
-        this.overrideQueries = overrideQueries;
-
-        /**
-         * Query
-         */
-        this.query = _QueryFactory2.default;
-        this.createObject = _SecureObjectFactory2.default;
-
-        /**
-         * HttpClient
-         */
-        this.client = new _HttpClient2.default(inMemoryCache ? new _MemoryCache2.default() : false);
-    }
-
-    /**
-     * Search items
-     *
-     * @param query
-     * @param callback
-     * @returns {Promise}
-     */
-
-
-    _createClass(Apisearch, [{
-        key: "search",
-        value: function search(query, callback) {
-            var encodedQuery = encodeURIComponent(JSON.stringify(query));
-            var url = this.endpoint + "/" + this.apiVersion + "?app_id=" + this.appId + "&index=" + this.indexId + "&token=" + this.token + "&query=" + encodedQuery;
-
-            return this.fetch(url).then(function (response) {
-                return callback(response, null);
-            }).catch(function (error) {
-                return callback(null, error);
-            });
-        }
-
-        /**
-         * Search events
-         *
-         * @param query
-         * @param callback
-         * @returns {Promise}
-         */
-
-    }, {
-        key: "events",
-        value: function events(query, callback) {
-            var encodedQuery = encodeURIComponent(JSON.stringify(query));
-            var url = this.endpoint + "/" + this.apiVersion + "/events?app_id=" + this.appId + "&index=" + this.indexId + "&token=" + this.token + "&query=" + encodedQuery;
-
-            return this.fetch(url).then(function (response) {
-                return callback(response, null);
-            }).catch(function (error) {
-                return callback(null, error);
-            });
-        }
-
-        /**
-         * Fetch data
-         *
-         * @param url
-         * @returns {Promise}
-         */
-
-    }, {
-        key: "fetch",
-        value: function fetch(url) {
-            var composedQuery = {
-                url: url,
-                options: {
-                    timeout: this.timeout
-                }
-            };
-
-            /**
-             * Abort any previous existing request
-             */
-            if (this.overrideQueries) {
-                this.client.abort();
-            }
-
-            /**
-             * Start new request
-             */
-            return this.client.query(composedQuery);
-        }
-    }]);
-
-    return Apisearch;
-}();
-
-exports.default = Apisearch;
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var axios = __webpack_require__(17);
-var CancelToken = __webpack_require__(11);
-
-/**
- * Http class
- */
-
-var HttpClient = function () {
-    /**
-     * Constructor
-     * @param cache
-     */
-    function HttpClient(cache) {
-        _classCallCheck(this, HttpClient);
-
-        this.cache = cache;
-        this.cancelToken = CancelToken.source();
-    }
-
-    /**
-     * Make query against the server
-     * @param query
-     * @returns {Promise}
-     */
-
-
-    _createClass(HttpClient, [{
-        key: 'query',
-        value: function query(_query) {
-            /**
-             * Check if query exists in cache store
-             * return promise with the cached value if key exists
-             * if not exists, fetch the data
-             */
-            if (this.cache) {
-                var cachedResponse = this.cache.get(_query.url);
-                if (cachedResponse) {
-                    return new Promise(function (resolve) {
-                        return resolve(cachedResponse);
-                    });
-                }
-            }
-
-            return this.fetchData(_query);
-        }
-
-        /**
-         * Fetch data using Axios
-         * @param query
-         * @returns {Promise}
-         */
-
-    }, {
-        key: 'fetchData',
-        value: function fetchData(query) {
-            /**
-             * Attach new cancellation token
-             */
-            query.options = _extends({}, query.options, {
-                cancelToken: this.cancelToken.token
-            });
-
-            /**
-             * Request promise
-             */
-            var self = this;
-            return new Promise(function (resolve, reject) {
-                axios.get(query.url, query.options).then(function (response) {
-                    /**
-                     * Check if cache is enabled
-                     * set the query as a cache key
-                     * and the valid response as a cache value
-                     */
-                    if (self.cache) {
-                        self.cache.set(query.url, response.data);
-                    }
-
-                    return resolve(response.data);
-                }).catch(function (thrown) {
-                    return reject(thrown);
-                });
-            });
-        }
-
-        /**
-         * Abort current request
-         * And regenerate the cancellation token
-         */
-
-    }, {
-        key: 'abort',
-        value: function abort() {
-            this.cancelToken.cancel();
-            this.cancelToken = CancelToken.source();
-        }
-    }]);
-
-    return HttpClient;
-}();
-
-exports.default = HttpClient;
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(0);
-var bind = __webpack_require__(5);
-var Axios = __webpack_require__(19);
-var defaults = __webpack_require__(4);
-
-/**
- * Create an instance of Axios
- *
- * @param {Object} defaultConfig The default config for the instance
- * @return {Axios} A new instance of Axios
- */
-function createInstance(defaultConfig) {
-  var context = new Axios(defaultConfig);
-  var instance = bind(Axios.prototype.request, context);
-
-  // Copy axios.prototype to instance
-  utils.extend(instance, Axios.prototype, context);
-
-  // Copy context to instance
-  utils.extend(instance, context);
-
-  return instance;
-}
-
-// Create the default instance to be exported
-var axios = createInstance(defaults);
-
-// Expose Axios class to allow class inheritance
-axios.Axios = Axios;
-
-// Factory for creating new instances
-axios.create = function create(instanceConfig) {
-  return createInstance(utils.merge(defaults, instanceConfig));
-};
-
-// Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(10);
-axios.CancelToken = __webpack_require__(11);
-axios.isCancel = __webpack_require__(9);
-
-// Expose all/spread
-axios.all = function all(promises) {
-  return Promise.all(promises);
-};
-axios.spread = __webpack_require__(33);
-
-module.exports = axios;
-
-// Allow use of default import syntax in TypeScript
-module.exports.default = axios;
-
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
- * @license  MIT
- */
-
-// The _isBuffer check is for Safari 5-7 support, because it's missing
-// Object.prototype.constructor. Remove this eventually
-module.exports = function (obj) {
-  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
-}
-
-function isBuffer (obj) {
-  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
-
-// For Node v0.10 support. Remove this eventually.
-function isSlowBuffer (obj) {
-  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
-}
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var defaults = __webpack_require__(4);
-var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(28);
-var dispatchRequest = __webpack_require__(29);
-
-/**
- * Create a new instance of Axios
- *
- * @param {Object} instanceConfig The default config for the instance
- */
-function Axios(instanceConfig) {
-  this.defaults = instanceConfig;
-  this.interceptors = {
-    request: new InterceptorManager(),
-    response: new InterceptorManager()
-  };
-}
-
-/**
- * Dispatch a request
- *
- * @param {Object} config The config specific for this request (merged with this.defaults)
- */
-Axios.prototype.request = function request(config) {
-  /*eslint no-param-reassign:0*/
-  // Allow for axios('example/url'[, config]) a la fetch API
-  if (typeof config === 'string') {
-    config = utils.merge({
-      url: arguments[0]
-    }, arguments[1]);
-  }
-
-  config = utils.merge(defaults, this.defaults, { method: 'get' }, config);
-  config.method = config.method.toLowerCase();
-
-  // Hook up interceptors middleware
-  var chain = [dispatchRequest, undefined];
-  var promise = Promise.resolve(config);
-
-  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
-    chain.unshift(interceptor.fulfilled, interceptor.rejected);
-  });
-
-  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
-    chain.push(interceptor.fulfilled, interceptor.rejected);
-  });
-
-  while (chain.length) {
-    promise = promise.then(chain.shift(), chain.shift());
-  }
-
-  return promise;
-};
-
-// Provide aliases for supported request methods
-utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
-  /*eslint func-names:0*/
-  Axios.prototype[method] = function(url, config) {
-    return this.request(utils.merge(config || {}, {
-      method: method,
-      url: url
-    }));
-  };
-});
-
-utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  /*eslint func-names:0*/
-  Axios.prototype[method] = function(url, data, config) {
-    return this.request(utils.merge(config || {}, {
-      method: method,
-      url: url,
-      data: data
-    }));
-  };
-});
-
-module.exports = Axios;
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -4102,13 +9121,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 21 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(40);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -4135,7 +9154,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 22 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4163,13 +9182,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 23 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -4210,9 +9229,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
       if (utils.isArray(val)) {
         key = key + '[]';
-      }
-
-      if (!utils.isArray(val)) {
+      } else {
         val = [val];
       }
 
@@ -4238,13 +9255,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 24 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -4298,13 +9315,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 25 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -4373,56 +9390,13 @@ module.exports = (
 
 
 /***/ }),
-/* 26 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
-
-var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
-function E() {
-  this.message = 'String contains an invalid character';
-}
-E.prototype = new Error;
-E.prototype.code = 5;
-E.prototype.name = 'InvalidCharacterError';
-
-function btoa(input) {
-  var str = String(input);
-  var output = '';
-  for (
-    // initialize result and counter
-    var block, charCode, idx = 0, map = chars;
-    // if the next str index does not exist:
-    //   change the mapping table to "="
-    //   check if d has no fractional digits
-    str.charAt(idx | 0) || (map = '=', idx % 1);
-    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
-    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
-  ) {
-    charCode = str.charCodeAt(idx += 3 / 4);
-    if (charCode > 0xFF) {
-      throw new E();
-    }
-    block = block << 8 | charCode;
-  }
-  return output;
-}
-
-module.exports = btoa;
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -4476,13 +9450,13 @@ module.exports = (
 
 
 /***/ }),
-/* 28 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -4535,18 +9509,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 29 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(0);
-var transformData = __webpack_require__(30);
-var isCancel = __webpack_require__(9);
-var defaults = __webpack_require__(4);
-var isAbsoluteURL = __webpack_require__(31);
-var combineURLs = __webpack_require__(32);
+var utils = __webpack_require__(1);
+var transformData = __webpack_require__(94);
+var isCancel = __webpack_require__(41);
+var defaults = __webpack_require__(22);
+var isAbsoluteURL = __webpack_require__(95);
+var combineURLs = __webpack_require__(96);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -4628,13 +9602,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 30 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 /**
  * Transform the data for a request or a response
@@ -4655,7 +9629,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 31 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4676,7 +9650,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 32 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4697,7 +9671,71 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 33 */
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Cancel = __webpack_require__(42);
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+
+/***/ }),
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4731,1105 +9769,894 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 34 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _ItemUUID = __webpack_require__(12);
-
-var _ItemUUID2 = _interopRequireDefault(_ItemUUID);
-
-var _Coordinate = __webpack_require__(1);
-
-var _Coordinate2 = _interopRequireDefault(_Coordinate);
-
-var _CoordinateAndDistance = __webpack_require__(35);
-
-var _CoordinateAndDistance2 = _interopRequireDefault(_CoordinateAndDistance);
-
-var _Square = __webpack_require__(36);
-
-var _Square2 = _interopRequireDefault(_Square);
-
-var _Polygon = __webpack_require__(37);
-
-var _Polygon2 = _interopRequireDefault(_Polygon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
 /**
- * SecureObjectFactory class.
+ * Connection error
  */
-var SecureObjectFactory = function () {
-    function SecureObjectFactory() {
-        _classCallCheck(this, SecureObjectFactory);
+var UnknownError = /** @class */ (function (_super) {
+    tslib_1.__extends(UnknownError, _super);
+    function UnknownError() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
+    /**
+     * Unknown error
+     *
+     * @return this
+     */
+    UnknownError.createUnknownError = function () {
+        return new this("Unknown error.");
+    };
+    return UnknownError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.UnknownError = UnknownError;
 
-    _createClass(SecureObjectFactory, null, [{
-        key: "uuid",
-        value: function uuid(id, type) {
-            return new _ItemUUID2.default(id, type);
-        }
-    }, {
-        key: "coordinate",
-        value: function coordinate(lat, lon) {
-            return new _Coordinate2.default(lat, lon);
-        }
-    }, {
-        key: "coordinateAndDistance",
-        value: function coordinateAndDistance(coordinate, distance) {
-            return new _CoordinateAndDistance2.default(coordinate, distance);
-        }
-    }, {
-        key: "square",
-        value: function square(topLeftCoordinate, bottomRightCoordinate) {
-            return new _Square2.default(topLeftCoordinate, bottomRightCoordinate);
-        }
-    }, {
-        key: "polygon",
-        value: function polygon() {
-            for (var _len = arguments.length, coordinates = Array(_len), _key = 0; _key < _len; _key++) {
-                coordinates[_key] = arguments[_key];
-            }
-
-            return new (Function.prototype.bind.apply(_Polygon2.default, [null].concat(coordinates)))();
-        }
-    }]);
-
-    return SecureObjectFactory;
-}();
-
-exports.default = SecureObjectFactory;
 
 /***/ }),
-/* 35 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+exports.__esModule = true;
+var InvalidFormatError_1 = __webpack_require__(2);
+var IndexUUID_1 = __webpack_require__(49);
+var AppUUID_1 = __webpack_require__(101);
+/**
+ * Index class
+ */
+var Index = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param uuid
+     * @param appUUID
+     * @param isOK
+     * @param docCount
+     * @param size
+     */
+    function Index(uuid, appUUID, isOK, docCount, size) {
+        if (isOK === void 0) { isOK = false; }
+        if (docCount === void 0) { docCount = 0; }
+        if (size === void 0) { size = '0kb'; }
+        this.uuid = uuid;
+        this.appUUID = appUUID;
+        this.isOK = isOK;
+        this.docCount = docCount;
+        this.size = size;
+    }
+    /**
+     * Get uuid
+     *
+     * @return {IndexUUID}
+     */
+    Index.prototype.getUUID = function () {
+        return this.uuid;
+    };
+    /**
+     * Get app id
+     *
+     * @return {AppUUID}
+     */
+    Index.prototype.getAppUUID = function () {
+        return this.appUUID;
+    };
+    /**
+     * Index is OK
+     *
+     * @return {boolean}
+     */
+    Index.prototype.isOk = function () {
+        return this.isOK;
+    };
+    /**
+     * Get doc count
+     *
+     * @return {number}
+     */
+    Index.prototype.getDocCount = function () {
+        return this.docCount;
+    };
+    /**
+     * get size
+     *
+     * @return {string}
+     */
+    Index.prototype.getSize = function () {
+        return this.size;
+    };
+    /**
+     * To array
+     *
+     * @returns {{id: string, attributes: {}}}
+     */
+    Index.prototype.toArray = function () {
+        return {
+            uuid: this.uuid.toArray(),
+            app_id: this.appUUID.toArray(),
+            is_ok: this.isOK,
+            doc_count: this.docCount,
+            size: this.size
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @return User
+     */
+    Index.createFromArray = function (array) {
+        if (typeof array.uuid == "undefined" ||
+            typeof array.app_id == "undefined") {
+            throw InvalidFormatError_1.InvalidFormatError.indexFormatNotValid();
+        }
+        return new Index(IndexUUID_1.IndexUUID.createFromArray(array.uuid), AppUUID_1.AppUUID.createFromArray(array.app_id), (typeof array.is_ok == "undefined" ? false : array.is_ok), (typeof array.doc_count == "undefined" ? 0 : array.doc_count), (typeof array.size == "undefined" ? '0kb' : array.size));
+    };
+    return Index;
+}());
+exports.Index = Index;
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var _AbstractLocationRange = __webpack_require__(2);
+"use strict";
 
-var _AbstractLocationRange2 = _interopRequireDefault(_AbstractLocationRange);
+exports.__esModule = true;
+var InvalidFormatError_1 = __webpack_require__(2);
+/**
+ * AppUUID class
+ */
+var AppUUID = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param id
+     */
+    function AppUUID(id) {
+        if (id.indexOf('_') >= 0) {
+            throw InvalidFormatError_1.InvalidFormatError.appUUIDFormatNotValid();
+        }
+        this.id = id;
+    }
+    /**
+     * Create by id
+     *
+     * @param id
+     *
+     * @returns {ItemUUID}
+     */
+    AppUUID.createById = function (id) {
+        return new AppUUID(id);
+    };
+    /**
+     * Return id
+     *
+     * @returns {string}
+     */
+    AppUUID.prototype.getId = function () {
+        return this.id;
+    };
+    /**
+     * To array
+     *
+     * @returns {{id: *, type: *}}
+     */
+    AppUUID.prototype.toArray = function () {
+        return {
+            id: this.id
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array {{id:string, type:string}}
+     *
+     * @return {ItemUUID}
+     */
+    AppUUID.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        return new AppUUID(array.id);
+    };
+    /**
+     * Compose unique id
+     *
+     * @returns {string}
+     */
+    AppUUID.prototype.composedUUID = function () {
+        return this.id;
+    };
+    return AppUUID;
+}());
+exports.AppUUID = AppUUID;
 
-var _Coordinate = __webpack_require__(1);
 
-var _Coordinate2 = _interopRequireDefault(_Coordinate);
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var _TypeChecker = __webpack_require__(3);
+"use strict";
 
-var _TypeChecker2 = _interopRequireDefault(_TypeChecker);
+exports.__esModule = true;
+var Synonym_1 = __webpack_require__(60);
+exports.DEFAULT_SHARDS = 1;
+exports.DEFAULT_REPLICAS = 0;
+/**
+ * Result class
+ */
+var Config = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param language
+     * @param storeSearchableMetadata
+     * @param shards
+     * @param replicas
+     */
+    function Config(language, storeSearchableMetadata, shards, replicas) {
+        if (language === void 0) { language = null; }
+        if (storeSearchableMetadata === void 0) { storeSearchableMetadata = true; }
+        if (shards === void 0) { shards = exports.DEFAULT_SHARDS; }
+        if (replicas === void 0) { replicas = exports.DEFAULT_REPLICAS; }
+        this.synonyms = [];
+        this.language = language;
+        this.storeSearchableMetadata = storeSearchableMetadata;
+        this.shards = shards;
+        this.replicas = replicas;
+    }
+    /**
+     * Get language
+     *
+     * @return {string}
+     */
+    Config.prototype.getLanguage = function () {
+        return this.language;
+    };
+    /**
+     * Should searchable metadata be stored
+     *
+     * @return {boolean}
+     */
+    Config.prototype.shouldSearchableMetadataBeStored = function () {
+        return this.storeSearchableMetadata;
+    };
+    /**
+     * Add synonym
+     *
+     * @param synonym
+     */
+    Config.prototype.addSynonym = function (synonym) {
+        this.synonyms.push(synonym);
+    };
+    /**
+     * Get synonyms
+     *
+     * @return {Synonym[]}
+     */
+    Config.prototype.getSynonyms = function () {
+        return this.synonyms;
+    };
+    /**
+     * Get shards
+     *
+     * @return {number}
+     */
+    Config.prototype.getShards = function () {
+        return this.shards;
+    };
+    /**
+     * Get replicas
+     *
+     * @return {number}
+     */
+    Config.prototype.getReplicas = function () {
+        return this.replicas;
+    };
+    /**
+     * to array
+     */
+    Config.prototype.toArray = function () {
+        return {
+            language: this.language,
+            store_searchable_metadata: this.storeSearchableMetadata,
+            synonyms: this.synonyms.map(function (synonym) { return synonym.toArray(); }),
+            shards: this.shards,
+            replicas: this.replicas
+        };
+    };
+    /**
+     * Create from array
+     */
+    Config.createFromArray = function (array) {
+        var config = new Config(array.language ? array.language : null, typeof array.store_searchable_metadata == "boolean"
+            ? array.store_searchable_metadata
+            : true);
+        if (array.synonyms instanceof Array &&
+            array.synonyms.length > 0) {
+            config.synonyms = array.synonyms.map(function (synonym) { return Synonym_1.Synonym.createFromArray(synonym); });
+        }
+        config.shards = typeof array.shards == "number"
+            ? array.shards
+            : exports.DEFAULT_SHARDS;
+        config.replicas = typeof array.replicas == "number"
+            ? array.replicas
+            : exports.DEFAULT_REPLICAS;
+        return config;
+    };
+    return Config;
+}());
+exports.Config = Config;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+"use strict";
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * EventError
+ */
+var EventError = /** @class */ (function (_super) {
+    tslib_1.__extends(EventError, _super);
+    function EventError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    EventError.throwEndpointNotAvailable = function () {
+        return new EventError("Endpoint not available");
+    };
+    return EventError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.EventError = EventError;
 
-var CoordinateAndDistance = function (_AbstractLocationRang) {
-    _inherits(CoordinateAndDistance, _AbstractLocationRang);
 
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * Forbidden Error
+ */
+var ForbiddenError = /** @class */ (function (_super) {
+    tslib_1.__extends(ForbiddenError, _super);
+    function ForbiddenError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    ForbiddenError.getTransportableHTTPError = function () {
+        return 403;
+    };
+    /**
+     * App id is required
+     *
+     * @return {ForbiddenError}
+     */
+    ForbiddenError.createAppIdIsRequiredException = function () {
+        return new ForbiddenError("AppId query parameter MUST be defined with a valid value");
+    };
+    /**
+     * Index id is required
+     *
+     * @return {ForbiddenError}
+     */
+    ForbiddenError.createIndexIsRequiredException = function () {
+        return new ForbiddenError("Index query parameter MUST be defined with a valid value");
+    };
+    /**
+     * Token is required
+     *
+     * @return {ForbiddenError}
+     */
+    ForbiddenError.createTokenIsRequiredException = function () {
+        return new ForbiddenError("Token query parameter MUST be defined with a valid value");
+    };
+    return ForbiddenError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.ForbiddenError = ForbiddenError;
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var ErrorWithMessage_1 = __webpack_require__(3);
+/**
+ * Unsupported content type error
+ */
+var UnsupportedContentTypeError = /** @class */ (function (_super) {
+    tslib_1.__extends(UnsupportedContentTypeError, _super);
+    function UnsupportedContentTypeError() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Get transportable http error
+     *
+     * @return {number}
+     */
+    UnsupportedContentTypeError.getTransportableHTTPError = function () {
+        return 415;
+    };
+    /**
+     * Unsupported content type
+     *
+     * @return {InvalidFormatError}
+     */
+    UnsupportedContentTypeError.createUnsupportedContentTypeException = function () {
+        return new UnsupportedContentTypeError("This content type is not accepted. Please use application/json");
+    };
+    return UnsupportedContentTypeError;
+}(ErrorWithMessage_1.ErrorWithMessage));
+exports.UnsupportedContentTypeError = UnsupportedContentTypeError;
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var tslib_1 = __webpack_require__(0);
+var Coordinate_1 = __webpack_require__(10);
+/**
+ * Abstract Location Range class
+ */
+var LocationRange = /** @class */ (function () {
+    function LocationRange() {
+    }
+    /**
+     * From filter object
+     *
+     * @param object
+     *
+     * @return {LocationRange}
+     */
+    LocationRange.fromFilterObject = function (object) {
+        throw TypeError("Method not valid");
+    };
+    /**
+     * to array
+     */
+    LocationRange.prototype.toArray = function () {
+        return {
+            type: this.getName(),
+            data: this.toFilterObject()
+        };
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     */
+    LocationRange.createFromArray = function (array) {
+        if (array.type == "CoordinateAndDistance") {
+            return CoordinateAndDistance.fromFilterObject(array.data);
+        }
+        if (array.type == "Polygon") {
+            return Polygon.fromFilterObject(array.data);
+        }
+        if (array.type == "Square") {
+            return Square.fromFilterObject(array.data);
+        }
+    };
+    return LocationRange;
+}());
+exports.LocationRange = LocationRange;
+/**
+ * CoordinateAndDistance
+ */
+var CoordinateAndDistance = /** @class */ (function (_super) {
+    tslib_1.__extends(CoordinateAndDistance, _super);
+    /**
+     * Constructor
+     *
+     * @param coordinate
+     * @param distance
+     */
     function CoordinateAndDistance(coordinate, distance) {
-        var _ret;
-
-        _classCallCheck(this, CoordinateAndDistance);
-
-        var _this = _possibleConstructorReturn(this, (CoordinateAndDistance.__proto__ || Object.getPrototypeOf(CoordinateAndDistance)).call(this));
-
-        _TypeChecker2.default.isObjectTypeOf(coordinate, _Coordinate2.default);
-        _TypeChecker2.default.isString(distance);
-
+        var _this = _super.call(this) || this;
         _this.coordinate = coordinate;
         _this.distance = distance;
-
-        return _ret = _this, _possibleConstructorReturn(_this, _ret);
+        return _this;
     }
-
-    _createClass(CoordinateAndDistance, [{
-        key: "toFilterObject",
-        value: function toFilterObject() {
-            return {
-                type: this.constructor.name,
-                data: {
-                    coordinate: this.coordinate,
-                    distance: this.distance
-                }
-            };
-        }
-    }]);
-
+    /**
+     * To filter object
+     *
+     * @return {{}}}
+     */
+    CoordinateAndDistance.prototype.toFilterObject = function () {
+        return {
+            coordinate: this.coordinate.toArray(),
+            distance: this.distance
+        };
+    };
+    /**
+     * Get name
+     *
+     * @return {string}
+     */
+    CoordinateAndDistance.prototype.getName = function () {
+        return "CoordinateAndDistance";
+    };
+    /**
+     * From filter object
+     *
+     * @param object
+     *
+     * @return {LocationRange}
+     */
+    CoordinateAndDistance.fromFilterObject = function (object) {
+        return new CoordinateAndDistance(Coordinate_1.Coordinate.createFromArray(object.coordinate), object.distance);
+    };
     return CoordinateAndDistance;
-}(_AbstractLocationRange2.default);
-
-exports.default = CoordinateAndDistance;
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _AbstractLocationRange = __webpack_require__(2);
-
-var _AbstractLocationRange2 = _interopRequireDefault(_AbstractLocationRange);
-
-var _Coordinate = __webpack_require__(1);
-
-var _Coordinate2 = _interopRequireDefault(_Coordinate);
-
-var _TypeChecker = __webpack_require__(3);
-
-var _TypeChecker2 = _interopRequireDefault(_TypeChecker);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Square = function (_AbstractLocationRang) {
-    _inherits(Square, _AbstractLocationRang);
-
-    function Square(topLeftCoordinate, bottomRightCoordinate) {
-        var _ret;
-
-        _classCallCheck(this, Square);
-
-        _TypeChecker2.default.isObjectTypeOf(topLeftCoordinate, _Coordinate2.default);
-        _TypeChecker2.default.isObjectTypeOf(bottomRightCoordinate, _Coordinate2.default);
-
-        var _this = _possibleConstructorReturn(this, (Square.__proto__ || Object.getPrototypeOf(Square)).call(this));
-
-        _this.topLeftCoordinate = topLeftCoordinate;
-        _this.bottomRightCoordinate = bottomRightCoordinate;
-
-        return _ret = _this, _possibleConstructorReturn(_this, _ret);
-    }
-
-    _createClass(Square, [{
-        key: "toFilterObject",
-        value: function toFilterObject() {
-            return {
-                type: this.constructor.name,
-                data: {
-                    0: this.topLeftCoordinate,
-                    1: this.bottomRightCoordinate
-                }
-            };
-        }
-    }]);
-
-    return Square;
-}(_AbstractLocationRange2.default);
-
-exports.default = Square;
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _AbstractLocationRange = __webpack_require__(2);
-
-var _AbstractLocationRange2 = _interopRequireDefault(_AbstractLocationRange);
-
-var _Coordinate = __webpack_require__(1);
-
-var _Coordinate2 = _interopRequireDefault(_Coordinate);
-
-var _TypeChecker = __webpack_require__(3);
-
-var _TypeChecker2 = _interopRequireDefault(_TypeChecker);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Polygon = function (_AbstractLocationRang) {
-    _inherits(Polygon, _AbstractLocationRang);
-
-    function Polygon() {
-        var _ret;
-
-        _classCallCheck(this, Polygon);
-
-        var _this = _possibleConstructorReturn(this, (Polygon.__proto__ || Object.getPrototypeOf(Polygon)).call(this));
-
-        for (var _len = arguments.length, coordinates = Array(_len), _key = 0; _key < _len; _key++) {
-            coordinates[_key] = arguments[_key];
-        }
-
+}(LocationRange));
+exports.CoordinateAndDistance = CoordinateAndDistance;
+/**
+ * Polygon
+ */
+var Polygon = /** @class */ (function (_super) {
+    tslib_1.__extends(Polygon, _super);
+    /**
+     * Constructor
+     *
+     * @param coordinates
+     */
+    function Polygon(coordinates) {
+        var _this = _super.call(this) || this;
         if (coordinates.length < 3) {
             throw new Error("A polygon needs more than two coordinates.");
         }
-
-        _this.coordinates = coordinates.map(function (coordinate) {
-            _TypeChecker2.default.isObjectTypeOf(coordinate, _Coordinate2.default);
-
-            return coordinate;
-        });
-
-        return _ret = _this, _possibleConstructorReturn(_this, _ret);
+        _this.coordinates = coordinates;
+        return _this;
     }
-
-    _createClass(Polygon, [{
-        key: "toFilterObject",
-        value: function toFilterObject() {
-            return {
-                type: this.constructor.name,
-                data: this.coordinates
-            };
+    /**
+     * To filter object
+     *
+     * @return {{coordinates: {lat:number, lon:number}[]}}
+     */
+    Polygon.prototype.toFilterObject = function () {
+        var coordinates = [];
+        for (var i in this.coordinates) {
+            coordinates.push(this.coordinates[i].toArray());
         }
-    }]);
-
+        return {
+            coordinates: coordinates
+        };
+    };
+    /**
+     * Get name
+     *
+     * @return {string}
+     */
+    Polygon.prototype.getName = function () {
+        return "Polygon";
+    };
+    /**
+     * From filter object
+     *
+     * @param object
+     *
+     * @return {Polygon}
+     */
+    Polygon.fromFilterObject = function (object) {
+        var coordinates = [];
+        for (var i in object.coordinates) {
+            coordinates.push(Coordinate_1.Coordinate.createFromArray(object.coordinates[i]));
+        }
+        return new Polygon(coordinates);
+    };
     return Polygon;
-}(_AbstractLocationRange2.default);
-
-exports.default = Polygon;
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Query = __webpack_require__(39);
-
-var _Query2 = _interopRequireDefault(_Query);
-
-var _Filter = __webpack_require__(13);
-
-var _Filter2 = _interopRequireDefault(_Filter);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+}(LocationRange));
+exports.Polygon = Polygon;
 /**
- * QueryFactory class
+ * Square
  */
-var QueryFactory = function () {
-    function QueryFactory() {
-        _classCallCheck(this, QueryFactory);
+var Square = /** @class */ (function (_super) {
+    tslib_1.__extends(Square, _super);
+    /**
+     * Constructor
+     *
+     * @param topLeftCoordinate
+     * @param bottomRightCoordinate
+     */
+    function Square(topLeftCoordinate, bottomRightCoordinate) {
+        var _this = _super.call(this) || this;
+        _this.topLeftCoordinate = topLeftCoordinate;
+        _this.bottomRightCoordinate = bottomRightCoordinate;
+        return _this;
     }
+    /**
+     * To filter object
+     *
+     * @return {{}}}
+     */
+    Square.prototype.toFilterObject = function () {
+        return {
+            top_left: this.topLeftCoordinate.toArray(),
+            bottom_right: this.bottomRightCoordinate.toArray()
+        };
+    };
+    /**
+     * Get name
+     *
+     * @return {string}
+     */
+    Square.prototype.getName = function () {
+        return "Square";
+    };
+    /**
+     * From filter object
+     *
+     * @param object
+     *
+     * @return {LocationRange}
+     */
+    Square.fromFilterObject = function (object) {
+        return new Square(Coordinate_1.Coordinate.createFromArray(object.top_left), Coordinate_1.Coordinate.createFromArray(object.bottom_right));
+    };
+    return Square;
+}(LocationRange));
+exports.Square = Square;
 
-    _createClass(QueryFactory, null, [{
-        key: "create",
-        value: function create(q) {
-            var page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _Query.QUERY_DEFAULT_PAGE;
-            var size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _Query.QUERY_DEFAULT_SIZE;
-
-            return new _Query2.default({
-                q: q,
-                from: (page - 1) * size,
-                page: page,
-                size: size
-            });
-        }
-    }, {
-        key: "createMatchAll",
-        value: function createMatchAll() {
-            return new _Query2.default({
-                q: '',
-                page: _Query.QUERY_DEFAULT_PAGE,
-                size: _Query.QUERY_INFINITE_SIZE
-            });
-        }
-    }, {
-        key: "createLocated",
-        value: function createLocated(coordinate, queryText) {
-            var page = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _Query.QUERY_DEFAULT_PAGE;
-            var size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _Query.QUERY_DEFAULT_SIZE;
-
-            return new _Query2.default({
-                coordinate: coordinate,
-                page: page,
-                size: size,
-                q: queryText
-            });
-        }
-    }, {
-        key: "createByUUID",
-        value: function createByUUID(uuid) {
-            return this.createByUUIDs(uuid);
-        }
-    }, {
-        key: "createByUUIDs",
-        value: function createByUUIDs() {
-            for (var _len = arguments.length, uuids = Array(_len), _key = 0; _key < _len; _key++) {
-                uuids[_key] = arguments[_key];
-            }
-
-            var ids = uuids.map(function (uuid) {
-                return uuid.composedUUID();
-            });
-            var query = new _Query2.default({
-                q: '',
-                page: _Query.QUERY_DEFAULT_PAGE,
-                size: _Query.QUERY_INFINITE_SIZE
-            });
-
-            query.disableAggregations().disableSuggestions();
-
-            query.filters = _extends({}, query.filters, _defineProperty({}, '_id', new _Filter2.default('_id', ids.filter(function (item, pos) {
-                return ids.indexOf(item) === pos;
-            }), _Filter.FILTER_AT_LEAST_ONE, _Filter.FILTER_TYPE_FIELD)));
-
-            return query;
-        }
-    }]);
-
-    return QueryFactory;
-}();
-
-exports.default = QueryFactory;
 
 /***/ }),
-/* 39 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.QUERY_INFINITE_SIZE = exports.QUERY_DEFAULT_SIZE = exports.QUERY_DEFAULT_PAGE = exports.QUERY_DEFAULT_FROM = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _ItemUUID = __webpack_require__(12);
-
-var _ItemUUID2 = _interopRequireDefault(_ItemUUID);
-
-var _Coordinate = __webpack_require__(1);
-
-var _Coordinate2 = _interopRequireDefault(_Coordinate);
-
-var _TypeChecker = __webpack_require__(3);
-
-var _TypeChecker2 = _interopRequireDefault(_TypeChecker);
-
-var _User = __webpack_require__(40);
-
-var _User2 = _interopRequireDefault(_User);
-
-var _Aggregation = __webpack_require__(41);
-
-var _Aggregation2 = _interopRequireDefault(_Aggregation);
-
-var _Filter = __webpack_require__(13);
-
-var _Filter2 = _interopRequireDefault(_Filter);
-
-var _AbstractLocationRange = __webpack_require__(2);
-
-var _AbstractLocationRange2 = _interopRequireDefault(_AbstractLocationRange);
-
-var _SortBy = __webpack_require__(42);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+exports.__esModule = true;
 /**
- * Query constants
+ * Http class
  */
-var QUERY_DEFAULT_FROM = exports.QUERY_DEFAULT_FROM = 0;
-var QUERY_DEFAULT_PAGE = exports.QUERY_DEFAULT_PAGE = 1;
-var QUERY_DEFAULT_SIZE = exports.QUERY_DEFAULT_SIZE = 10;
-var QUERY_INFINITE_SIZE = exports.QUERY_INFINITE_SIZE = 1000;
-
-/**
- * Query class
- */
-
-var Query = function () {
-    function Query(params) {
-        _classCallCheck(this, Query);
-
-        this.q = params.q;
-        this.universe_filters = params.universe_filters || [];
-        this.filters = params.filters || [];
-        this.items_promoted = params.items_promoted || [];
-        this.aggregations = params.aggregations || [];
-        this.page = params.page || QUERY_DEFAULT_PAGE;
-        this.size = params.size || QUERY_DEFAULT_SIZE;
-        this.from = params.from || QUERY_DEFAULT_FROM;
-        this.results_enabled = params.results_enabled || null;
-        this.aggregations_enabled = params.aggregations_enabled || null;
-        this.suggestions_enabled = params.suggestions_enabled || null;
-        this.highlight_enabled = params.highlight_enabled || null;
-        this.filter_fields = params.filter_fields || [];
-        this.user = params.user || null;
-        this.coordinate = typeof params.coordinate !== 'undefined' ? new _Coordinate2.default(params.coordinate.lat, params.coordinate.lon) : null;
-        this.sort = null;
-
-        return this;
+var HttpClient = /** @class */ (function () {
+    function HttpClient() {
     }
+    return HttpClient;
+}());
+exports.HttpClient = HttpClient;
 
-    _createClass(Query, [{
-        key: "setQueryText",
-        value: function setQueryText(text) {
-            this.q = text;
-
-            return this;
-        }
-    }, {
-        key: "setPage",
-        value: function setPage(page) {
-            this.page = page;
-
-            return this;
-        }
-    }, {
-        key: "setResultSize",
-        value: function setResultSize(size) {
-            _TypeChecker2.default.isInteger(size);
-            this.size = size;
-
-            return this;
-        }
-    }, {
-        key: "filterBy",
-        value: function filterBy(filterName, field, values) {
-            var applicationType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _Filter.FILTER_AT_LEAST_ONE;
-            var aggregate = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true;
-            var aggregationSort = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : _Aggregation.AGGREGATION_SORT_BY_COUNT_DESC;
-
-            _TypeChecker2.default.isArray(values);
-            _TypeChecker2.default.isArray(aggregationSort);
-
-            var fieldPath = _Filter2.default.getFilterPathByField(field);
-            if (values.length !== 0) {
-                this.filters = _extends({}, this.filters, _defineProperty({}, filterName, new _Filter2.default(fieldPath, values, applicationType, _Filter.FILTER_TYPE_FIELD)));
-            } else {
-                delete this.filters[filterName];
-            }
-
-            if (aggregate) {
-                this.aggregateBy(filterName, field, applicationType, aggregationSort);
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterByTypes",
-        value: function filterByTypes(values) {
-            var aggregate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-            var aggregationSort = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _Aggregation.AGGREGATION_SORT_BY_COUNT_DESC;
-
-            _TypeChecker2.default.isArray(values);
-
-            var fieldPath = _Filter2.default.getFilterPathByField('type');
-            if (values.length !== 0) {
-                this.filters = _extends({}, this.filters, _defineProperty({}, 'type', new _Filter2.default(fieldPath, values, _Filter.FILTER_AT_LEAST_ONE, _Filter.FILTER_TYPE_FIELD)));
-            } else {
-                delete this.filters['type'];
-            }
-
-            if (aggregate) {
-                this.aggregations = _extends({}, this.aggregations, _defineProperty({}, 'type', new _Aggregation2.default('type', fieldPath, _Filter.FILTER_AT_LEAST_ONE, _Filter.FILTER_TYPE_FIELD, [], aggregationSort)));
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterByIds",
-        value: function filterByIds(values) {
-            _TypeChecker2.default.isArray(values);
-
-            var fieldPath = _Filter2.default.getFilterPathByField('id');
-            if (values.length !== 0) {
-                this.filters = _extends({}, this.filters, _defineProperty({}, 'id', new _Filter2.default(fieldPath, values, _Filter.FILTER_AT_LEAST_ONE, _Filter.FILTER_TYPE_FIELD)));
-            } else {
-                delete this.filters['id'];
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterByRange",
-        value: function filterByRange(filterName, field, options, values) {
-            var applicationType = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _Filter.FILTER_AT_LEAST_ONE;
-            var rangeType = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : _Filter.FILTER_TYPE_RANGE;
-            var aggregate = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : true;
-            var aggregationSort = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : _Aggregation.AGGREGATION_SORT_BY_COUNT_DESC;
-
-            _TypeChecker2.default.isArray(options);
-            _TypeChecker2.default.isArray(values);
-
-            var fieldPath = _Filter2.default.getFilterPathByField(field);
-            if (values.length !== 0) {
-                this.filters = _extends({}, this.filters, _defineProperty({}, filterName, new _Filter2.default(fieldPath, values, applicationType, rangeType)));
-            } else {
-                delete this.filters[filterName];
-            }
-
-            if (aggregate) {
-                this.aggregateByRange(filterName, fieldPath, options, applicationType, rangeType, aggregationSort);
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterByDateRange",
-        value: function filterByDateRange(filterName, field, options, values) {
-            var applicationType = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _Filter.FILTER_AT_LEAST_ONE;
-            var aggregate = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : true;
-            var aggregationSort = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : _Aggregation.AGGREGATION_SORT_BY_COUNT_DESC;
-
-            return this.filterByRange(filterName, field, options, values, applicationType, _Filter.FILTER_TYPE_DATE_RANGE, aggregate, aggregationSort);
-        }
-    }, {
-        key: "filterUniverseBy",
-        value: function filterUniverseBy(field, values) {
-            var applicationType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _Filter.FILTER_AT_LEAST_ONE;
-
-            _TypeChecker2.default.isArray(values);
-
-            var fieldPath = _Filter2.default.getFilterPathByField(field);
-            if (values.length !== 0) {
-                this.universe_filters = _extends({}, this.universe_filters, _defineProperty({}, field, new _Filter2.default(fieldPath, values, applicationType, _Filter.FILTER_TYPE_FIELD)));
-            } else {
-                delete this.universe_filters[field];
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterUniverseByTypes",
-        value: function filterUniverseByTypes(values) {
-            _TypeChecker2.default.isArray(values);
-
-            var fieldPath = _Filter2.default.getFilterPathByField('type');
-            if (values.length !== 0) {
-                this.universe_filters = _extends({}, this.universe_filters, _defineProperty({}, 'type', new _Filter2.default(fieldPath, values, _Filter.FILTER_AT_LEAST_ONE, _Filter.FILTER_TYPE_FIELD)));
-            } else {
-                delete this.universe_filters['type'];
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterUniverseByIds",
-        value: function filterUniverseByIds(values) {
-            _TypeChecker2.default.isArray(values);
-
-            var fieldPath = _Filter2.default.getFilterPathByField('id');
-            if (values.length !== 0) {
-                this.universe_filters = _extends({}, this.universe_filters, _defineProperty({}, 'id', new _Filter2.default(fieldPath, values, _Filter.FILTER_AT_LEAST_ONE, _Filter.FILTER_TYPE_FIELD)));
-            } else {
-                delete this.universe_filters['id'];
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterUniverseByRange",
-        value: function filterUniverseByRange(field, values) {
-            var applicationType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _Filter.FILTER_AT_LEAST_ONE;
-            var rangeType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _Filter.FILTER_TYPE_RANGE;
-
-            _TypeChecker2.default.isArray(values);
-
-            var fieldPath = _Filter2.default.getFilterPathByField(field);
-            if (values.length !== 0) {
-                this.universe_filters = _extends({}, this.universe_filters, _defineProperty({}, field, new _Filter2.default(fieldPath, values, applicationType, rangeType)));
-            } else {
-                delete this.universe_filters[field];
-            }
-
-            return this;
-        }
-    }, {
-        key: "filterUniverseByDateRange",
-        value: function filterUniverseByDateRange(field, values) {
-            var applicationType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _Filter.FILTER_AT_LEAST_ONE;
-
-            return this.filterUniverseByRange(field, values, applicationType, _Filter.FILTER_TYPE_DATE_RANGE);
-        }
-    }, {
-        key: "filterUniverseByLocation",
-        value: function filterUniverseByLocation(locationRange) {
-            _TypeChecker2.default.isObjectTypeOf(locationRange, _AbstractLocationRange2.default);
-
-            this.universe_filters = _extends({}, this.universe_filters, _defineProperty({}, 'coordinate', new _Filter2.default('coordinate', locationRange.toFilterObject(), _Filter.FILTER_AT_LEAST_ONE, _Filter.FILTER_TYPE_GEO)));
-
-            return this;
-        }
-    }, {
-        key: "setFilterFields",
-        value: function setFilterFields(fields) {
-            var _this = this;
-
-            _TypeChecker2.default.isArray(fields);
-
-            if (fields.length === 0) {
-                this.filter_fields = [].concat(_toConsumableArray(fields));
-
-                return this;
-            }
-
-            fields.map(function (field) {
-                _this.filter_fields = [].concat(_toConsumableArray(_this.filter_fields), [field]);
-            });
-
-            return this;
-        }
-    }, {
-        key: "sortBy",
-        value: function sortBy(sort) {
-            var _this2 = this;
-
-            _TypeChecker2.default.isDefined(sort);
-
-            if (typeof sort['_geo_distance'] !== 'undefined') {
-                var _geo_distance;
-
-                if (this.coordinate instanceof _Coordinate2.default === false) {
-                    throw new Error("\n                    In order to be able to sort by coordinates, you need to \n                    create a Query by using apisearch.query.createLocated(...) \n                    instead of apisearch.query.create(...)\n                ");
-                }
-                this.sort = _defineProperty({}, '_geo_distance', (_geo_distance = {}, _defineProperty(_geo_distance, 'coordinate', this.coordinate), _defineProperty(_geo_distance, 'order', sort._geo_distance.order), _defineProperty(_geo_distance, 'unit', sort._geo_distance.unit), _geo_distance));
-            } else {
-                Object.keys(sort).map(function (field) {
-                    var direction = sort[field].order;
-                    _this2.sort = _defineProperty({}, field, _defineProperty({}, 'order', direction));
-                });
-            }
-
-            return this;
-        }
-    }, {
-        key: "aggregateBy",
-        value: function aggregateBy(filterName, field, applicationType) {
-            var aggregationSort = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _Aggregation.AGGREGATION_SORT_BY_COUNT_DESC;
-            var limit = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _Aggregation.AGGREGATION_NO_LIMIT;
-
-            _TypeChecker2.default.isDefined(applicationType);
-            _TypeChecker2.default.isInteger(applicationType);
-
-            this.aggregations = _extends({}, this.aggregations, _defineProperty({}, filterName, new _Aggregation2.default(filterName, _Filter2.default.getFilterPathByField(field), applicationType, _Filter.FILTER_TYPE_FIELD, [], aggregationSort, limit)));
-
-            return this;
-        }
-    }, {
-        key: "aggregateByRange",
-        value: function aggregateByRange(filterName, field, options, applicationType) {
-            var rangeType = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _Filter.FILTER_TYPE_RANGE;
-            var aggregationSort = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : _Aggregation.AGGREGATION_SORT_BY_COUNT_DESC;
-            var limit = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : _Aggregation.AGGREGATION_NO_LIMIT;
-
-            _TypeChecker2.default.isArray(options);
-
-            if (options.length === 0) {
-                return this;
-            }
-
-            this.aggregations = _extends({}, this.aggregations, _defineProperty({}, filterName, new _Aggregation2.default(filterName, _Filter2.default.getFilterPathByField(field), applicationType, rangeType, aggregationSort, limit)));
-
-            return this;
-        }
-    }, {
-        key: "aggregateByDateRange",
-        value: function aggregateByDateRange(filterName, field, options, applicationType) {
-            var aggregationSort = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _Aggregation.AGGREGATION_SORT_BY_COUNT_DESC;
-            var limit = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : _Aggregation.AGGREGATION_NO_LIMIT;
-
-            _TypeChecker2.default.isArray(options);
-
-            if (options.length === 0) {
-                return this;
-            }
-
-            this.aggregations = _extends({}, this.aggregations, _defineProperty({}, filterName, new _Aggregation2.default(filterName, _Filter2.default.getFilterPathByField(field), applicationType, _Filter.FILTER_TYPE_DATE_RANGE, aggregationSort, limit)));
-
-            return this;
-        }
-    }, {
-        key: "enableResults",
-        value: function enableResults() {
-            this.results_enabled = true;
-            return this;
-        }
-    }, {
-        key: "disableResults",
-        value: function disableResults() {
-            this.results_enabled = false;
-            return this;
-        }
-    }, {
-        key: "enableAggregations",
-        value: function enableAggregations() {
-            this.aggregations_enabled = true;
-            return this;
-        }
-    }, {
-        key: "disableAggregations",
-        value: function disableAggregations() {
-            this.aggregations_enabled = false;
-            return this;
-        }
-    }, {
-        key: "enableSuggestions",
-        value: function enableSuggestions() {
-            this.suggestions_enabled = true;
-            return this;
-        }
-    }, {
-        key: "disableSuggestions",
-        value: function disableSuggestions() {
-            this.suggestions_enabled = false;
-            return this;
-        }
-    }, {
-        key: "enableHighlights",
-        value: function enableHighlights() {
-            this.highlight_enabled = true;
-            return this;
-        }
-    }, {
-        key: "disableHighlights",
-        value: function disableHighlights() {
-            this.highlight_enabled = false;
-            return this;
-        }
-    }, {
-        key: "promoteUUID",
-        value: function promoteUUID(itemUUID) {
-            if (itemUUID instanceof _ItemUUID2.default === false) {
-                throw new Error("Excluded item must be type \"ItemUUID\", \"" + itemUUID.constructor.name + "\" given.");
-            }
-            this.items_promoted = [].concat(_toConsumableArray(this.items_promoted), [itemUUID]);
-
-            return this;
-        }
-    }, {
-        key: "promoteUUIDs",
-        value: function promoteUUIDs() {
-            var _this3 = this;
-
-            for (var _len = arguments.length, uuids = Array(_len), _key = 0; _key < _len; _key++) {
-                uuids[_key] = arguments[_key];
-            }
-
-            uuids.forEach(function (uuid) {
-                return _this3.promoteUUID(uuid);
-            });
-
-            return this;
-        }
-    }, {
-        key: "excludeUUID",
-        value: function excludeUUID(itemUUID) {
-            _TypeChecker2.default.isObjectTypeOf(itemUUID, _ItemUUID2.default);
-            this.excludeUUIDs(itemUUID);
-
-            return this;
-        }
-    }, {
-        key: "excludeUUIDs",
-        value: function excludeUUIDs() {
-            for (var _len2 = arguments.length, uuids = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-                uuids[_key2] = arguments[_key2];
-            }
-
-            this.filters = _extends({}, this.filters, _defineProperty({}, 'excluded_ids', new _Filter2.default('_id', uuids.map(function (uuid) {
-                return uuid.composedUUID();
-            }), _Filter.FILTER_EXCLUDE, _Filter.FILTER_TYPE_FIELD)));
-
-            return this;
-        }
-    }, {
-        key: "byUser",
-        value: function byUser(user) {
-            _TypeChecker2.default.isObjectTypeOf(user, _User2.default);
-            this.user = user;
-
-            return this;
-        }
-    }, {
-        key: "anonymously",
-        value: function anonymously() {
-            this.user = null;
-
-            return null;
-        }
-    }, {
-        key: "toJSON",
-        value: function toJSON() {
-            var _this4 = this;
-
-            var object = {
-                q: this.q
-            };
-
-            Object.keys(this).forEach(function (key) {
-                var value = _this4[key];
-
-                /**
-                 * When null, server handles its default values
-                 */
-                if (value instanceof Array && value.length === 0) return;
-                if (value === null) return;
-                if (key === 'page' && value === QUERY_DEFAULT_PAGE) return;
-                if (key === 'from' && value === QUERY_DEFAULT_FROM) return;
-                if (key === 'size' && value === QUERY_DEFAULT_SIZE) return;
-
-                object = _extends({}, object, _defineProperty({}, key, value));
-            });
-
-            return object;
-        }
-    }]);
-
-    return Query;
-}();
-
-exports.default = Query;
 
 /***/ }),
-/* 40 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+exports.__esModule = true;
 /**
- * User class
+ * filter constants
  */
-var User = function User(id) {
-    _classCallCheck(this, User);
+exports.TYPE_VALUE = 1;
+exports.TYPE_LITERAL = 4;
+exports.TYPE_ARRAY_ELEMENT_UPDATE = 8;
+exports.TYPE_ARRAY_ELEMENT_ADD = 16;
+exports.TYPE_ARRAY_ELEMENT_DELETE = 32;
+exports.TYPE_ARRAY_EXPECTS_ELEMENT = 24;
+exports.TYPE_ARRAY = 56;
+/**
+ * Changes Type cast
+ * @param Changes
+ */
+var Changes = /** @class */ (function () {
+    function Changes() {
+        /**
+         * Changes
+         *
+         * @type {Array}
+         */
+        this.changes = [];
+    }
+    /**
+     * Add new change
+     *
+     * @param field
+     * @param value
+     * @param type
+     */
+    Changes.prototype.addChange = function (field, value, type) {
+        if (type === void 0) { type = exports.TYPE_VALUE; }
+        this.changes.push({
+            field: field,
+            type: type,
+            value: value
+        });
+    };
+    /**
+     * Update element from list
+     *
+     * @param field
+     * @param condition
+     * @param value
+     * @param type
+     */
+    Changes.prototype.updateElementFromList = function (field, condition, value, type) {
+        this.changes.push({
+            field: field,
+            type: type | exports.TYPE_ARRAY_ELEMENT_UPDATE,
+            condition: condition,
+            value: value
+        });
+    };
+    /**
+     * Add element in list
+     *
+     * @param field
+     * @param value
+     * @param type
+     */
+    Changes.prototype.addElementInList = function (field, value, type) {
+        this.changes.push({
+            field: field,
+            type: type | exports.TYPE_ARRAY_ELEMENT_ADD,
+            value: value
+        });
+    };
+    /**
+     * Delete element from list
+     *
+     * @param field
+     * @param condition
+     */
+    Changes.prototype.deleteElementFromList = function (field, condition) {
+        this.changes.push({
+            field: field,
+            type: exports.TYPE_ARRAY_ELEMENT_DELETE,
+            condition: condition
+        });
+    };
+    /**
+     * Get changes
+     *
+     * @returns {[]}
+     */
+    Changes.prototype.getChanges = function () {
+        return this.changes;
+    };
+    /**
+     * Create
+     *
+     * @returns {Changes}
+     */
+    Changes.create = function () {
+        return new Changes();
+    };
+    /**
+     * To array
+     *
+     * @returns {[]}
+     */
+    Changes.prototype.toArray = function () {
+        return JSON.parse(JSON.stringify(this.changes));
+    };
+    /**
+     * Create from array
+     *
+     * @param array
+     *
+     * @returns {Changes}
+     */
+    Changes.createFromArray = function (array) {
+        array = JSON.parse(JSON.stringify(array));
+        var changes = Changes.create();
+        changes.changes = array;
+        return changes;
+    };
+    return Changes;
+}());
+exports.Changes = Changes;
 
-    this.id = id;
-};
-
-exports.default = User;
 
 /***/ }),
-/* 41 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+exports.__esModule = true;
 /**
  * Aggregation constants
  */
-var AGGREGATION_SORT_BY_COUNT_ASC = exports.AGGREGATION_SORT_BY_COUNT_ASC = ['_count', 'asc'];
-var AGGREGATION_SORT_BY_COUNT_DESC = exports.AGGREGATION_SORT_BY_COUNT_DESC = ['_count', 'desc'];
-var AGGREGATION_SORT_BY_NAME_ASC = exports.AGGREGATION_SORT_BY_NAME_ASC = ['_term', 'asc'];
-var AGGREGATION_SORT_BY_NAME_DESC = exports.AGGREGATION_SORT_BY_NAME_DESC = ['_term', 'desc'];
-var AGGREGATION_NO_LIMIT = exports.AGGREGATION_NO_LIMIT = 0;
-
+exports.RANGE_ZERO = 0;
+exports.RANGE_INFINITE = -1;
+exports.RANGE_SEPARATOR = "..";
 /**
- * Aggregation class
+ * Filter class
  */
+var Range = /** @class */ (function () {
+    function Range() {
+    }
+    /**
+     * Strong to array
+     *
+     * @param string
+     *
+     * @returns {[number, number]}
+     */
+    Range.stringToArray = function (string) {
+        var parts = string.split(exports.RANGE_SEPARATOR);
+        var from = parts[0];
+        var to = parts[1];
+        var finalFrom = exports.RANGE_ZERO;
+        var finalTo = exports.RANGE_INFINITE;
+        if (from != "") {
+            finalFrom = parseInt(from);
+        }
+        if (to != "") {
+            finalTo = parseInt(to);
+        }
+        return [finalFrom, finalTo];
+    };
+    /**
+     * Array to string
+     *
+     * @param values
+     *
+     * @return {string}
+     */
+    Range.arrayToString = function (values) {
+        var finalValues = ["", ""];
+        if (values[0] != exports.RANGE_ZERO) {
+            finalValues[0] = String(values[0]);
+        }
+        if (values[1] != exports.RANGE_INFINITE) {
+            finalValues[1] = String(values[1]);
+        }
+        return finalValues.join(exports.RANGE_SEPARATOR);
+    };
+    /**
+     * Create ranges
+     *
+     * @param from
+     * @param to
+     * @param incremental
+     */
+    Range.createRanges = function (from, to, incremental) {
+        var ranges = [];
+        var nextTo;
+        while (from < to) {
+            nextTo = from + incremental;
+            ranges.push(from + exports.RANGE_SEPARATOR + nextTo);
+            from = nextTo;
+        }
+        return ranges;
+    };
+    return Range;
+}());
+exports.Range = Range;
 
-var Aggregation = function Aggregation(name, field, applicationType, filterType, subgroup, sort, limit) {
-    _classCallCheck(this, Aggregation);
-
-    this.name = name;
-    this.field = field;
-    this.applicationType = applicationType;
-    this.filterType = filterType;
-    this.subgroup = subgroup;
-    this.sort = sort || AGGREGATION_SORT_BY_COUNT_DESC;
-    this.limit = limit || AGGREGATION_NO_LIMIT;
-};
-
-exports.default = Aggregation;
 
 /***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-/**
- export * Sort by constants
- */
-
-var SORT_BY_SCORE = exports.SORT_BY_SCORE = {
-    '_score': {
-        'order': 'asc'
-    }
-};
-var SORT_BY_RANDOM = exports.SORT_BY_RANDOM = {
-    'random': {
-        'order': 'asc'
-    }
-};
-var SORT_BY_ID_ASC = exports.SORT_BY_ID_ASC = {
-    'uuid.id': {
-        'order': 'asc'
-    }
-};
-var SORT_BY_ID_DESC = exports.SORT_BY_ID_DESC = {
-    'uuid.id': {
-        'order': 'desc'
-    }
-};
-var SORT_BY_TYPE_ASC = exports.SORT_BY_TYPE_ASC = {
-    'uuid.type': {
-        'order': 'asc'
-    }
-};
-var SORT_BY_TYPE_DESC = exports.SORT_BY_TYPE_DESC = {
-    'uuid.type': {
-        'order': 'desc'
-    }
-};
-var SORT_BY_LOCATION_KM_ASC = exports.SORT_BY_LOCATION_KM_ASC = {
-    '_geo_distance': {
-        'order': 'asc',
-        'unit': 'km'
-    }
-};
-var SORT_BY_LOCATION_MI_ASC = exports.SORT_BY_LOCATION_MI_ASC = {
-    '_geo_distance': {
-        'order': 'asc',
-        'unit': 'mi'
-    }
-};
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Cache class
- */
-var MemoryCache = function () {
-    function MemoryCache() {
-        _classCallCheck(this, MemoryCache);
-
-        this.cache = {};
-        this.size = 0;
-
-        return this;
-    }
-
-    _createClass(MemoryCache, [{
-        key: "set",
-        value: function set(key, value) {
-            this.cache = _extends({}, this.cache, _defineProperty({}, key, value));
-            this.size = this.size + 1;
-
-            return this;
-        }
-    }, {
-        key: "get",
-        value: function get(key) {
-            return this.cache[key];
-        }
-    }, {
-        key: "clear",
-        value: function clear() {
-            this.cache = {};
-            this.size = 0;
-        }
-    }]);
-
-    return MemoryCache;
-}();
-
-exports.default = MemoryCache;
-
-/***/ })
-/******/ ]);
-});
-//# sourceMappingURL=apisearch.js.map
-
-/***/ }),
-/* 40 */
+/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5839,7 +10666,7 @@ function n(n,t){for(var u in t)n[u]=t[u];return n}function t(t){var u=[];functio
 
 
 /***/ }),
-/* 41 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5852,15 +10679,15 @@ exports.renderResult = exports.renderInput = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _preact = __webpack_require__(3);
+var _preact = __webpack_require__(12);
 
-var _preact2 = __webpack_require__(12);
+var _preact2 = __webpack_require__(28);
 
-var _InputComponent = __webpack_require__(42);
+var _InputComponent = __webpack_require__(112);
 
 var _InputComponent2 = _interopRequireDefault(_InputComponent);
 
-var _ResultComponent = __webpack_require__(44);
+var _ResultComponent = __webpack_require__(114);
 
 var _ResultComponent2 = _interopRequireDefault(_ResultComponent);
 
@@ -5982,7 +10809,7 @@ function getNodeAttributes(htmlNode) {
 }
 
 /***/ }),
-/* 42 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5995,11 +10822,11 @@ exports.InputComponent = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _preact = __webpack_require__(3);
+var _preact = __webpack_require__(12);
 
-var _actions = __webpack_require__(43);
+var _actions = __webpack_require__(113);
 
-var _preact2 = __webpack_require__(12);
+var _preact2 = __webpack_require__(28);
 
 /**
  * Input Component
@@ -6038,7 +10865,7 @@ var ConnectedInput = (0, _preact2.connect)('', _actions.actions)(InputComponent)
 exports.default = ConnectedInput;
 
 /***/ }),
-/* 43 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6047,6 +10874,15 @@ exports.default = ConnectedInput;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.actions = undefined;
+
+var _apisearch = __webpack_require__(21);
+
+var _apisearch2 = _interopRequireDefault(_apisearch);
+
+var _Query = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
@@ -6081,13 +10917,13 @@ var actions = exports.actions = function actions(store) {
             /**
              * Compose query
              */
-            var query = state.client.query.create(queryText).filterByTypes(datasetKeys).setResultSize(state.itemsPerResult).enableHighlights();
+            var query = _Query.Query.create(queryText, 1, state.itemsPerResult).filterByTypes(datasetKeys).enableHighlights();
 
             /**
              * Empty query OR
              * Query length smaller than min keywords
              */
-            if (query.q === '' || query.q.length < state.startSearchOn) {
+            if (query.getQueryText === '' || query.getQueryText.length < state.startSearchOn) {
                 store.setState({ resultBoxOpen: false });
                 event.target.setAttribute('aria-expanded', 'false');
                 return;
@@ -6096,18 +10932,11 @@ var actions = exports.actions = function actions(store) {
             /**
              * Search data
              */
-            state.client.search(query, function (data, error) {
-                if (error) {
-                    store.setState({
-                        error: error,
-                        resultBoxOpen: false,
-                        currentCursorIndex: 0
-                    });
-                    event.target.setAttribute('aria-expanded', 'false');
+            state.client.query(query).then(function (result) {
 
-                    return;
-                }
-                if (data.total_hits === 0) {
+                var totalHits = result.totalHits;
+
+                if (totalHits === 0) {
                     store.setState({
                         total_hits: 0,
                         resultBoxOpen: false,
@@ -6119,12 +10948,22 @@ var actions = exports.actions = function actions(store) {
                 }
 
                 store.setState({
-                    items: data.items,
-                    total_hits: data.total_hits,
+                    items: result.items,
+                    total_hits: totalHits,
                     resultBoxOpen: true,
                     currentCursorIndex: 0
                 });
+
                 event.target.setAttribute('aria-expanded', 'true');
+            }).catch(function (error) {
+
+                store.setState({
+                    error: error,
+                    resultBoxOpen: false,
+                    currentCursorIndex: 0
+                });
+
+                event.target.setAttribute('aria-expanded', 'false');
             });
         },
 
@@ -6145,7 +10984,7 @@ var actions = exports.actions = function actions(store) {
                     /**
                      * Select an anchor inside the targeted element
                      */
-                    document.querySelector('li[data-index=\'' + state.currentCursorIndex + '\'] a').click();
+                    document.querySelector("li[data-index='" + state.currentCursorIndex + "'] a").click();
                 }
             }
 
@@ -6198,7 +11037,7 @@ var actions = exports.actions = function actions(store) {
 };
 
 /***/ }),
-/* 44 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6211,15 +11050,15 @@ exports.ResultComponent = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _preact = __webpack_require__(3);
+var _preact = __webpack_require__(12);
 
-var _preact2 = __webpack_require__(12);
+var _preact2 = __webpack_require__(28);
 
-var _groupBy = __webpack_require__(45);
+var _groupBy = __webpack_require__(115);
 
 var _groupBy2 = _interopRequireDefault(_groupBy);
 
-var _helpers = __webpack_require__(136);
+var _helpers = __webpack_require__(206);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6303,11 +11142,11 @@ var ConnectedResult = (0, _preact2.connect)('datasets, poweredBy, resultBoxOpen,
 exports.default = ConnectedResult;
 
 /***/ }),
-/* 45 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(46),
-    createAggregator = __webpack_require__(54);
+var baseAssignValue = __webpack_require__(116),
+    createAggregator = __webpack_require__(124);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -6350,10 +11189,10 @@ module.exports = groupBy;
 
 
 /***/ }),
-/* 46 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var defineProperty = __webpack_require__(47);
+var defineProperty = __webpack_require__(117);
 
 /**
  * The base implementation of `assignValue` and `assignMergeValue` without
@@ -6381,10 +11220,10 @@ module.exports = baseAssignValue;
 
 
 /***/ }),
-/* 47 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(2);
+var getNative = __webpack_require__(8);
 
 var defineProperty = (function() {
   try {
@@ -6398,13 +11237,13 @@ module.exports = defineProperty;
 
 
 /***/ }),
-/* 48 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(21),
-    isMasked = __webpack_require__(51),
-    isObject = __webpack_require__(13),
-    toSource = __webpack_require__(24);
+var isFunction = __webpack_require__(61),
+    isMasked = __webpack_require__(121),
+    isObject = __webpack_require__(29),
+    toSource = __webpack_require__(64);
 
 /**
  * Used to match `RegExp`
@@ -6451,10 +11290,10 @@ module.exports = baseIsNative;
 
 
 /***/ }),
-/* 49 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(6);
+var Symbol = __webpack_require__(15);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -6503,7 +11342,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 50 */
+/* 120 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -6531,10 +11370,10 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 51 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var coreJsData = __webpack_require__(52);
+var coreJsData = __webpack_require__(122);
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
@@ -6557,10 +11396,10 @@ module.exports = isMasked;
 
 
 /***/ }),
-/* 52 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(0);
+var root = __webpack_require__(4);
 
 /** Used to detect overreaching core-js shims. */
 var coreJsData = root['__core-js_shared__'];
@@ -6569,7 +11408,7 @@ module.exports = coreJsData;
 
 
 /***/ }),
-/* 53 */
+/* 123 */
 /***/ (function(module, exports) {
 
 /**
@@ -6588,13 +11427,13 @@ module.exports = getValue;
 
 
 /***/ }),
-/* 54 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayAggregator = __webpack_require__(55),
-    baseAggregator = __webpack_require__(56),
-    baseIteratee = __webpack_require__(73),
-    isArray = __webpack_require__(1);
+var arrayAggregator = __webpack_require__(125),
+    baseAggregator = __webpack_require__(126),
+    baseIteratee = __webpack_require__(143),
+    isArray = __webpack_require__(5);
 
 /**
  * Creates a function like `_.groupBy`.
@@ -6617,7 +11456,7 @@ module.exports = createAggregator;
 
 
 /***/ }),
-/* 55 */
+/* 125 */
 /***/ (function(module, exports) {
 
 /**
@@ -6645,10 +11484,10 @@ module.exports = arrayAggregator;
 
 
 /***/ }),
-/* 56 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseEach = __webpack_require__(57);
+var baseEach = __webpack_require__(127);
 
 /**
  * Aggregates elements of `collection` on `accumulator` with keys transformed
@@ -6672,11 +11511,11 @@ module.exports = baseAggregator;
 
 
 /***/ }),
-/* 57 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseForOwn = __webpack_require__(58),
-    createBaseEach = __webpack_require__(72);
+var baseForOwn = __webpack_require__(128),
+    createBaseEach = __webpack_require__(142);
 
 /**
  * The base implementation of `_.forEach` without support for iteratee shorthands.
@@ -6692,11 +11531,11 @@ module.exports = baseEach;
 
 
 /***/ }),
-/* 58 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFor = __webpack_require__(59),
-    keys = __webpack_require__(14);
+var baseFor = __webpack_require__(129),
+    keys = __webpack_require__(30);
 
 /**
  * The base implementation of `_.forOwn` without support for iteratee shorthands.
@@ -6714,10 +11553,10 @@ module.exports = baseForOwn;
 
 
 /***/ }),
-/* 59 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createBaseFor = __webpack_require__(60);
+var createBaseFor = __webpack_require__(130);
 
 /**
  * The base implementation of `baseForOwn` which iterates over `object`
@@ -6736,7 +11575,7 @@ module.exports = baseFor;
 
 
 /***/ }),
-/* 60 */
+/* 130 */
 /***/ (function(module, exports) {
 
 /**
@@ -6767,15 +11606,15 @@ module.exports = createBaseFor;
 
 
 /***/ }),
-/* 61 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseTimes = __webpack_require__(62),
-    isArguments = __webpack_require__(25),
-    isArray = __webpack_require__(1),
-    isBuffer = __webpack_require__(26),
-    isIndex = __webpack_require__(27),
-    isTypedArray = __webpack_require__(28);
+var baseTimes = __webpack_require__(132),
+    isArguments = __webpack_require__(65),
+    isArray = __webpack_require__(5),
+    isBuffer = __webpack_require__(66),
+    isIndex = __webpack_require__(67),
+    isTypedArray = __webpack_require__(68);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -6822,7 +11661,7 @@ module.exports = arrayLikeKeys;
 
 
 /***/ }),
-/* 62 */
+/* 132 */
 /***/ (function(module, exports) {
 
 /**
@@ -6848,11 +11687,11 @@ module.exports = baseTimes;
 
 
 /***/ }),
-/* 63 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
-    isObjectLike = __webpack_require__(5);
+var baseGetTag = __webpack_require__(13),
+    isObjectLike = __webpack_require__(14);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]';
@@ -6872,7 +11711,7 @@ module.exports = baseIsArguments;
 
 
 /***/ }),
-/* 64 */
+/* 134 */
 /***/ (function(module, exports) {
 
 /**
@@ -6896,12 +11735,12 @@ module.exports = stubFalse;
 
 
 /***/ }),
-/* 65 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(4),
-    isLength = __webpack_require__(16),
-    isObjectLike = __webpack_require__(5);
+var baseGetTag = __webpack_require__(13),
+    isLength = __webpack_require__(32),
+    isObjectLike = __webpack_require__(14);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -6962,7 +11801,7 @@ module.exports = baseIsTypedArray;
 
 
 /***/ }),
-/* 66 */
+/* 136 */
 /***/ (function(module, exports) {
 
 /**
@@ -6982,10 +11821,10 @@ module.exports = baseUnary;
 
 
 /***/ }),
-/* 67 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(22);
+/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(62);
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -7008,14 +11847,14 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)(module)))
 
 /***/ }),
-/* 68 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isPrototype = __webpack_require__(69),
-    nativeKeys = __webpack_require__(70);
+var isPrototype = __webpack_require__(139),
+    nativeKeys = __webpack_require__(140);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -7047,7 +11886,7 @@ module.exports = baseKeys;
 
 
 /***/ }),
-/* 69 */
+/* 139 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -7071,10 +11910,10 @@ module.exports = isPrototype;
 
 
 /***/ }),
-/* 70 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(71);
+var overArg = __webpack_require__(141);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeKeys = overArg(Object.keys, Object);
@@ -7083,7 +11922,7 @@ module.exports = nativeKeys;
 
 
 /***/ }),
-/* 71 */
+/* 141 */
 /***/ (function(module, exports) {
 
 /**
@@ -7104,10 +11943,10 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 72 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArrayLike = __webpack_require__(29);
+var isArrayLike = __webpack_require__(69);
 
 /**
  * Creates a `baseEach` or `baseEachRight` function.
@@ -7142,14 +11981,14 @@ module.exports = createBaseEach;
 
 
 /***/ }),
-/* 73 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseMatches = __webpack_require__(74),
-    baseMatchesProperty = __webpack_require__(121),
-    identity = __webpack_require__(132),
-    isArray = __webpack_require__(1),
-    property = __webpack_require__(133);
+var baseMatches = __webpack_require__(144),
+    baseMatchesProperty = __webpack_require__(191),
+    identity = __webpack_require__(202),
+    isArray = __webpack_require__(5),
+    property = __webpack_require__(203);
 
 /**
  * The base implementation of `_.iteratee`.
@@ -7179,12 +12018,12 @@ module.exports = baseIteratee;
 
 
 /***/ }),
-/* 74 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsMatch = __webpack_require__(75),
-    getMatchData = __webpack_require__(120),
-    matchesStrictComparable = __webpack_require__(35);
+var baseIsMatch = __webpack_require__(145),
+    getMatchData = __webpack_require__(190),
+    matchesStrictComparable = __webpack_require__(75);
 
 /**
  * The base implementation of `_.matches` which doesn't clone `source`.
@@ -7207,11 +12046,11 @@ module.exports = baseMatches;
 
 
 /***/ }),
-/* 75 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Stack = __webpack_require__(30),
-    baseIsEqual = __webpack_require__(32);
+var Stack = __webpack_require__(70),
+    baseIsEqual = __webpack_require__(72);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -7275,7 +12114,7 @@ module.exports = baseIsMatch;
 
 
 /***/ }),
-/* 76 */
+/* 146 */
 /***/ (function(module, exports) {
 
 /**
@@ -7294,10 +12133,10 @@ module.exports = listCacheClear;
 
 
 /***/ }),
-/* 77 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(8);
+var assocIndexOf = __webpack_require__(17);
 
 /** Used for built-in method references. */
 var arrayProto = Array.prototype;
@@ -7335,10 +12174,10 @@ module.exports = listCacheDelete;
 
 
 /***/ }),
-/* 78 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(8);
+var assocIndexOf = __webpack_require__(17);
 
 /**
  * Gets the list cache value for `key`.
@@ -7360,10 +12199,10 @@ module.exports = listCacheGet;
 
 
 /***/ }),
-/* 79 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(8);
+var assocIndexOf = __webpack_require__(17);
 
 /**
  * Checks if a list cache value for `key` exists.
@@ -7382,10 +12221,10 @@ module.exports = listCacheHas;
 
 
 /***/ }),
-/* 80 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(8);
+var assocIndexOf = __webpack_require__(17);
 
 /**
  * Sets the list cache `key` to `value`.
@@ -7414,10 +12253,10 @@ module.exports = listCacheSet;
 
 
 /***/ }),
-/* 81 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(7);
+var ListCache = __webpack_require__(16);
 
 /**
  * Removes all key-value entries from the stack.
@@ -7435,7 +12274,7 @@ module.exports = stackClear;
 
 
 /***/ }),
-/* 82 */
+/* 152 */
 /***/ (function(module, exports) {
 
 /**
@@ -7459,7 +12298,7 @@ module.exports = stackDelete;
 
 
 /***/ }),
-/* 83 */
+/* 153 */
 /***/ (function(module, exports) {
 
 /**
@@ -7479,7 +12318,7 @@ module.exports = stackGet;
 
 
 /***/ }),
-/* 84 */
+/* 154 */
 /***/ (function(module, exports) {
 
 /**
@@ -7499,12 +12338,12 @@ module.exports = stackHas;
 
 
 /***/ }),
-/* 85 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(7),
-    Map = __webpack_require__(17),
-    MapCache = __webpack_require__(18);
+var ListCache = __webpack_require__(16),
+    Map = __webpack_require__(33),
+    MapCache = __webpack_require__(34);
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -7539,12 +12378,12 @@ module.exports = stackSet;
 
 
 /***/ }),
-/* 86 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Hash = __webpack_require__(87),
-    ListCache = __webpack_require__(7),
-    Map = __webpack_require__(17);
+var Hash = __webpack_require__(157),
+    ListCache = __webpack_require__(16),
+    Map = __webpack_require__(33);
 
 /**
  * Removes all key-value entries from the map.
@@ -7566,14 +12405,14 @@ module.exports = mapCacheClear;
 
 
 /***/ }),
-/* 87 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hashClear = __webpack_require__(88),
-    hashDelete = __webpack_require__(89),
-    hashGet = __webpack_require__(90),
-    hashHas = __webpack_require__(91),
-    hashSet = __webpack_require__(92);
+var hashClear = __webpack_require__(158),
+    hashDelete = __webpack_require__(159),
+    hashGet = __webpack_require__(160),
+    hashHas = __webpack_require__(161),
+    hashSet = __webpack_require__(162);
 
 /**
  * Creates a hash object.
@@ -7604,10 +12443,10 @@ module.exports = Hash;
 
 
 /***/ }),
-/* 88 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(9);
+var nativeCreate = __webpack_require__(18);
 
 /**
  * Removes all key-value entries from the hash.
@@ -7625,7 +12464,7 @@ module.exports = hashClear;
 
 
 /***/ }),
-/* 89 */
+/* 159 */
 /***/ (function(module, exports) {
 
 /**
@@ -7648,10 +12487,10 @@ module.exports = hashDelete;
 
 
 /***/ }),
-/* 90 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(9);
+var nativeCreate = __webpack_require__(18);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -7684,10 +12523,10 @@ module.exports = hashGet;
 
 
 /***/ }),
-/* 91 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(9);
+var nativeCreate = __webpack_require__(18);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -7713,10 +12552,10 @@ module.exports = hashHas;
 
 
 /***/ }),
-/* 92 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(9);
+var nativeCreate = __webpack_require__(18);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -7742,10 +12581,10 @@ module.exports = hashSet;
 
 
 /***/ }),
-/* 93 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(10);
+var getMapData = __webpack_require__(19);
 
 /**
  * Removes `key` and its value from the map.
@@ -7766,7 +12605,7 @@ module.exports = mapCacheDelete;
 
 
 /***/ }),
-/* 94 */
+/* 164 */
 /***/ (function(module, exports) {
 
 /**
@@ -7787,10 +12626,10 @@ module.exports = isKeyable;
 
 
 /***/ }),
-/* 95 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(10);
+var getMapData = __webpack_require__(19);
 
 /**
  * Gets the map value for `key`.
@@ -7809,10 +12648,10 @@ module.exports = mapCacheGet;
 
 
 /***/ }),
-/* 96 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(10);
+var getMapData = __webpack_require__(19);
 
 /**
  * Checks if a map value for `key` exists.
@@ -7831,10 +12670,10 @@ module.exports = mapCacheHas;
 
 
 /***/ }),
-/* 97 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(10);
+var getMapData = __webpack_require__(19);
 
 /**
  * Sets the map `key` to `value`.
@@ -7859,17 +12698,17 @@ module.exports = mapCacheSet;
 
 
 /***/ }),
-/* 98 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Stack = __webpack_require__(30),
-    equalArrays = __webpack_require__(33),
-    equalByTag = __webpack_require__(104),
-    equalObjects = __webpack_require__(108),
-    getTag = __webpack_require__(115),
-    isArray = __webpack_require__(1),
-    isBuffer = __webpack_require__(26),
-    isTypedArray = __webpack_require__(28);
+var Stack = __webpack_require__(70),
+    equalArrays = __webpack_require__(73),
+    equalByTag = __webpack_require__(174),
+    equalObjects = __webpack_require__(178),
+    getTag = __webpack_require__(185),
+    isArray = __webpack_require__(5),
+    isBuffer = __webpack_require__(66),
+    isTypedArray = __webpack_require__(68);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;
@@ -7948,12 +12787,12 @@ module.exports = baseIsEqualDeep;
 
 
 /***/ }),
-/* 99 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MapCache = __webpack_require__(18),
-    setCacheAdd = __webpack_require__(100),
-    setCacheHas = __webpack_require__(101);
+var MapCache = __webpack_require__(34),
+    setCacheAdd = __webpack_require__(170),
+    setCacheHas = __webpack_require__(171);
 
 /**
  *
@@ -7981,7 +12820,7 @@ module.exports = SetCache;
 
 
 /***/ }),
-/* 100 */
+/* 170 */
 /***/ (function(module, exports) {
 
 /** Used to stand-in for `undefined` hash values. */
@@ -8006,7 +12845,7 @@ module.exports = setCacheAdd;
 
 
 /***/ }),
-/* 101 */
+/* 171 */
 /***/ (function(module, exports) {
 
 /**
@@ -8026,7 +12865,7 @@ module.exports = setCacheHas;
 
 
 /***/ }),
-/* 102 */
+/* 172 */
 /***/ (function(module, exports) {
 
 /**
@@ -8055,7 +12894,7 @@ module.exports = arraySome;
 
 
 /***/ }),
-/* 103 */
+/* 173 */
 /***/ (function(module, exports) {
 
 /**
@@ -8074,15 +12913,15 @@ module.exports = cacheHas;
 
 
 /***/ }),
-/* 104 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(6),
-    Uint8Array = __webpack_require__(105),
-    eq = __webpack_require__(31),
-    equalArrays = __webpack_require__(33),
-    mapToArray = __webpack_require__(106),
-    setToArray = __webpack_require__(107);
+var Symbol = __webpack_require__(15),
+    Uint8Array = __webpack_require__(175),
+    eq = __webpack_require__(71),
+    equalArrays = __webpack_require__(73),
+    mapToArray = __webpack_require__(176),
+    setToArray = __webpack_require__(177);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -8192,10 +13031,10 @@ module.exports = equalByTag;
 
 
 /***/ }),
-/* 105 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(0);
+var root = __webpack_require__(4);
 
 /** Built-in value references. */
 var Uint8Array = root.Uint8Array;
@@ -8204,7 +13043,7 @@ module.exports = Uint8Array;
 
 
 /***/ }),
-/* 106 */
+/* 176 */
 /***/ (function(module, exports) {
 
 /**
@@ -8228,7 +13067,7 @@ module.exports = mapToArray;
 
 
 /***/ }),
-/* 107 */
+/* 177 */
 /***/ (function(module, exports) {
 
 /**
@@ -8252,10 +13091,10 @@ module.exports = setToArray;
 
 
 /***/ }),
-/* 108 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getAllKeys = __webpack_require__(109);
+var getAllKeys = __webpack_require__(179);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;
@@ -8347,12 +13186,12 @@ module.exports = equalObjects;
 
 
 /***/ }),
-/* 109 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetAllKeys = __webpack_require__(110),
-    getSymbols = __webpack_require__(112),
-    keys = __webpack_require__(14);
+var baseGetAllKeys = __webpack_require__(180),
+    getSymbols = __webpack_require__(182),
+    keys = __webpack_require__(30);
 
 /**
  * Creates an array of own enumerable property names and symbols of `object`.
@@ -8369,11 +13208,11 @@ module.exports = getAllKeys;
 
 
 /***/ }),
-/* 110 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayPush = __webpack_require__(111),
-    isArray = __webpack_require__(1);
+var arrayPush = __webpack_require__(181),
+    isArray = __webpack_require__(5);
 
 /**
  * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
@@ -8395,7 +13234,7 @@ module.exports = baseGetAllKeys;
 
 
 /***/ }),
-/* 111 */
+/* 181 */
 /***/ (function(module, exports) {
 
 /**
@@ -8421,11 +13260,11 @@ module.exports = arrayPush;
 
 
 /***/ }),
-/* 112 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayFilter = __webpack_require__(113),
-    stubArray = __webpack_require__(114);
+var arrayFilter = __webpack_require__(183),
+    stubArray = __webpack_require__(184);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -8457,7 +13296,7 @@ module.exports = getSymbols;
 
 
 /***/ }),
-/* 113 */
+/* 183 */
 /***/ (function(module, exports) {
 
 /**
@@ -8488,7 +13327,7 @@ module.exports = arrayFilter;
 
 
 /***/ }),
-/* 114 */
+/* 184 */
 /***/ (function(module, exports) {
 
 /**
@@ -8517,16 +13356,16 @@ module.exports = stubArray;
 
 
 /***/ }),
-/* 115 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataView = __webpack_require__(116),
-    Map = __webpack_require__(17),
-    Promise = __webpack_require__(117),
-    Set = __webpack_require__(118),
-    WeakMap = __webpack_require__(119),
-    baseGetTag = __webpack_require__(4),
-    toSource = __webpack_require__(24);
+var DataView = __webpack_require__(186),
+    Map = __webpack_require__(33),
+    Promise = __webpack_require__(187),
+    Set = __webpack_require__(188),
+    WeakMap = __webpack_require__(189),
+    baseGetTag = __webpack_require__(13),
+    toSource = __webpack_require__(64);
 
 /** `Object#toString` result references. */
 var mapTag = '[object Map]',
@@ -8581,11 +13420,11 @@ module.exports = getTag;
 
 
 /***/ }),
-/* 116 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(2),
-    root = __webpack_require__(0);
+var getNative = __webpack_require__(8),
+    root = __webpack_require__(4);
 
 /* Built-in method references that are verified to be native. */
 var DataView = getNative(root, 'DataView');
@@ -8594,11 +13433,11 @@ module.exports = DataView;
 
 
 /***/ }),
-/* 117 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(2),
-    root = __webpack_require__(0);
+var getNative = __webpack_require__(8),
+    root = __webpack_require__(4);
 
 /* Built-in method references that are verified to be native. */
 var Promise = getNative(root, 'Promise');
@@ -8607,11 +13446,11 @@ module.exports = Promise;
 
 
 /***/ }),
-/* 118 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(2),
-    root = __webpack_require__(0);
+var getNative = __webpack_require__(8),
+    root = __webpack_require__(4);
 
 /* Built-in method references that are verified to be native. */
 var Set = getNative(root, 'Set');
@@ -8620,11 +13459,11 @@ module.exports = Set;
 
 
 /***/ }),
-/* 119 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(2),
-    root = __webpack_require__(0);
+var getNative = __webpack_require__(8),
+    root = __webpack_require__(4);
 
 /* Built-in method references that are verified to be native. */
 var WeakMap = getNative(root, 'WeakMap');
@@ -8633,11 +13472,11 @@ module.exports = WeakMap;
 
 
 /***/ }),
-/* 120 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isStrictComparable = __webpack_require__(34),
-    keys = __webpack_require__(14);
+var isStrictComparable = __webpack_require__(74),
+    keys = __webpack_require__(30);
 
 /**
  * Gets the property names, values, and compare flags of `object`.
@@ -8663,16 +13502,16 @@ module.exports = getMatchData;
 
 
 /***/ }),
-/* 121 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqual = __webpack_require__(32),
-    get = __webpack_require__(122),
-    hasIn = __webpack_require__(129),
-    isKey = __webpack_require__(19),
-    isStrictComparable = __webpack_require__(34),
-    matchesStrictComparable = __webpack_require__(35),
-    toKey = __webpack_require__(11);
+var baseIsEqual = __webpack_require__(72),
+    get = __webpack_require__(192),
+    hasIn = __webpack_require__(199),
+    isKey = __webpack_require__(35),
+    isStrictComparable = __webpack_require__(74),
+    matchesStrictComparable = __webpack_require__(75),
+    toKey = __webpack_require__(20);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -8702,10 +13541,10 @@ module.exports = baseMatchesProperty;
 
 
 /***/ }),
-/* 122 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGet = __webpack_require__(36);
+var baseGet = __webpack_require__(76);
 
 /**
  * Gets the value at `path` of `object`. If the resolved value is
@@ -8741,10 +13580,10 @@ module.exports = get;
 
 
 /***/ }),
-/* 123 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoizeCapped = __webpack_require__(124);
+var memoizeCapped = __webpack_require__(194);
 
 /** Used to match property names within property paths. */
 var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
@@ -8774,10 +13613,10 @@ module.exports = stringToPath;
 
 
 /***/ }),
-/* 124 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoize = __webpack_require__(125);
+var memoize = __webpack_require__(195);
 
 /** Used as the maximum memoize cache size. */
 var MAX_MEMOIZE_SIZE = 500;
@@ -8806,10 +13645,10 @@ module.exports = memoizeCapped;
 
 
 /***/ }),
-/* 125 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MapCache = __webpack_require__(18);
+var MapCache = __webpack_require__(34);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -8885,10 +13724,10 @@ module.exports = memoize;
 
 
 /***/ }),
-/* 126 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseToString = __webpack_require__(127);
+var baseToString = __webpack_require__(197);
 
 /**
  * Converts `value` to a string. An empty string is returned for `null`
@@ -8919,13 +13758,13 @@ module.exports = toString;
 
 
 /***/ }),
-/* 127 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(6),
-    arrayMap = __webpack_require__(128),
-    isArray = __webpack_require__(1),
-    isSymbol = __webpack_require__(20);
+var Symbol = __webpack_require__(15),
+    arrayMap = __webpack_require__(198),
+    isArray = __webpack_require__(5),
+    isSymbol = __webpack_require__(36);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;
@@ -8962,7 +13801,7 @@ module.exports = baseToString;
 
 
 /***/ }),
-/* 128 */
+/* 198 */
 /***/ (function(module, exports) {
 
 /**
@@ -8989,11 +13828,11 @@ module.exports = arrayMap;
 
 
 /***/ }),
-/* 129 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseHasIn = __webpack_require__(130),
-    hasPath = __webpack_require__(131);
+var baseHasIn = __webpack_require__(200),
+    hasPath = __webpack_require__(201);
 
 /**
  * Checks if `path` is a direct or inherited property of `object`.
@@ -9029,7 +13868,7 @@ module.exports = hasIn;
 
 
 /***/ }),
-/* 130 */
+/* 200 */
 /***/ (function(module, exports) {
 
 /**
@@ -9048,15 +13887,15 @@ module.exports = baseHasIn;
 
 
 /***/ }),
-/* 131 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var castPath = __webpack_require__(37),
-    isArguments = __webpack_require__(25),
-    isArray = __webpack_require__(1),
-    isIndex = __webpack_require__(27),
-    isLength = __webpack_require__(16),
-    toKey = __webpack_require__(11);
+var castPath = __webpack_require__(77),
+    isArguments = __webpack_require__(65),
+    isArray = __webpack_require__(5),
+    isIndex = __webpack_require__(67),
+    isLength = __webpack_require__(32),
+    toKey = __webpack_require__(20);
 
 /**
  * Checks if `path` exists on `object`.
@@ -9093,7 +13932,7 @@ module.exports = hasPath;
 
 
 /***/ }),
-/* 132 */
+/* 202 */
 /***/ (function(module, exports) {
 
 /**
@@ -9120,13 +13959,13 @@ module.exports = identity;
 
 
 /***/ }),
-/* 133 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseProperty = __webpack_require__(134),
-    basePropertyDeep = __webpack_require__(135),
-    isKey = __webpack_require__(19),
-    toKey = __webpack_require__(11);
+var baseProperty = __webpack_require__(204),
+    basePropertyDeep = __webpack_require__(205),
+    isKey = __webpack_require__(35),
+    toKey = __webpack_require__(20);
 
 /**
  * Creates a function that returns the value at `path` of a given object.
@@ -9158,7 +13997,7 @@ module.exports = property;
 
 
 /***/ }),
-/* 134 */
+/* 204 */
 /***/ (function(module, exports) {
 
 /**
@@ -9178,10 +14017,10 @@ module.exports = baseProperty;
 
 
 /***/ }),
-/* 135 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGet = __webpack_require__(36);
+var baseGet = __webpack_require__(76);
 
 /**
  * A specialized version of `baseProperty` which supports deep paths.
@@ -9200,7 +14039,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 136 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9213,11 +14052,11 @@ exports.buildPoweredBy = exports.createDatasetByItemTypeAndSetActiveIndex = expo
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _preact = __webpack_require__(3);
+var _preact = __webpack_require__(12);
 
-var _lodash = __webpack_require__(137);
+var _lodash = __webpack_require__(207);
 
-var _hogan = __webpack_require__(138);
+var _hogan = __webpack_require__(208);
 
 var _hogan2 = _interopRequireDefault(_hogan);
 
@@ -9281,7 +14120,7 @@ var buildPoweredBy = exports.buildPoweredBy = function buildPoweredBy() {
 };
 
 /***/ }),
-/* 137 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -26383,10 +31222,10 @@ var buildPoweredBy = exports.buildPoweredBy = function buildPoweredBy() {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23), __webpack_require__(15)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(63), __webpack_require__(31)(module)))
 
 /***/ }),
-/* 138 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -26406,14 +31245,14 @@ var buildPoweredBy = exports.buildPoweredBy = function buildPoweredBy() {
 
 // This file is for use with Node.js. See dist/ for browser files.
 
-var Hogan = __webpack_require__(139);
-Hogan.Template = __webpack_require__(140).Template;
+var Hogan = __webpack_require__(209);
+Hogan.Template = __webpack_require__(210).Template;
 Hogan.template = Hogan.Template;
 module.exports = Hogan;
 
 
 /***/ }),
-/* 139 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -26842,7 +31681,7 @@ module.exports = Hogan;
 
 
 /***/ }),
-/* 140 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*

@@ -1,5 +1,7 @@
 <html>
 <head>
+    <meta charset="utf-8" /> 
+
     <title>Simple example</title>
     <script src="./../dist/apisearch-autocomplete.js"></script>
     <link rel="stylesheet" href="./styles.css">
@@ -7,7 +9,7 @@
 <body>
     <form action="./autocomplete.html">
         <h1>Apisearch autocomplete</h1>
-        <p>Search apisearch documentation</p>
+        <p>Try write some album eg. Swimming</p>
         <input
             type="search"
             class="as-autocomplete"
@@ -18,21 +20,22 @@
 
     <script>
         // Create instance
-        var autocomplete = apisearchAutocomplete({
-            appId: '4186e76c',
-            indexId: '6de535c5',
-            token: 'e3aee575-2b0a-4a95-b0ce-88fa316c4eff'
+        const autocomplete = apisearchAutocomplete({
+            app_id: '9c078fa1a748',
+            index_id: 'e742fbfbac24',
+            token: 'daf93c2b-40bc-49f2-870e-f8f62ea524ad',
+            options: {
+                endpoint: 'https://apisearch.global.ssl.fastly.net',
+            }
         });
 
         // item template
         var itemTemplate = '' +
-            '<a href="http://docs.apisearch.io/{{metadata.url}}" target="_blank">' +
-                '{{#highlights.title}}{{{highlights.title}}}{{/highlights.title}}' +
-                '{{^highlights.title}}{{metadata.title}}{{/highlights.title}}' +
-                '<span>' +
-                    '{{#highlights.content}}{{{highlights.content}}}{{/highlights.content}}' +
-                    '{{^highlights.content}}{{metadata.content}}{{/highlights.content}}' +
-                '</span>' +
+            '<a href="{{metadata.url}}" target="_blank">' +
+                '<img class="itemImage" src="{{metadata.img}}" />' +
+                '<div class="itemTitle">{{#highlights.title}}{{{highlights.title}}}{{/highlights.title}}' +
+                '{{^highlights.title}}{{metadata.title}}{{/highlights.title}} ({{indexedMetadata.year}})' +
+                '</div>' +
             '</a>'
         ;
 
@@ -42,21 +45,9 @@
             poweredBy: true,
             itemsPerResult: 8,
             datasets: [{
-                type: 'ui',
+                type: 'album',
                 template: {
-                    header: '<h3>UI</h3>',
-                    item: itemTemplate
-                }
-            },{
-                type: 'api-client',
-                template: {
-                    header: '<h3>API Reference</h3>',
-                    item: itemTemplate
-                }
-            },{
-                type: 'integrations',
-                template: {
-                    header: '<h3>Integrations</h3>',
+                    header: '<h3>Album</h3>',
                     item: itemTemplate
                 }
             }]

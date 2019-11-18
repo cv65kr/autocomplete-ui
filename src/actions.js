@@ -1,3 +1,6 @@
+import apisearch from "apisearch";
+import { Query } from "apisearch/lib/Query/Query";
+
 /**
  * Keyboard keys
  * @type {{up: string, down: string, esc: string, enter: string}}
@@ -29,12 +32,8 @@ export const actions = store => ({
         /**
          * Compose query
          */
-        let query = state
-            .client
-            .query
-            .create(queryText)
+        let query = Query.create(queryText, 1, state.itemsPerResult)
             .filterByTypes(datasetKeys)
-            .setResultSize(state.itemsPerResult)
             .enableHighlights()
         ;
 
@@ -43,8 +42,8 @@ export const actions = store => ({
          * Query length smaller than min keywords
          */
         if (
-            query.q === '' ||
-            query.q.length < state.startSearchOn
+            query.getQueryText === '' ||
+            query.getQueryText.length < state.startSearchOn
         ) {
             store.setState({resultBoxOpen: false});
             event.target.setAttribute('aria-expanded', 'false');
@@ -56,18 +55,12 @@ export const actions = store => ({
          */
         state
             .client
-            .search(query, (data, error) => {
-                if (error) {
-                    store.setState({
-                        error,
-                        resultBoxOpen: false,
-                        currentCursorIndex: 0
-                    });
-                    event.target.setAttribute('aria-expanded', 'false');
+            .query(query)
+            .then(result => {
 
-                    return;
-                }
-                if (data.total_hits === 0) {
+                let totalHits = result.totalHits;
+
+                if (totalHits === 0) {
                     store.setState({
                         total_hits: 0,
                         resultBoxOpen: false,
@@ -79,13 +72,24 @@ export const actions = store => ({
                 }
 
                 store.setState({
-                    items: data.items,
-                    total_hits: data.total_hits,
+                    items: result.items,
+                    total_hits: totalHits,
                     resultBoxOpen: true,
                     currentCursorIndex: 0
                 });
+
                 event.target.setAttribute('aria-expanded', 'true');
             })
+            .catch(error => {
+                
+                store.setState({
+                    error,
+                    resultBoxOpen: false,
+                    currentCursorIndex: 0
+                });
+
+                event.target.setAttribute('aria-expanded', 'false');
+            });
     },
 
     /**
